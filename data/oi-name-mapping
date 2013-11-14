@@ -1704,8 +1704,8 @@ SUNWxorg-client-docs           x11/extension-clients/manual
 SUNWxorg-client-programs       x11/extension-clients
 SUNWxorg-clientlibs            x11/library/extension-clients
 SUNWxorg-compatlinks           x11/compatibility/links-xorg
-SUNWxorg-devel-docs            pkg:/SUNWxwpmn
-SUNWxorg-doc                   pkg:/SUNWxorg-graphics-ddx
+SUNWxorg-devel-docs            SUNWxwpmn
+SUNWxorg-doc                   SUNWxorg-graphics-ddx
 SUNWxorg-graphics-ddx          x11/server/xorg/driver/xorg-misc
 SUNWxorg-headers               x11/header/header-xorg
 SUNWxorg-mesa                  x11/library/mesa
@@ -1746,7 +1746,7 @@ SUNWxwplt                      x11/clients
 SUNWxwpmn                      x11/developer/manual
 SUNWxwrtl                      x11/compatibility/links-svid
 SUNWxwslb                      x11/library/lint
-SUNWxwsvr                      pkg:/SUNWxscreensaver
+SUNWxwsvr                      SUNWxscreensaver
 SUNWxwxft                      x11/library/libxft
 SUNWyge                        driver/network/yge
 SUNWyp                         service/network/nis

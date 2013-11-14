@@ -195,7 +195,7 @@ SUNWcpp                        developer/macro/cpp
 SUNWcpprou                     (Obsolete)
 SUNWcpr                        system/kernel/suspend-resume
 SUNWcs                         system/core-os
-SUNWcsd                        pkg:/system/kernel
+SUNWcsd                        system/kernel
 SUNWcsdhcm                     network/dhcp/dhcpmgr/locale/cs
 SUNWcsl                        system/library
 SUNWcsmauth                    (Obsolete)
@@ -659,7 +659,7 @@ SUNWgtk2-print-papi            (Obsolete)
 SUNWgtkmm                      library/desktop/c++/gtkmm
 SUNWgtkperf                    benchmark/gtkperf
 SUNWgtkspell                   library/desktop/gtkspell
-SUNWgui-install                pkg:/system/install/gui-install
+SUNWgui-install                system/install/gui-install
 SUNWguile                      library/guile
 SUNWgutenprint                 print/filter/gutenprint
 SUNWgvim                       editor/gvim
@@ -1509,7 +1509,7 @@ SUNWsimplewbem                 (Obsolete)
 SUNWsladm                      (Obsolete)
 SUNWslang                      library/slang
 SUNWslib                       library/slib
-SUNWslim-utils                 pkg:/system/install/media/internal
+SUNWslim-utils                 system/install/media/internal
 SUNWslocate                    file/slocate
 SUNWslp                        service/network/slp
 SUNWslrn                       network/nntp/slrn
