@@ -1,0 +1,1854 @@
+Thu Nov 14 22:41:38 UTC 2013
+
+
+Packages to which both distributions give the same new name:
+
+SUNWpsdcr                     driver/i86pc/platform
+SUNWgnome-audio               gnome/gnome-audio
+SUNWfont-xorg-iso8859-4       system/font/xorg/iso8859-4
+SUNWapch22m-security          web/server/apache-22/plugin/plugin-security
+SUNWusbvc                     driver/graphics/usbvc
+SUNWmyspell-dictionary-pl     library/myspell/dictionary/pl
+SUNWzip                       compress/zip
+SUNWuath                      driver/network/uath
+SUNWfirefox-bookmark          web/data/firefox-bookmarks
+SUNWlxml                      library/libxml2
+SUNWlibxmlrpc-c               library/xmlrpc-c
+SUNWliboil                    library/liboil
+SUNWncurses                   library/ncurses
+SUNWlang-fi-extra             system/locale/fi-extra
+SUNWtnetd                     service/network/telnet
+SUNWunzip                     compress/unzip
+SUNWxcursor-themes            x11/data/xcursor-themes
+SUNWgnome-cd-burner           desktop/cd-burning/brasero
+SUNWckr                       system/kernel
+SUNWlang-et                   system/locale/et_EE
+SUNWerlang-doc                runtime/erlang/documentation
+SUNWgnome-log-viewer          gnome/gnome-log-viewer
+SUNWpool                      service/resource-pools
+SUNWvtsmn                     system/test/sunvts/manual
+SUNWmysql51                   database/mysql-51
+SUNWdialog                    terminal/dialog
+SUNWwget                      web/wget
+SUNWinstall-l10n              system/install/locale
+SUNWgtk2-engines              gnome/theme/gtk2-engines
+SUNWgtkspell                  library/desktop/gtkspell
+SUNWxcompmgr                  x11/xcompmgr
+SUNWmemcached-java            library/java/memcached-java
+SUNWlang-is-extra             system/locale/is-extra
+SUNWatigfx                    driver/graphics/atiatom
+SUNWa2ps                      print/lp/filter/a2ps
+SUNWuksp                      driver/serial/usbsksp
+SUNWvr                        driver/network/vr
+SUNWlang-it                   system/locale/it
+SUNWuprl                      driver/serial/usbsprl
+SUNWprivoxy                   web/proxy/privoxy
+SUNWlang-nn                   system/locale/nn
+SUNWgnome-intranet-applets    gnome/applet/gnome-intranet-applets
+SUNWlibgcrypt                 system/library/security/libgcrypt
+SUNWidnu                      network/dns/idnconv
+SUNWtecla                     library/libtecla
+SUNWgnome-icon-theme          gnome/theme/gnome-icon-theme
+SUNWvim                       editor/vim
+SUNWidhcm                     network/dhcp/dhcpmgr/locale/it
+SUNWimagick                   image/imagemagick
+SUNWmxfe                      driver/network/mxfe
+SUNWlibgmime                  library/gmime
+SUNWlang-hr                   system/locale/hr
+SUNWibus-hangul               system/input-method/ibus/hangul
+SUNWgamin                     library/file-monitor/gamin
+SUNWfontconfig-docs           system/library/fontconfig/documentation
+SUNWlinks                     web/browser/links
+SUNWxorg-client-docs          x11/extension-clients/manual
+SUNWxwxft                     x11/library/libxft
+SUNWlang-ja                   system/locale/ja
+SUNWgnu-findutils             file/gnu-findutils
+SUNWrdesktop                  desktop/remote-desktop/rdesktop
+SUNWedhcm                     network/dhcp/dhcpmgr/locale/es
+SUNWatge                      driver/network/atge
+SUNWmutt                      mail/mutt
+SUNWlogrotate                 system/file/logrotate
+SUNWddu-l10n                  diagnostic/ddu/locale
+SUNWlibstdcxx4                library/c++/stdcxx
+SUNWrtls                      driver/network/rtls
+SUNWdrivel                    editor/blog/drivel
+SUNWgnome-terminal            terminal/gnome-terminal
+SUNWbindc                     network/dns/bind
+SUNWphp52-xdebug              web/php-52/extension/php-xdebug
+SUNWlang-mk-extra             system/locale/mk-extra
+SUNWlftp                      network/ftp/lftp
+SUNWdbus-glib                 system/library/libdbus-glib
+SUNWfont-xorg-iso8859-10      system/font/xorg/iso8859-10
+SUNWntfsprogs                 system/file-system/ntfsprogs
+SUNWTiff                      image/library/libtiff
+SUNWbash                      shell/bash
+SUNWmfrun                     library/motif
+SUNWdbus-python26             library/python-2/python-dbus-26
+SUNWxsane                     image/scanner/xsane
+SUNWgnuplot                   image/gnuplot
+SUNWlibmemcached              library/libmemcached
+SUNWlang-hu                   system/locale/hu
+SUNWgnu-mc                    file/mc
+SUNWgnupg                     crypto/gnupg
+SUNWpython26-lxml             library/python-2/lxml-26
+SUNWarcmsr                    driver/storage/arcmsr
+SUNWlang-ru                   system/locale/ru
+SUNWsynergy                   desktop/synergy
+SUNWslim-utils                system/install/media/internal
+SUNWlang-bg-extra             system/locale/bg-extra
+SUNWiwi                       driver/network/iwi
+SUNWm17n-contrib              system/m17n/contrib
+SUNWfcgi                      library/fastcgi
+SUNWperl-pmtools              library/perl-5/pmtools
+SUNWtcpdump                   diagnostic/tcpdump
+SUNWlibsasl                   system/library/security/libsasl
+SUNWespeak                    library/speech/espeak
+SUNWlang-es-extra             system/locale/es-extra
+SUNWsvn-python                library/python-2/subversion
+SUNWdmgt                      system/management/wbem/data-management
+SUNWchxge                     driver/network/chxge
+SUNWlang-mt                   system/locale/mt
+SUNWcups-manager              print/cups/system-config-printer
+SUNWpciaccess                 diagnostic/scanpci
+SUNWlibrsvg                   image/library/librsvg
+SUNWhicolor-icon-theme        gnome/theme/hicolor-icon-theme
+SUNWiso-codes                 data/iso-codes
+SUNWgnome-calculator          desktop/calculator/gcalctool
+SUNWhea                       system/header
+SUNWgnome-themes-only-extra   gnome/theme/gnome-themes-extra
+SUNWperl-authen-pam           library/perl-5/authen-pam
+SUNWmyspell-dictionary-es     library/myspell/dictionary/es
+SUNWibdma                     driver/network/ibdma
+SUNWgrub                      system/boot/grub
+SUNWkdhcm                     network/dhcp/dhcpmgr/locale/ko
+SUNWlang-fi                   system/locale/fi
+SUNWlang-az                   system/locale/az
+SUNWlang-kk                   system/locale/kk
+SUNWstmf                      network/iscsi
+SUNWwpi                       driver/network/wpi
+SUNWgutenprint                print/filter/gutenprint
+SUNWibus-table-data-erbi      system/input-method/ibus/table/erbi
+SUNWipw                       driver/network/ipw
+SUNWgnome-terminal-java       library/java/java-gnome/java-libvte
+SUNWfoomatic-db-engine        print/cups/filter/foomatic-db-engine
+SUNWfruip                     system/fru-id/platform
+SUNWtoo                       developer/linker
+SUNWiiimf-zhTW-twle-open      system/input-method/iiim/zh_tw-twle-open
+SUNWlang-af                   system/locale/af
+SUNWgnome-file-mgr            gnome/file-manager/nautilus
+SUNWusb                       driver/usb
+SUNWnethack                   games/nethack
+SUNWlang-pt-extra             system/locale/pt-extra
+SUNWgnome-dtstart             SUNWdesktop-startup
+SUNWgnome-system-monitor      desktop/system-monitor/gnome-system-monitor
+SUNWsolnm                     release/name
+SUNWgssk                      system/kernel/security/gss
+SUNWlibevent                  library/libevent
+SUNWnet-snmp-core             system/management/snmp/net-snmp
+SUNWmrtg                      diagnostic/mrtg
+SUNWlibgsf                    library/desktop/libgsf
+SUNWudf                       system/file-system/udfs
+SUNWfont-xorg-iso8859-2       system/font/xorg/iso8859-2
+SUNWcpcu                      diagnostic/cpu-counters
+SUNWgobject-introspection     library/desktop/gobject/gobject-introspection
+SUNWxorg-graphics-ddx         x11/server/xorg/driver/xorg-misc
+SUNWlang-bn                   system/locale/bn
+SUNWtltk                      library/tooltalk
+SUNWlang-zhHK                 system/locale/zh_hk
+SUNWhos                       system/osnet/locale/zh_tw
+SUNWttf-wqy-zenhei            system/font/truetype/wqy-zenhei
+SUNWgnome-commander           desktop/file-manager/gnome-commander
+SUNWswt                       library/java/swt
+SUNWcacaodtrace               library/cacao/cacao-dtrace
+SUNWlibusbugen                system/library/usb/libusbugen
+SUNWlang-en                   system/locale/en
+SUNWgnome-ui-designer         developer/ui-designer/glade
+SUNWnimbus                    gnome/theme/nimbus
+SUNWfcprt                     system/storage/fibre-channel/port-utility
+SUNWkdc                       system/security/kerberos-5
+SUNWlang-deDE                 system/locale/de_de
+SUNWmegasas                   driver/storage/mega_sas
+SUNWgm4                       developer/macro/gnu-m4
+SUNWlang-lt                   system/locale/lt
+SUNWzoneint                   system/zones/internal
+SUNWpython-mako               library/python-2/mako
+SUNWgnome-archive-mgr         desktop/archive-manager/file-roller
+SUNWbge                       driver/network/bge
+SUNWxorg-clientlibs           x11/library/extension-clients
+SUNWsbp2                      driver/storage/sbp2
+SUNWlang-lt-extra             system/locale/lt-extra
+SUNWrtw                       driver/network/rtw
+SUNWttf-arabeyes              system/font/truetype/arabeyes
+SUNWxdm                       x11/session/xdm
+SUNWlang-nlNL                 system/locale/nl_nl
+SUNWrcmdc                     service/network/network-clients
+SUNWttf-hanyang-ko-core       system/font/truetype/hanyang-ko-core
+SUNWpolkit                    system/library/policykit
+SUNWnetcat                    network/netcat
+SUNWhal-cups-utils            print/cups/hal-cups-utils
+SUNWjpg                       image/library/libjpeg
+SUNWiiimf-zhHK-hkle-open      system/input-method/iiim/zh_hk-hkle-open
+SUNWrss-glx                   desktop/xscreensaver/hacks/rss-glx
+SUNWlang-nl                   system/locale/nl
+SUNWfchba                     system/library/storage/fibre-channel/libsun_fc
+SUNWxwinc                     x11/header
+SUNWtsclient                  desktop/remote-desktop/tsclient
+SUNWgnome-img-organizer       image/viewer/gthumb
+SUNWmyspell-dictionary-sv     library/myspell/dictionary/sv
+SUNWcstl                      developer/apptrace
+SUNWttf-google-droid          system/font/truetype/google-droid
+SUNWspsv                      driver/storage/sv
+SUNWlibchewing                system/input-method/library/libchewing
+SUNWiiimf-zhHK-hkle-core      system/input-method/iiim/zh_hk-hkle-core
+SUNWttf-gentium               system/font/truetype/gentium
+SUNWlibsmbclient              library/samba/libsmbclient
+SUNWmyspell-dictionary-noinst library/myspell/dictionary/noinst
+SUNWibus-table-data-zhengma   system/input-method/ibus/table/zhengma
+SUNWtgnome-tsoljdsselmgr      gnome/trusted/selection-manager
+SUNWcns                       service/network/legacy
+SUNWibus-table-data-jyutping  system/input-method/ibus/table/jyutping
+SUNWfruid                     system/fru-id
+SUNWxscreensaver              desktop/xscreensaver
+SUNWcompizconfig-gconf        desktop/compiz/library/compizconfig-gconf
+SUNWiiim                      SUNWiiimf
+SUNWatheros                   driver/network/ath
+SUNWlang-el-extra             system/locale/el-extra
+SUNWkrb                       service/security/kerberos-5
+SUNWinstalladm-tools          install/installadm
+SUNWiconv-extra               system/library/iconv/extra
+SUNWfftw3                     library/fftw-3
+SUNWmyspell-dictionary-de     library/myspell/dictionary/de
+SUNWgtk2-engines-extra        gnome/theme/gtk2-engines-extra
+SUNWgnome-xml                 data/docbook
+SUNWlang-gu                   system/locale/gu
+SUNWttf-ipafont               system/font/truetype/ipafont
+SUNWudapl                     system/network/udapl
+SUNWxwfsw                     x11/font-utilities
+SUNWperl-net-ssleay           library/perl-5/net-ssleay
+SUNWlibtorrent                library/libtorrent
+SUNWapct                      developer/appcert
+SUNWidnl                      library/idnkit
+SUNWilb                       service/network/load-balancer/ilb
+SUNWxwdem                     x11/demo
+SUNWaudiop16x                 driver/audio/audiop16x
+SUNWlang-da                   system/locale/da
+SUNWsdhcm                     network/dhcp/dhcpmgr/locale/sv
+SUNWastdev                    developer/astdev
+SUNWcommons-collections       library/java/commons-collections
+SUNWsvn-java                  library/java/subversion
+SUNWphp52-tcpwrap             web/php-52/extension/php-tcpwrap
+SUNWgnu-dbm                   library/database/gdbm
+SUNWbluefish                  web/editor/bluefish
+SUNWwbsup                     system/boot/wanboot
+SUNWpsdpr                     driver/storage/pcata
+SUNWqlc                       driver/network/qlc
+SUNWphp52-memcache            web/php-52/extension/php-memcache
+SUNWgnome-media               library/audio/gstreamer
+SUNWbs                        system/boot/network
+SUNWlang-sq-extra             system/locale/sq-extra
+SUNWsound-exchange            audio/sox
+SUNWgksu                      desktop/gksu
+SUNWuwb                       system/kernel/ultra-wideband
+SUNWlexpt                     library/expat
+SUNWlang-te                   system/locale/te
+SUNWgnome-libs                library/gnome/gnome-libs
+SUNWonbld                     developer/build/onbld
+SUNWiwp                       driver/network/iwp
+SUNWagph                      system/header/header-agp
+SUNWzfs-auto-snapshot         service/storage/zfs-auto-snapshot
+SUNWconflict                  shell/conflict
+SUNWrtorrent                  network/rtorrent
+SUNWiiimf-zhCN-cle-core       system/input-method/iiim/zh_cn-cle-core
+SUNWxwfs                      x11/xfs
+SUNWaconf                     developer/build/autoconf
+SUNWlang-cs-extra             system/locale/cs-extra
+SUNWicon-naming-utils         library/desktop/xdg/icon-naming-utils
+SUNWttf-bh-luxi               system/font/truetype/bh-luxi
+SUNWipoib                     driver/network/ibd
+SUNWlibm                      system/library/math/header-math
+SUNWlibconfuse                library/libconfuse
+SUNWiiimf-zhCN-cle-sunpinyin  system/input-method/iiim/zh_cn-cle-sunpinyin
+SUNWapch22d                   web/server/apache-22/documentation
+SUNWgnu-automake-110          developer/build/automake-110
+SUNWibus-table-data-ziranma   system/input-method/ibus/table/ziranma
+SUNWlibmikmod                 library/audio/libmikmod
+SUNWmtx                       media/mtx
+SUNWgnu-which                 shell/which
+SUNWbeadm                     install/beadm
+SUNWmusicbrainz               library/musicbrainz/libmusicbrainz
+SUNWaudiohd                   driver/audio/audiohd
+SUNWlang-ta                   system/locale/ta
+SUNWzone                      system/zones
+SUNWs10brand                  system/zones/brand/s10
+SUNWphp52-idn                 web/php-52/extension/php-idn
+SUNWdhcs                      service/network/dhcp
+SUNWpsh                       system/header/header-storage
+SUNWgnome-base-libs           library/gnome/base-libs
+SUNWcheese                    image/webcam/cheese
+SUNWcompiz-fusion-extra       desktop/compiz/plugin/compiz-fusion-extra
+SUNWpcan                      driver/network/pcan
+SUNWiiimf-ko-hangul           system/input-method/iiim/ko-hangul
+SUNWpcser                     driver/serial/pcser
+SUNWnet-snmp-addons           system/management/snmp/net-snmp/addons
+SUNWjre-config-plugin         web/browser/firefox/plugin/plugin-java
+SUNWxwopt                     x11/optional-clients
+SUNWibus-table-data-cns11643  system/input-method/ibus/table/cns11643
+SUNWii                        storage/avs/point-in-time-copy
+SUNWbtool                     developer/object-file
+SUNWlang-be                   system/locale/be
+SUNWvscankr                   SUNWvscan
+SUNWgnome-config              gnome/config/gconf
+SUNWconvmv                    text/convmv
+SUNWaudiocmi                  driver/audio/audiocmi
+SUNWmyspell-dictionary-ru     library/myspell/dictionary/ru
+SUNWgtar                      archiver/gnu-tar
+SUNWaudh                      system/header/header-audio
+SUNWmyspell-dictionary-it     library/myspell/dictionary/it
+SUNWibus-table-data-xinhua    system/input-method/ibus/table/xinhua
+SUNWgnu-emacs-nox             editor/gnu-emacs/gnu-emacs-no-x11
+SUNWdcaf                      driver/crypto/dca
+SUNWlibgpg-error              library/security/libgpg-error
+SUNWlang-ptBR                 system/locale/pt_br
+SUNWgnome-camera-img-editor-plugin image/editor/gimp/plugin/gimp-gtkam
+SUNWter                       system/data/terminfo
+SUNWhmd                       driver/network/hme
+SUNWapr13doc                  web/library/apache/apr-13/documentation
+SUNWlang-ml                   system/locale/ml
+SUNWlibms                     system/library/math
+SUNWfilebench                 benchmark/filebench
+SUNWpng                       image/library/libpng
+SUNWpppd                      system/network/ppp
+SUNWlang-lv-extra             system/locale/lv-extra
+SUNWgnome-component           library/gnome/gnome-component
+SUNWibus-table-data-wu        system/input-method/ibus/table/wu
+SUNWpixman                    library/graphics/pixman
+SUNWbabl                      image/library/babl
+SUNWpwgen                     crypto/pwgen
+SUNWlang-hu-extra             system/locale/hu-extra
+SUNWlibgtop                   library/libgtop
+SUNWapch22m-jk                web/server/apache-22/plugin/plugin-tomcat
+SUNWlang-he                   system/locale/he
+SUNWcairo                     library/desktop/cairo
+SUNWxvmpv                     driver/xvm/pv
+SUNWpcmci                     driver/pcmcia
+SUNWibus-pinyin               system/input-method/ibus/pinyin
+SUNWiiimf-zhCN-cle-open       system/input-method/iiim/zh_cn-cle-open
+SUNWibus-table-data-rustrad   system/input-method/ibus/table/rustrad
+SUNWsqlite3                   database/sqlite-3
+SUNWerlang                    runtime/erlang
+SUNWxorg-headers              x11/header/header-xorg
+SUNWsexy-python               library/python-2/python-sexy-24
+SUNWrpcib                     driver/network/rpcib
+SUNWcompiz                    desktop/compiz
+SUNWgnome-media-player        gnome/media/gnome-media-player
+SUNWscp                       compatibility/ucb
+SUNWperl-xml-parser           library/perl-5/xml-parser
+SUNWplanner                   desktop/project-management/planner
+SUNWbinutils                  developer/gnu-binutils
+SUNWgrails                    library/java/grails
+SUNWxcu4                      system/xopen/xcu4
+SUNWmyspell-dictionary-extra  library/myspell/dictionary/extra
+SUNWflexruntime               system/library/flex-runtime
+SUNWgnome-time-slider         desktop/time-slider
+SUNWpython26-twisted-web2     library/python-2/python-twisted-web2-26
+SUNWgnu-gperf                 developer/gperf
+SUNWgsfst                     print/filter/ghostscript/fonts/gnu-gs-fonts-std
+SUNWfipe                      driver/i86pc/fipe
+SUNWmysql51test               database/mysql-51/tests
+SUNWhpijs                     print/filter/hplip
+SUNWttf-unfonts-ko-core       system/font/truetype/unfonts-ko-core
+SUNWspeex                     codec/speex
+SUNWlibsexy                   library/desktop/libsexy
+SUNWpangomm                   library/desktop/c++/pangomm
+SUNWgnome-a11y-libs           gnome/accessibility/gnome-a11y-libs
+SUNWnwam-manager              desktop/administration/nwam-manager
+SUNWlang-de                   system/locale/de
+SUNWesu                       system/extended-system-utilities
+SUNWssh                       network/ssh
+SUNWgnu-automake-19           developer/build/automake-19
+SUNWcontact-lookup-applet     gnome/applet/contact-lookup-applet
+SUNWapu13dbd-mysql            web/library/apache/apr-util-13/dbd-mysql
+SUNWfmd                       service/fault-management
+SUNWapch22                    web/server/apache-22
+SUNWopenldap                  library/openldap
+SUNWatu                       driver/network/atu
+SUNWdtrc                      developer/dtrace
+SUNWxwsvr                     SUNWxscreensaver
+SUNWpkgcmds                   package/svr4
+SUNWixgbe                     driver/network/ixgbe
+SUNWbridge                    network/bridging
+SUNWsmcmd                     SUNWnet-snmp-utils
+SUNWibus-table-data-zhuyin    system/input-method/ibus/table/zhuyin
+SUNWapch22m-dtrace            web/server/apache-22/plugin/plugin-dtrace
+SUNWpython26-xdg              library/python-2/python-xdg-26
+SUNWlibffi                    library/libffi
+SUNWfss                       system/scheduler/fss
+SUNWwireshark                 diagnostic/wireshark
+SUNWtcltls                    runtime/tcl-8/tcl-openssl
+SUNWxorg-server               x11/server/xorg
+SUNWaudiols                   driver/audio/audiols
+SUNWbnu                       service/network/uucp
+SUNWlang-en-extra             system/locale/en-extra
+SUNWantlr2                    developer/parser/antlr-2
+SUNWfreeipmi                  system/management/freeipmi
+SUNWgnome-im-client           communication/im/pidgin
+SUNWfont-xorg-iso8859-15      system/font/xorg/iso8859-15
+SUNWtgnome-tsol-libs          gnome/trusted/libgnometsol
+SUNWmeld                      developer/meld
+SUNWgtkmm                     library/desktop/c++/gtkmm
+SUNWgnome-a11y-dasher         gnome/accessibility/dasher
+SUNWlang-pt                   system/locale/pt
+SUNWopenexr                   library/openexr
+SUNWapch22m-xml2enc           web/server/apache-22/plugin/plugin-xml2enc
+SUNWdmz-cursor-aa             gnome/theme/cursor/dmz-cursor-aa
+SUNWapch22m-proxy-html        web/server/apache-22/plugin/plugin-html-plugin
+SUNWtgnome-tsoljdsdevmgr      gnome/trusted/device-manager
+SUNWlang-zhTW                 system/locale/zh_tw
+SUNWgtk-doc                   developer/documentation-tool/gtk-doc
+SUNWfcoet                     driver/network/fcoet
+SUNWfont-jis-misc             system/font/jis-misc
+SUNWfppd                      print/lp/filter/foomatic-ppds
+SUNWcfcl                      system/library/storage/fibre-channel/hbaapi
+SUNWddu                       diagnostic/ddu
+SUNWthunderbird-calendar      mail/thunderbird/plugin/plugin-lightning
+SUNWauto-install-common       system/install/auto-install/auto-install-common
+SUNWgtkperf                   benchmark/gtkperf
+SUNWsigcpp                    library/c++/sigcpp
+SUNWlibgnomecanvas            library/desktop/libgnomecanvas
+SUNWunixodbc                  library/unixodbc
+SUNWxwpmn                     x11/developer/manual
+SUNWgnome-power-manager       gnome/gnome-power-manager
+SUNWlang-or                   system/locale/or
+SUNWibus-table-data-translit  system/input-method/ibus/table/translit
+SUNWsvos                      system/osnet/locale/sv
+SUNWgnu-emacs                 editor/gnu-emacs
+SUNWtgnome-tsoljdslabel       gnome/trusted/login-label-selector
+SUNWdeos                      system/osnet/locale/de
+SUNWapu13-ldap                web/library/apache/apr-util-13/apr-ldap
+SUNWgnome-img-editor-help     image/editor/gimp/gimp-help
+SUNWlua                       runtime/lua
+SUNWgnome-camera              gnome/gnome-camera
+SUNWxwacx                     x11/keyboard/accessx
+SUNWlang-sa                   system/locale/sa
+SUNWlang-it-extra             system/locale/it-extra
+SUNWprocmail                  mail/procmail
+SUNWfwdcu                     driver/graphics/dcam1394/devfsadm-dcam1394
+SUNWgnonlin                   library/audio/gstreamer/plugin/gnonlin
+SUNWlang-frFR                 system/locale/fr_fr
+SUNWiscsi                     network/iscsi/initiator
+SUNWtpm                       driver/crypto/tpm
+SUNWgscr                      SUNWghostscript
+SUNWadixp                     driver/audio/audioixp
+SUNWpppdt                     system/network/ppp/tunnel
+SUNWaudioemu10k               driver/audio/audioemu10k
+SUNWfcsm                      driver/network/fcsm
+SUNWuium                      system/library/iconv/utf-8/manual
+SUNWdvdrw                     media/dvd+rw-tools
+SUNWpacket                    driver/network/bpf
+SUNWttf-ipafont-mincho        system/font/truetype/ipafont-mincho
+SUNWlang-da-extra             system/locale/da-extra
+SUNWlang-enUS                 system/locale/en_us
+SUNWhal                       service/hal
+SUNWcurl                      web/curl
+SUNWbind                      service/network/dns/bind
+SUNWlang-ro                   system/locale/ro
+SUNWfetchmail                 mail/fetchmail
+SUNWlang-mr                   system/locale/mr
+SUNWlibcompizconfig           desktop/compiz/library/libcompizconfig
+SUNWlang-uk                   system/locale/uk
+SUNWibus-xkbc                 system/input-method/ibus/xkbc
+SUNWesos                      system/osnet/locale/es
+SUNWgnome-menu-editor         desktop/xdg/menu-editor/alacarte
+SUNWclutter                   library/desktop/clutter
+SUNWlang-vi                   system/locale/vi
+SUNWareca                     backup/areca
+SUNWbcc                       developer/bcc
+SUNWlibsigsegv                library/libsigsegv
+SUNWddhcm                     network/dhcp/dhcpmgr/locale/de
+SUNWbison                     developer/parser/bison
+SUNWlibunique                 library/libunique
+SUNWsmpd                      driver/storage/smp
+SUNWudaplt                    system/network/udapl/udapl-tavor
+SUNWlang-hi                   system/locale/hi
+SUNWslang                     library/slang
+SUNWrsg                       system/library/security/rpcsec
+SUNWphp524man                 SUNWphp52
+SUNWfcoei                     driver/network/fcoei
+SUNWhdhcm                     network/dhcp/dhcpmgr/locale/zh_hk_tw
+SUNWspnego                    system/library/security/gss/spnego
+SUNWless                      text/less
+SUNWxdg-user-dirs             library/xdg/xdg-user-dirs
+SUNWibus-table-data-cangjie   system/input-method/ibus/table/cangjie
+SUNWsndm                      service/network/smtp/sendmail
+SUNWaudit                     library/libadt_jni
+SUNWpd                        driver/storage/glm
+SUNWlang-tr-extra             system/locale/tr-extra
+SUNWlang-de-extra             system/locale/de-extra
+SUNWautogen                   developer/build/autogen
+SUNWcarx                      SUNWcar
+SUNWsmbfskr                   SUNWsmbfs
+SUNWgnome-meeting             communication/conferencing/ekiga
+SUNWgnome-a11y-poke           gnome/accessibility/accerciser
+SUNWfcgi-doc                  library/fastcgi/documentation
+SUNWlang-ms                   system/locale/ms
+SUNWseahorse                  gnome/security/seahorse
+SUNWperl584core               runtime/perl-584
+SUNWdesktop-startup           system/display-manager/desktop-startup
+SUNWgnome-gtksourceview       library/desktop/gtksourceview
+SUNWlang-nb                   system/locale/nb
+SUNWxscreensaver-hacks-gl     desktop/xscreensaver/hacks/hacks-gl
+SUNWgsed                      text/gnu-sed
+SUNWsmapi                     system/library/libdiskmgt
+SUNWlang-as                   system/locale/as
+SUNWlibmcrypt                 system/library/security/libmcrypt
+SUNWrpm                       package/rpm
+SUNWsshd                      service/network/ssh
+SUNWscsip                     system/library/storage/scsi-plugin
+SUNWibus                      system/input-method/ibus
+SUNWpycups                    library/python-2/pycups
+SUNWgnu-gettext               text/gnu-gettext
+SUNWlldap                     naming/ldap
+SUNWttf-sil                   system/font/truetype/sil
+SUNWdia                       editor/diagram/dia
+SUNWtss                       library/security/trousers
+SUNWcsdhcm                    network/dhcp/dhcpmgr/locale/cs
+SUNW1394                      driver/firewire
+SUNWxorg-compatlinks          x11/compatibility/links-xorg
+SUNWfcoe                      driver/network/fcoe
+SUNWcar                       system/library/processor
+SUNWgnome-themes-only         gnome/theme/gnome-themes
+SUNWbeanshell                 runtime/java/beanshell
+SUNWgnome-sound-recorder      gnome/media/sound-recorder
+SUNWfont-xorg-iso8859-8       system/font/xorg/iso8859-8
+SUNWxwrtl                     x11/compatibility/links-svid
+SUNWquilt                     developer/quilt
+SUNWcups-libs                 library/print/cups-libs
+SUNWgnome-character-map       desktop/character-map/gucharmap
+SUNWnet-snmp-utils            SUNWnet-snmp-core
+SUNWfont-misc-meltho          system/font/misc-meltho
+SUNWmyspell-dictionary-ptBR   library/myspell/dictionary/pt_br
+SUNWexpect                    shell/expect
+SUNWvtsts                     system/test/sunvts/tests
+SUNWo3read                    text/o3read
+SUNWcairomm                   library/desktop/c++/cairomm
+SUNWtango-icon-theme          gnome/theme/tango-icon-theme
+SUNWp7zip                     compress/p7zip
+SUNWdpl                       developer/library/profiled-libc
+SUNWrds                       driver/network/rds
+SUNWmwl                       driver/network/mwl
+SUNWipfh                      network/ipfilter/header-ipfilter
+SUNWopensolaris-backgrounds   gnome/theme/background/opensolaris-backgrounds
+SUNWad810                     driver/audio/audio810
+SUNWibus-table-data-cantonese system/input-method/ibus/table/cantonese
+SUNWgvim                      editor/gvim
+SUNWtack                      terminal/tack
+SUNWlang-es                   system/locale/es
+SUNWgnome-utility-applets     gnome/applet/gnome-utility-applets
+SUNWapr13                     web/library/apache/apr-13
+SUNWlang-sk                   system/locale/sk
+SUNWfont-isas-misc            system/font/isas-misc
+SUNWmv88sx                    driver/storage/marvell88sx
+SUNWlang-id                   system/locale/id
+SUNWpython26-zope-interface   library/python-2/python-zope-interface-26
+SUNWobby                      library/c++/obby
+SUNWisolc                     system/library/iconv/xsh4/latin
+SUNWevolution-webcal          mail/evolution/connector/evolution-webcal
+SUNWjunit                     developer/java/junit
+SUNWsdcard                    driver/storage/sdcard
+SUNWcmake                     developer/build/cmake
+SUNWphp524                    SUNWphp52
+SUNWlang-sv                   system/locale/sv
+SUNWtcat                      web/java-servlet/tomcat
+SUNWnet6                      library/c++/net6
+SUNWlogilab-common            library/python-2/logilab-common
+SUNWlibcanberra               library/desktop/xdg/libcanberra
+SUNWixgb                      driver/network/ixgb
+SUNWbzip                      compress/bzip2
+SUNWgkrellm                   desktop/system-monitor/gkrellm
+SUNWpython-cherrypy           library/python-2/cherrypy
+SUNWlibxmlpp                  library/c++/libxml++
+SUNWzyd                       driver/network/zyd
+SUNWphp52d                    web/php-52/documentation
+SUNWmyspell-dictionary-fr     library/myspell/dictionary/fr
+SUNWxwman                     x11/manual
+SUNWmddr                      system/library/svm-rcm
+SUNWgnome-pdf-viewer          desktop/pdf-viewer/evince
+SUNWcakr                      system/kernel/platform
+SUNWnfss                      service/file-system/nfs
+SUNWqdox                      library/java/qdox
+SUNWcompiz-fusion-main        desktop/compiz/plugin/compiz-fusion-main
+SUNWbrltty                    library/accessibility/brltty
+SUNWterminator                terminal/terminator
+SUNWopenproj                  desktop/project-management/openproj
+SUNWiperf                     benchmark/iperf
+SUNWphp52-mysql               web/php-52/extension/php-mysql
+SUNWlang-ruRU                 system/locale/ru_ru
+SUNWflac                      codec/flac
+SUNWscsa1394                  driver/storage/scsa1394
+SUNWrum                       driver/network/rum
+SUNWgzip                      compress/gzip
+SUNWpipe-viewer               shell/pipe-viewer
+SUNWagp                       driver/graphics/agpgart
+SUNWlang-kn                   system/locale/kn
+SUNWlibpcap                   system/library/libpcap
+SUNWcdrw                      media/cdrw
+SUNWpython-ply                library/python-2/ply
+SUNWibus-table-data-stroke5   system/input-method/ibus/table/stroke5
+SUNWlang-is                   system/locale/is
+SUNWusbs                      driver/serial/usbser
+SUNWclutter-gst               library/desktop/clutter/clutter-gst
+SUNWcompizconfig-python       library/python-2/python-compizconfig-26
+SUNWgnutls                    library/gnutls
+SUNWxorg-devel-docs           SUNWxwpmn
+SUNWipmi                      system/ipmi/ipmitool
+SUNWcpr                       system/kernel/suspend-resume
+SUNWadpu320                   driver/storage/adpu320
+SUNWpsdir                     driver/storage/ata
+SUNWlxsl-python26             library/python-2/libxsl-26
+SUNWlibpopt                   library/popt
+SUNWinstall-libs              system/library/install
+SUNWttf-hanyang-ko            system/font/truetype/hanyang-ko
+SUNWzfs                       system/file-system/zfs
+SUNWfont-xorg-iso8859-13      system/font/xorg/iso8859-13
+SUNWgnome-config-editor       gnome/config/gconf/gconf-editor
+SUNWrmvolmgr                  service/storage/media-volume-manager
+SUNWpython26-simplejson       library/python-2/simplejson-devel-26
+SUNWsshcu                     network/ssh/ssh-key
+SUNWfcoeu                     system/library/libfcoe
+SUNWuiu8                      system/library/iconv/utf-8
+SUNWxchat                     desktop/irc/xchat
+SUNWlibdiscid                 library/musicbrainz/libdiscid
+SUNWxsvc                      driver/x11/xsvc
+SUNWgawk                      text/gawk
+SUNWgnu-nano                  editor/nano
+SUNWgnome-img-editor          image/editor/gimp
+SUNWacc                       system/accounting/legacy
+SUNWinstall-test              system/install/tests
+SUNWiconv-unicode             system/library/iconv/unicode
+SUNWpampkcs11                 library/security/pam/module/pam-pkcs11
+SUNWcakrx                     SUNWcakr
+SUNWntp                       service/network/ntp
+SUNWlatencytop                diagnostic/latencytop
+SUNWapch2                     SUNWapch22
+SUNWfcip                      driver/network/fcip
+SUNWlang-zhSG                 system/locale/zh_sg
+SUNWhexedit                   editor/hexedit
+SUNWcfpl                      service/storage/fibre-channel/fc-fabric
+SUNWlang-sl                   system/locale/sl
+SUNWjokosher                  desktop/studio/jokosher
+SUNWpython26-setuptools       library/python-2/setuptools-26
+SUNWgssc                      service/security/gss
+SUNWroute                     system/network/routing
+SUNWauda                      audio/audio-utilities
+SUNWima                       system/library/storage/ima
+SUNWaudf                      library/demo/audio-samples
+SUNWrcap                      service/resource-cap
+SUNWsvn                       developer/versioning/subversion
+SUNWpowertop                  diagnostic/powertop
+SUNWttf-liberation            system/font/truetype/liberation
+SUNWmlib                      library/medialib
+SUNWlibvisual                 library/desktop/libvisual
+SUNWstardict                  system/desktop/stardict
+SUNWsane-frontend             image/scanner/xsane/sane-frontend
+SUNWsudo                      security/sudo
+SUNWgit                       developer/versioning/git
+SUNWrsgk                      system/kernel/secure-rpc
+SUNWlibmng                    library/graphics/libmng
+SUNWlibproxy                  library/libproxy
+SUNWservicetag                system/management/service-tag
+SUNWbip                       network/ftp
+SUNWlang-tr                   system/locale/tr
+SUNWevolution-data-server     library/desktop/evolution-data-server
+SUNWlang-ar                   system/locale/ar
+SUNWlang-pl                   system/locale/pl
+SUNWlibart                    image/library/libart
+SUNWpm                        system/kernel/power
+SUNWxwice                     x11/library/libice
+SUNWafe                       driver/network/afe
+SUNWxvnc                      x11/server/xvnc
+SUNWpatchutils                text/patchutils
+SUNWcimserver                 system/management/cim/pegasus
+SUNWemlxs                     driver/network/emlxs
+SUNWipc                       system/ipc
+SUNWgnome-xml-share           SUNWgnome-xml
+SUNWgftp                      desktop/gftp
+SUNWiscsidm                   network/iscsi/iser
+SUNWfont-xorg-iso8859-5       system/font/xorg/iso8859-5
+SUNWtnetc                     network/telnet
+SUNWhermon                    driver/network/hermon
+SUNWgsfot                     print/filter/ghostscript/fonts/gnu-gs-fonts-other
+SUNWevolution                 mail/evolution
+SUNWogg-vorbis                codec/ogg-vorbis
+SUNWgnome-vfs                 library/gnome/gnome-vfs
+SUNWxorg-tsol-module          x11/trusted/trusted-xorg
+SUNWpmcs                      driver/storage/pmcs
+SUNWfirefox                   web/browser/firefox
+SUNWvrrp                      system/network/routing/vrrp
+SUNWconsolekit                library/xdg/consolekit
+SUNWicu                       library/icu
+SUNWiscsit                    network/iscsi/target
+SUNWlibhangul                 system/input-method/library/libhangul
+SUNWdcopy                     driver/i86pc/ioat
+SUNWneon                      library/neon
+SUNWgnome-nettool             desktop/network/gnome-nettool
+SUNWibus-table-data-cantonhk  system/input-method/ibus/table/cantonhk
+SUNWgnome-disk-analyzer       gnome/disk-analyzer/baobab
+SUNWDTraceToolkit             developer/dtrace/toolkit
+SUNWsnort                     diagnostic/snort
+SUNWamt                       system/management/intel-amt
+SUNWlibical                   library/libical
+SUNWccsm                      desktop/compiz/ccsm
+SUNWevolution-libs            library/desktop/gtkhtml
+SUNWgnome-panel               gnome/gnome-panel
+SUNWsmbskr                    SUNWsmbs
+SUNWlibrsync                  library/librsync
+SUNWtidy                      text/tidy
+SUNWSblimCimClient            system/management/wbem/wbemcli
+SUNWkvm                       system/library/platform
+SUNWlang-cs                   system/locale/cs
+SUNWpython-pycurl             library/python-2/pycurl
+SUNWgobby                     editor/gobby
+SUNWibus-anthy                system/input-method/ibus/anthy
+SUNWlxsl                      library/libxslt
+SUNWttf-indic-fonts-core      system/font/truetype/indic-fonts-core
+SUNWgnome-backgrounds         image/gnome-backgrounds
+SUNWcsl                       system/library
+SUNWttf-bitstream-vera        system/font/truetype/bitstream-vera
+SUNWm17n                      system/m17n
+SUNWgtk-vnc-python26          library/python-2/python-gtk-vnc-26
+SUNWgnome-remote-desktop      gnome/gnome-remote-desktop
+SUNWlang-fr                   system/locale/fr
+SUNWjos                       system/osnet/locale/ja
+SUNWlang-fr-extra             system/locale/fr-extra
+SUNWavant                     desktop/avant-window-navigator
+SUNWpconsole                  terminal/pconsole
+SUNWman-l10n-ja               system/manual/locale/ja
+SUNWfcmdb                     developer/debug/mdb/module/module-fibre-channel
+SUNWgnu-readline              library/readline
+SUNWfctl                      driver/network/fp
+SUNWiwh                       driver/network/iwh
+SUNWqos                       system/network/ipqos/ipqos-config
+SUNWnimbus-hires              gnome/theme/nimbus-hires
+SUNWpcwl                      driver/network/pcwl
+SUNWmysql-base                database/mysql-common
+SUNWgnome-display-mgr         system/display-manager/gdm
+SUNWgimpprint                 SUNWgutenprint
+SUNWtftp                      service/network/tftp
+SUNWnis                       system/network/nis
+SUNWgssdh                     system/library/security/gss/diffie-hellman
+SUNWttf-mgopen                system/font/truetype/mgopen
+SUNWsmbfs                     system/file-system/smb
+SUNWxorg-doc                  SUNWxorg-graphics-ddx
+SUNW1394h                     system/header/header-firewire
+SUNWdbus-libs                 system/library/libdbus
+SUNWxcu6                      system/xopen/xcu6
+SUNWfont-xorg-iso8859-11      system/font/xorg/iso8859-11
+SUNWmda                       storage/metassist
+SUNWusbu                      system/header/header-usb
+SUNWtexi                      text/texinfo
+SUNWcsos                      system/osnet/locale/cs
+SUNWahci                      driver/storage/ahci
+SUNWTk                        runtime/tk-8
+SUNWsmdoc                     SUNWnet-snmp-doc
+SUNWgst-python26              library/python-2/python-gst-26
+SUNWttf-unifont               system/font/truetype/unifont
+SUNWpython26-twisted          library/python-2/python-twisted-26
+SUNWfont-xorg-core            system/font/xorg/xorg-core
+SUNWnfsckr                    SUNWnfsc
+SUNWlang-arEG                 system/locale/ar_eg
+SUNWlibC                      system/library/c++/sunpro
+SUNWnca                       system/network/http-cache-accelerator
+SUNWftdu                      developer/driver/ftsafe
+SUNWncft                      network/ftp/ncftp
+SUNWgnome-a11y-libs-python26  library/python-2/pyatspi-26
+SUNWpcre                      library/pcre
+SUNWgnome-wm                  gnome/window-manager/metacity
+SUNWlighttpd14                web/server/lighttpd
+SUNWurtw                      driver/network/urtw
+SUNWlibusb                    system/library/usb/libusb
+SUNWnfsc                      system/file-system/nfs
+SUNWgnome-user-docs           documentation/gnome/gnome-user-docs
+SUNWspawn-fcgi                web/fastcgi/spawn-fcgi
+SUNWconsolekit-pam            library/security/pam/module/pam-consolekit
+SUNWgnome-fonts               system/font/gnome-fonts
+SUNWmyri10ge                  driver/network/myri10ge
+SUNWwxwidgets                 library/graphics/wxwidgets
+SUNWphp524-mysql              SUNWphp52-mysql
+SUNWibus-table-data-array30   system/input-method/ibus/table/array30
+SUNWpywbem                    library/python-2/pywbem
+SUNWlang-pa                   system/locale/pa
+SUNWftp                       service/network/ftp
+SUNWio-tools                  system/management/pcitool
+SUNWnxge                      driver/network/nxge
+SUNWautoef                    text/auto_ef
+SUNWarc                       developer/library/lint
+SUNWxorg-client-programs      x11/extension-clients
+SUNWmyspell-dictionary-cs     library/myspell/dictionary/cs
+SUNWmemcached                 service/memcached
+SUNWfont-xorg-iso8859-1       system/font/xorg/iso8859-1
+SUNWphp52                     web/php-52
+SUNWlang-el                   system/locale/el
+SUNWdtrp                      system/kernel/dtrace/providers
+SUNWxcu4t                     developer/xopen/xcu4
+SUNWthunderbird               mail/thunderbird
+SUNWfreetype2                 system/library/freetype-2
+SUNWrmodu                     system/boot/real-mode
+SUNWaac                       driver/storage/aac
+SUNWib                        driver/network/ib
+SUNWclisp                     runtime/clisp
+SUNWfwdc                      driver/graphics/dcam1394
+SUNWipf                       network/ipfilter
+SUNWrcmds                     service/network/network-servers
+SUNWgnome-base-libs-java      library/java/java-gnome
+SUNWlang-sq                   system/locale/sq
+SUNWfont-xorg-iso8859-16      system/font/xorg/iso8859-16
+SUNWglib2                     library/glib2
+SUNWlibcroco                  library/libcroco
+SUNWsprot                     developer/build/make
+SUNWjdoc                      text/doctools/ja
+SUNWgnome-dialog              gnome/zenity
+SUNWlibsdl                    library/sdl
+SUNWttf-arphic-ukai           system/font/truetype/arphic-ukai
+SUNWPython26                  runtime/python-26
+SUNWdtbas                     cde/cde-runtime
+SUNWid3lib                    library/id3lib
+SUNWejabberd                  web/server/ejabberd
+SUNWscreen                    terminal/screen
+SUNWrge                       driver/network/rge
+SUNWgss                       system/library/security/gss
+SUNWiiimf                     system/input-method/iiim
+SUNWctpls                     system/library/liblayout
+SUNWpth                       library/pth
+SUNWsmhba                     system/storage/sasinfo
+SUNWxge                       driver/network/xge
+SUNWpython26-coherence        library/python-2/coherence-26
+SUNWapch2d                    SUNWapch22d
+SUNWugenu                     system/header/header-ugen
+SUNWmkcd                      media/cdrtools
+SUNWlibanthy                  system/input-method/library/libanthy
+SUNWtcpd                      library/security/tcp-wrapper
+SUNWintgige                   driver/network/e1000g
+SUNWpicl                      service/picl
+SUNWsmbs                      service/file-system/smb
+SUNWiftop                     diagnostic/iftop
+SUNWgnome-gvfs                library/gnome/gvfs
+SUNWphp524core                SUNWphp52
+SUNWparted                    system/storage/parted
+SUNWlang-ar-extra             system/locale/ar-extra
+SUNWcmdassist                 gnome/cmdassist
+SUNWicud                      developer/icu
+SUNWlibthai                   system/library/i18n/libthai
+SUNWapch22m-php5              SUNWapch22m-php52
+SUNWnfsskr                    SUNWnfss
+SUNWaudiosolo                 driver/audio/audiosolo
+SUNWdsd                       service/network/dns/mdns
+SUNWrrdtool                   image/rrdtool
+SUNWgnome-screenshot          gnome/gnome-screenshot
+SUNWcpp                       developer/macro/cpp
+SUNWgnome-cd                  desktop/cd-ripping/sound-juicer
+SUNWiiimf-zhTW-twle-chewing   system/input-method/iiim/zh_tw-twle-chewing
+SUNWgnome-xml-root            SUNWgnome-xml
+SUNWrmodr                     SUNWrmod
+SUNWggrp                      text/gnu-grep
+SUNWgnu-emacs-el              editor/gnu-emacs/gnu-emacs-lisp
+SUNWant                       developer/build/ant
+SUNWfwflash                   system/flash/fwflash
+SUNWgroff                     text/groff
+SUNWltdl                      library/libtool/libltdl
+SUNWgnu-emacs-gtk             editor/gnu-emacs/gnu-emacs-gtk
+SUNWgnome-a11y-poke-root      SUNWgnome-a11y-poke
+SUNWfont-xorg-iso8859-7       system/font/xorg/iso8859-7
+SUNWopenjade                  developer/documentation-tool/openjade
+SUNWpylint                    developer/python/pylint
+SUNWsrpt                      driver/network/srpt
+SUNWsg3utils                  system/storage/sg3_utils
+SUNWlcms                      library/lcms
+SUNWmpsvplr                   system/library/storage/libmpscsi_vhci
+SUNWdhcsb                     service/network/dhcp/datastore/binfiles
+SUNWzfskr                     SUNWzfs
+SUNWgnome-session             gnome/gnome-session
+SUNWucbt                      developer/apptrace/ucblib
+SUNWslp                       service/network/slp
+SUNWibus-table-data-viqr      system/input-method/ibus/table/viqr
+SUNWsfe                       driver/network/sfe
+SUNWircii                     network/chat/ircii
+SUNWxorg-mesa                 x11/library/mesa
+SUNWbcmsata                   driver/storage/bcm_sata
+SUNWmrsas                     driver/storage/mr_sas
+SUNWvinagre                   desktop/remote-desktop/vinagre
+SUNWttf-dejavu                system/font/truetype/dejavu
+SUNWsqlite3docs               database/sqlite-3/documentation
+SUNWuftdi                     driver/serial/usbftdi
+SUNWpostrun                   service/postrun
+SUNWugen                      driver/usb/ugen
+SUNWibus-table                system/input-method/ibus/table
+SUNWisns                      service/storage/isns
+SUNWrwd                       driver/network/rwd
+SUNWmyspell-dictionary-hu     library/myspell/dictionary/hu
+SUNWgnu-diffutils             text/gnu-diffutils
+SUNWgnome-devel-docs          documentation/gnome/gnome-devel-docs
+SUNWtcsh                      shell/tcsh
+SUNWgnome-applets             gnome/applet/gnome-applets
+SUNWlang-ca                   system/locale/ca
+SUNWlang-lv                   system/locale/lv
+SUNWrdiff-backup              backup/rdiff-backup
+SUNWsblimwbemcli              system/management/wbem/sblim-cim-client
+SUNWlibsoup                   library/libsoup
+SUNWdbus                      system/library/dbus
+SUNWapu13doc                  web/library/apache/apr-util-13/documentation
+SUNWfont-xorg-iso8859-14      system/font/xorg/iso8859-14
+SUNWdistro-license            SUNWdistro-license-copyright
+SUNWapch22m-fcgid             web/server/apache-22/plugin/plugin-fastcgi
+SUNWdistro-license-copyright  release/copyright
+SUNWphp52-suhosin             web/php-52/extension/php-suhosin
+SUNWttf-kacst                 system/font/truetype/kacst
+SUNWtsg                       system/trusted/global-zone
+SUNWzlib                      library/zlib
+SUNWmpathadm                  storage/mpathadm
+SUNWav1394                    driver/graphics/av1394
+SUNWaalib                     library/aalib
+SUNWtransmission              desktop/torrent/transmission
+SUNWsfwdemo                   SUNWnet-snmp-doc
+SUNWtcat-examples             web/java-servlet/tomcat/tomcat-examples
+SUNWlogilab-astng             library/python-2/logilab-astng
+SUNWcups                      print/cups
+SUNWgtk-vnc                   library/desktop/gtk-vnc
+SUNWocaml                     runtime/ocaml
+SUNWnvsata                    driver/storage/nv_sata
+SUNWiiimf-zhTW-twle-core      system/input-method/iiim/zh_tw-twle-core
+SUNWlibdatrie                 system/library/libdatrie
+SUNWslocate                   file/slocate
+SUNWgdb                       developer/debug/gdb
+SUNWmd                        storage/svm
+SUNWvscan                     service/storage/virus-scan
+SUNWpoold                     service/resource-pools/poold
+SUNWgegl                      image/library/gegl
+SUNWgnu-idn                   library/libidn
+SUNWlang-nl-extra             system/locale/nl-extra
+SUNWxwplt                     x11/clients
+SUNWblueprint                 gnome/theme/blueprint
+SUNWflexlex                   developer/lexer/flex
+SUNWgui-install               system/install/gui-install
+SUNWvts                       system/test/sunvts
+SUNWqosu                      system/network/ipqos
+SUNWopenssl-fips-140          library/security/openssl/openssl-fips-140
+SUNWbart                      security/bart
+SUNWraptor                    library/raptor
+SUNWquagga                    system/network/routing/quagga
+SUNWigb                       driver/network/igb
+SUNWhttping                   diagnostic/httping
+SUNWukspfw                    driver/serial/usbsksp/usbs49_fw
+SUNWdcraw                     image/dcraw
+SUNWdistro-const              install/distribution-constructor
+SUNWluxop                     system/storage/luxadm
+SUNWmpapi                     system/library/storage/libmpapi
+SUNWlang-hr-extra             system/locale/hr-extra
+SUNWtgnome-tstripe            gnome/trusted/trusted-stripe
+SUNWts                        system/trusted
+SUNWTcl                       runtime/tcl-8
+SUNWpython26-imaging          library/python-2/python-imaging-26
+SUNWnet-snmp-doc              system/management/snmp/net-snmp/documentation
+SUNWinstall                   system/install
+SUNWfsexam                    storage/fsexam
+SUNWlang-ja-extra             system/locale/ja-extra
+SUNWwebalizer                 web/analytics/webalizer
+SUNWlynx                      web/browser/lynx
+SUNWxdg-utils                 desktop/xdg/xdg-utils
+SUNWmptsas                    driver/storage/mpt_sas
+SUNWslrn                      network/nntp/slrn
+SUNWghostscript               print/filter/ghostscript
+SUNWrwn                       driver/network/rwn
+SUNWlang-bg                   system/locale/bg
+SUNWiiimf-th-thaile           system/input-method/iiim/th-thaile
+SUNWgtk2                      library/desktop/gtk2
+SUNWgnome-text-editor         editor/gedit
+SUNWpython26-notify           library/python-2/python-notify-26
+SUNWgcc                       developer/gcc-3
+SUNWsmedia                    service/storage/removable-media
+SUNWdiffstat                  text/diffstat
+SUNWfoomatic-db               print/cups/filter/foomatic-db
+SUNWamd8111s                  driver/network/amd8111s
+SUNWhwdata                    system/data/hardware-registry
+SUNWlang-th                   system/locale/th
+SUNWibus-table-data-wubi      system/input-method/ibus/table/wubi
+SUNWkos                       system/osnet/locale/ko
+SUNWgnome-python26-extras     library/python-2/python-gnome-extras-26
+SUNWvncviewer                 desktop/remote-desktop/tigervnc
+SUNWmdb                       developer/debug/mdb
+SUNWgnome-doc-utils           developer/gnome/gnome-doc-utils
+SUNWapu13                     web/library/apache/apr-util-13
+SUNWgnome-fun-applets         gnome/applet/gnome-fun-applets
+SUNWlibsndfile                library/libsndfile
+SUNWdiveintopython            documentation/diveintopython
+SUNWevolution-exchange        mail/evolution/connector/evolution-exchange
+SUNWsi3124                    driver/storage/si3124
+SUNWosdem                     source/demo/system
+SUNWlibgoffice                library/desktop/goffice
+SUNWperl584usr                runtime/perl-584/extra
+SUNWdmz-cursor                gnome/theme/cursor/dmz-cursor
+SUNWcacaort                   library/cacao
+SUNWgpch                      text/gnu-patch
+SUNWacpidump                  diagnostic/acpidump
+SUNWiwk                       driver/network/iwk
+SUNWatfs                      system/file-system/autofs
+SUNWw3m                       web/browser/w3m
+SUNWgnome-a11y-speech         gnome/speech/gnome-speech
+SUNWlibtool                   developer/build/libtool
+SUNWgnome-a11y-speech-espeak  gnome/speech/gnome-speech/driver/gnome-speech-espeak
+SUNWjdhcm                     network/dhcp/dhcpmgr/locale/ja
+SUNWgnu-emacs-x               editor/gnu-emacs/gnu-emacs-x11
+SUNWrdc                       storage/avs/remote-mirror
+SUNWgnome-internet-applets    gnome/applet/gnome-internet-applets
+SUNWstosreg                   release/registration
+SUNWdhcm                      network/dhcp/dhcpmgr
+SUNWibus-m17n                 system/input-method/ibus/m17n
+SUNWphp524doc                 SUNWphp52d
+SUNWsmagt                     SUNWnet-snmp-addons
+SUNWphp52-pear                web/php-52/extension/php-pear
+SUNWmysql-python26            library/python-2/python-mysql-26
+SUNWstunnel                   service/security/stunnel
+SUNWdoc                       text/doctools
+SUNWlibatk                    library/desktop/atk
+SUNWgnome-config-java         library/java/java-gnome/java-libgconf
+SUNWgocr                      image/gocr
+SUNWfping                     diagnostic/fping
+SUNWscm                       service/storage/avs/cache-management
+SUNWsmmgr                     SUNWnet-snmp-core
+SUNWdoxygen                   developer/documentation-tool/doxygen
+SUNWrsync                     network/rsync
+SUNWdmfe                      driver/network/dmfe
+SUNWibus-table-data-quick     system/input-method/ibus/table/quick
+SUNWslib                      library/slib
+SUNWpyyaml26                  library/python-2/pyyaml-26
+SUNWgnome-python26-desktop    library/python-2/python-gnome-desktop-26
+SUNWgnome-search-tool         gnome/gnome-search-tool
+SUNWnmap                      diagnostic/nmap
+SUNWavahi-bridge-dsd          system/network/avahi
+SUNWlibnet                    system/library/libnet
+SUNWrmod                      system/boot/real-mode
+SUNWlxml-python26             library/python-2/libxml2-26
+SUNWfont-xorg-iso8859-9       system/font/xorg/iso8859-9
+SUNWxwplr                     x11/x11-config
+SUNWyge                       driver/network/yge
+SUNWsquid                     web/proxy/squid
+SUNWgtk2-print-cups           library/desktop/gtk2/gtk-backend-cups
+SUNWibus-chewing              system/input-method/ibus/chewing
+SUNWlang-ca-extra             system/locale/ca-extra
+SUNWfont-misc-ethiopic        system/font/misc-ethiopic
+SUNWttf-thai-scalable         system/font/truetype/thai-scalable
+SUNWfakeroot                  developer/fakeroot
+SUNWiiimf-ja-anthy            system/input-method/iiim/ja-anthy
+SUNWfont-daewoo-misc          system/font/daewoo-misc
+SUNWapch22m-sed               web/server/apache-22/plugin/plugin-sed
+SUNWlang-zhCN                 system/locale/zh_cn
+SUNWilmbase                   library/ilmbase
+SUNWxscreensaver-hacks        desktop/xscreensaver/hacks
+SUNWlang-ko                   system/locale/ko
+SUNWtgnome-xagent             gnome/trusted/xagent
+SUNWdesktop-cache             service/gnome/desktop-cache
+SUNWxwdxm                     library/motif/libdpstkXm
+SUNWgnome-python26-libs       library/python-2/python-gnome-libs-26
+SUNWirssi                     network/chat/irssi
+SUNWlang-ru-extra             system/locale/ru-extra
+SUNWsmba                      service/network/samba
+SUNWdesktop-search            library/desktop/search/tracker
+SUNWgnome-a11y-mousetweaks    gnome/accessibility/mousetweaks
+SUNWphp524usr                 SUNWphp524
+SUNWelinks                    web/browser/elinks
+SUNWibus-table-data-yong      system/input-method/ibus/table/yong
+SUNWlibdaemon                 library/libdaemon
+SUNWgnome-help-viewer         gnome/help-viewer/yelp
+SUNWfdhcm                     network/dhcp/dhcpmgr/locale/fr
+SUNWwpa                       service/network/wpa
+SUNWgrubS                     source/system/grub
+SUNWxdg-sound-theme           gnome/theme/sound/xdg-sound-theme
+SUNWpython26-cssutils         library/python-2/cssutils-26
+SUNWlang-hy                   system/locale/hy
+SUNWldtp                      system/desktop/ldtp
+SUNWgnome-ps-viewer           gnome/ggv
+SUNWopenwsman                 system/management/web/openwsman
+SUNWlibgc                     library/gc
+SUNWtree                      file/tree
+SUNWibsdp                     driver/network/sdp
+SUNWpango                     library/desktop/pango
+SUNWfont-xorg-cyrillic        system/font/xorg/cyrillic
+SUNWIPython                   library/python-2/ipython-26
+SUNWunrar                     archiver/unrar
+SUNWglibmm                    library/c++/glibmm
+SUNWvia823x                   driver/audio/audiovia823x
+SUNWgnome-dictionary          gnome/gnome-dictionary
+SUNWlibexif                   image/library/libexif
+SUNWsqlite3tcl                runtime/tcl-8/tcl-sqlite-3
+SUNWgnu-coreutils             file/gnu-coreutils
+SUNWxwslb                     x11/library/lint
+SUNWpython26-pyopenssl        library/python-2/pyopenssl-26
+SUNWpmdbi                     library/perl-5/database
+SUNWmdbdm                     source/demo/mdb-examples
+SUNWgccruntime                system/library/gcc-3-runtime
+SUNWlang-itIT                 system/locale/it_it
+SUNWttf-bpg-georgian          system/font/truetype/bpg-georgian
+SUNWclutter-gtk               library/desktop/clutter/clutter-gtk
+SUNWgnome-desktop-prefs       gnome/preferences/control-center
+SUNWzsh                       shell/zsh
+SUNWimac                      system/library/storage/ima/header-ima
+SUNWural                      driver/network/ural
+SUNWgd2                       library/gd
+SUNWlang-pl-extra             system/locale/pl-extra
+SUNWqlcu                      driver/network/qlc/qlc-mdb
+SUNWlibtheora                 codec/libtheora
+SUNWgnome-games               games/gnome-games
+SUNWgnome-mm-applets          gnome/applet/gnome-mm-applets
+SUNWkey                       system/data/keyboard/keytables
+SUNWruby18                    runtime/ruby-18
+SUNWpiclh                     system/header/header-picl
+SUNWcpc                       system/kernel/cpu-counters
+SUNWntxn                      driver/network/ntxn
+SUNWopensolaris-backgrounds-xtra gnome/theme/background/opensolaris-backgrounds-extra
+SUNWxwdv                      driver/x11/winlock
+SUNWphp52-apc                 web/php-52/extension/php-apc
+SUNWnge                       driver/network/nge
+SUNWlibopenusb                system/library/usb/openusb
+SUNWralink                    driver/network/ral
+SUNWgnome-devhelp             developer/gnome/devhelp
+SUNWloc                       text/locale
+SUNWpsutils                   print/psutils
+SUNWgnome-common-devel        developer/gnome/gettext
+SUNWcos                       system/osnet/locale/zh
+SUNWgnome-a11y-reader         gnome/accessibility/orca
+SUNWfcp                       driver/network/fcp
+SUNWdrmr                      driver/graphics/drm
+SUNWpilot-link                communication/pda/pilot-link
+SUNWuacm                      driver/serial/usbsacm
+SUNWGParted                   desktop/administration/gparted
+SUNWdesktop-search-firefox    library/desktop/search/tracker/tracker-firefox
+SUNWguile                     library/guile
+SUNWseahorse-plugins          gnome/security/seahorse/seahorse-plugins
+SUNWlang-esES                 system/locale/es_es
+SUNWfros                      system/osnet/locale/fr
+SUNWses                       driver/storage/ses
+SUNWgnome-media-apps          gnome/media/gnome-media
+SUNWttf-unfonts-ko-extra      system/font/truetype/unfonts-ko-extra
+SUNWconman                    terminal/conman
+SUNWlang-mk                   system/locale/mk
+SUNWfont-xorg-iso8859-3       system/font/xorg/iso8859-3
+SUNWitos                      system/osnet/locale/it
+SUNWuedg                      driver/serial/usbser_edge
+SUNWgmake                     developer/build/gnu-make
+SUNWndmp                      service/storage/ndmp
+SUNWos86r                     driver/network/platform
+SUNWgnome-pilot               communication/pda/gnome-pilot
+SUNWpppg                      system/network/ppp/pppdump
+SUNWopensp                    developer/documentation-tool/opensp
+SUNWarn                       driver/network/arn
+SUNWlang-sv-extra             system/locale/sv-extra
+SUNWffilters                  print/lp/filter/foomatic-rip
+SUNWopenssl                   library/security/openssl
+SUNWmp                        print/mp
+SUNWibus-table-data-thai      system/input-method/ibus/table/thai
+SUNWgnu-mp                    library/gmp
+SUNWcnetr                     system/network
+SUNWgnome-spell               library/spell-checking/enchant
+SUNWtotem-pl-parser           library/media-player/totem-pl-parser
+SUNWmercurial                 developer/versioning/mercurial
+SUNWgcmn                      system/prerequisite/gnu
+SUNWfontconfig                system/library/fontconfig
+SUNWgnu-mpfr                  library/mpfr
+SUNWmyspell-dictionary-en     library/myspell/dictionary/en
+SUNWyp                        service/network/nis
+SUNWaudd                      driver/audio
+SUNWlang-th-extra             system/locale/th-extra
+SUNWmysql51lib                database/mysql-51/library
+SUNWcvs                       developer/versioning/cvs
+SUNWxdg-user-dirs-gtk         desktop/xdg/xdg-user-dirs-gtk
+SUNWttf-arphic-uming          system/font/truetype/arphic-uming
+SUNWgnome-img-viewer          image/viewer/eog
+SUNWbfe                       driver/network/bfe
+SUNWtop                       diagnostic/top
+SUNWswig                      developer/swig
+SUNWlibtasn1                  library/libtasn1
+SUNWxorg-xkb                  x11/keyboard/data-xkb
+SUNWlang-ka                   system/locale/ka
+SUNWsvn-perl                  library/perl-5/subversion
+SUNWapu13dbd-sqlite           web/library/apache/apr-util-13/dbd-sqlite
+SUNWlibglade                  library/desktop/libglade
+SUNWsane-backend              image/scanner/xsane/sane-backends
+SUNWibsdpib                   driver/network/sdpib
+SUNWlang-elGR                 system/locale/el_gr
+SUNWgnome-crash-report        gnome/crash-report/bug-buddy
+SUNWcdhcm                     network/dhcp/dhcpmgr/locale/zh_cn
+SUNWhxge                      driver/network/hxge
+SUNWgqview                    image/viewer/gqview
+SUNWapch22m-php52             web/server/apache-22/plugin/plugin-php52
+SUNWjdmk-base                 library/java/jdmk-runtime
+SUNWPython26-extra            library/python-2/python-extra-26
+SUNWauto-install              system/install/auto-install
+SUNWidnd                      library/idnkit/header-idnkit
+
+Packages which are obsoleted by both distributions:
+
+SUNWgnome-sys-suspend
+SUNWsamow
+SUNWhiu8
+SUNWsbrg
+SUNWjxl
+SUNWsrh
+SUNWpgbouncer-pg83
+SUNWpostgr-83-docs
+SUNWitdma
+SUNWantlr
+SUNWulcf
+SUNWjodatime
+SUNWccsign
+SUNWpostgr-83-client
+SUNWpostgr-84-devel
+SUNWxsdlib
+SUNWsvdis
+SUNWladm
+SUNWcladm
+SUNWkiu8
+SUNWiiimf-in-indicle
+SUNWdedis
+SUNWhadis
+SUNWpostgr-83-tcl
+SUNWkadma
+SUNWpython25-simplejson
+SUNWpostgr-82-server
+SUNWgnome-media-mp3
+SUNWgnu-libiconv
+SUNWjadma
+SUNWesdma
+SUNWcglib
+SUNWcwsr2
+SUNWscn-base
+SUNWnamos
+SUNWccccfg
+SUNWrelaxngDatatype
+SUNWiupdatemgru
+SUNWhupdatemgru
+SUNWapu13dbd-pgsql
+SUNWpostgr-84-docs
+SUNWktsu
+SUNWevolution-jescs
+SUNWpostgr-server
+SUNWinplt
+SUNWfrdis
+SUNWsfdoc
+SUNWeupdatemgru
+SUNWi15cs
+SUNWdeiso1
+SUNWdom4j
+SUNWi5cs
+SUNWpl5p
+SUNWgnome-a11y-speech-freetts
+SUNWdbrg
+SUNWhxwsvr
+SUNWindt
+SUNWmms
+SUNWpostgr-common
+SUNWsolaris-devel-docs
+SUNWitiso1
+SUNWjaxen-core
+SUNWpostgr-83-l10n-ja
+SUNWcodeina
+SUNWsasnm
+SUNWi2cs
+SUNWpostgr-82-docs
+SUNWpostgr-server-data
+SUNWseuos
+SUNWxstream
+SUNWxi18n
+SUNWsfinf
+SUNWixplt
+SUNWpostgr-82-libs
+SUNWhwsr2
+SUNWtiu8
+SUNWxprint-server
+SUNWkpprou
+SUNWjladm
+SUNWjxwsvr
+SUNWsviso1
+SUNWpostgr-tcl
+SUNWjbrg
+SUNWxsun-keytables
+SUNWaspell
+SUNWfrxwsvr
+SUNWlibpigment-python24
+SUNWxom
+SUNWpostgr-82-l10n-ja
+SUNWjdtcore
+SUNWpostgr-82-tcl
+SUNWccinv
+SUNWsxplt
+SUNWsamos
+SUNWspprou
+SUNWmysqlt
+SUNWlang-sh
+SUNWnamow
+SUNWeu8os
+SUNWmeaos
+SUNWlocaledefsrc
+SUNWneuow
+SUNWpostgr-docs
+SUNWibrg
+SUNWupdatemgr
+SUNWpostgr-82-pl
+SUNWcsmauth
+SUNWpull-parser
+SUNWesdis
+SUNWfrws2
+SUNWcleue
+SUNWsun-gdm-themes
+SUNWppro-plugin-sunos-base
+SUNWlang-no-extra
+SUNWi7cs
+SUNWppro
+SUNWsupdatemgru
+SUNWfpprou
+SUNWpcmem
+SUNWkleue
+SUNWepprou
+SUNWruxwsvr
+SUNWeuxwe
+SUNWxpp3min
+SUNWadmc
+SUNWitxwsvr
+SUNWxwhl
+SUNWpostgr-jdbc
+SUNWfriso1
+SUNWlog4j
+SUNWseuow
+SUNWlp-cmds
+SUNWscnsom
+SUNWlang-sh-extra
+SUNWeeuos
+SUNWpostgr-84-contrib
+SUNWgnome-media-center
+SUNWpostgr-libs
+SUNWhadma
+SUNWcupdatemgru
+SUNWgnome-freedb-libs
+SUNWhleue
+SUNWjtsu
+SUNWpl5m
+SUNWdxplt
+SUNWpostgr-82-devel
+SUNWpostgr-upgrade
+SUNWpostgr-84-tests
+SUNWdbus-python24
+SUNWhladm
+SUNWpostgr-84-server
+SUNWislcc
+SUNWsvxwsvr
+SUNWmeaow
+SUNWser
+SUNWfxplt
+SUNWpostgr-82-client
+SUNWbrasero
+SUNWpcelx
+SUNWgnome-a11y-libs-python24
+SUNWdedma
+SUNWdfb
+SUNWccfw
+SUNWhbrg
+SUNWnafos
+SUNWpostgr-82-contrib
+SUNWdupdatemgru
+SUNWesiso1
+SUNWmysql
+SUNWiniu8
+SUNWdrools
+SUNWdfbh
+SUNWpmdbdpg
+SUNWceuow
+SUNWsvdma
+SUNWplxwsvr
+SUNWgnome-gui-test
+SUNWuxlcf
+SUNWsun-backgrounds
+SUNWkadis
+SUNWcpprou
+SUNWinleu
+SUNWccccr
+SUNWpostgr-libpqxx
+SUNWsfwhea
+SUNWstringtemplate
+SUNWcctpx
+SUNWcxwsvr
+SUNWjadis
+SUNWjettison
+SUNWpyyaml25
+SUNWpostgr-l10n-ja
+SUNWjanino
+SUNWdpprou
+SUNWitdis
+SUNWlang-nn-extra
+SUNWweuow
+SUNWxwpft
+SUNWpostgr
+SUNWpgadmin3
+SUNWexplt
+SUNWaspell-en
+SUNWfladm
+SUNWpostgr-pl
+SUNWkupdatemgru
+SUNWsensor
+SUNWlibpigment-python25
+SUNWdesktop-search-thunderbird
+SUNWcamow
+SUNWkxwsvr
+SUNWcbrg
+SUNWhpprou
+SUNWiiimf-ko-kole
+SUNWsam
+SUNWebrg
+SUNWi13cs
+SUNWpostgr-84-client
+SUNWweuos
+SUNWkladm
+SUNWi9cs
+SUNWpcmcu
+SUNWauaos
+SUNWdews2
+SUNWceuos
+SUNWesws2
+SUNWfbrg
+SUNWdladm
+SUNWneuos
+SUNWesxwsvr
+SUNWlccom
+SUNWlang-nb-extra
+SUNWarbel
+SUNWpostgr-83-devel
+SUNWeeuow
+SUNWlcl
+SUNWiladm
+SUNWopensolaris-gdm-themes
+SUNWcadma
+SUNWbrg
+SUNWhkeue
+SUNWsfman
+SUNWjxplt
+SUNWeladm
+SUNWmvel
+SUNWlang-mt-extra
+SUNWiscsitgt
+SUNWkbrg
+SUNWusbccid
+SUNWjws2
+SUNWvtss
+SUNWpython25-cssutils
+SUNWgnome-keyring-manager
+SUNWpostgr-83-pl
+SUNWpostgr-84-pl
+SUNWitws2
+SUNWneutral-plus-cursors
+SUNWscnprm
+SUNWsladm
+SUNWipprou
+SUNWi1cs
+SUNWnafow
+SUNWpython25-twisted
+SUNWclutter-cairo
+SUNWcadis
+SUNWpostgr-83-server
+SUNWobjectasm
+SUNWphp52-pgsql
+SUNWpostgr-83-contrib
+SUNWjarjar
+SUNWccfwctrl
+SUNWkwsr2
+SUNWpostgr-82-jdbc
+SUNWpostgr-84-libs
+SUNWpl5v
+SUNWmibii
+SUNWdexwsvr
+SUNWjupdatemgru
+SUNWauaow
+SUNWserweb
+SUNWpl5u
+SUNWxorg-cfg
+SUNWcamos
+SUNWfirefox-apoc-adapter
+SUNWhkxwsvr
+SUNWsra
+SUNWpython25-twisted-web2
+SUNWciu8
+SUNWptxwsvr
+SUNWfrdma
+SUNWeuluf
+SUNWfupdatemgru
+SUNWlx
+SUNWlpr-cmds
+SUNWjpprou
+SUNWpostgr-83-libs
+SUNWpostgr-contrib
+
+Packages which are renamed by OpenIndiana Hipster but are obsoleted by Solaris 11.1:
+
+SUNWscim-chewing
+SUNWcacaowsvr
+SUNWgnome-python-desktop
+SUNWscim-thai
+SUNWgnome-l10ndocument-ko
+SUNWjruby
+SUNWmysql5jdbc
+SUNWsnack
+SUNWImperius
+SUNWfirefoxl10n-hi-IN
+SUNWced
+SUNWpapi
+SUNWdesktop-other-l10n-zhTW
+SUNWgnome-l10ndocument-zhHK
+SUNWgnome-l10ndocument-rtl
+SUNWPython-extra
+SUNWdwdiff
+SUNWtnfd
+SUNWgnome-img-editor-help-es
+SUNWfirefoxl10n-de-DE
+SUNWgnome-l10ndocument-it
+SUNWlibvirt
+SUNWgnome-python-extras
+SUNWamr
+SUNWperl510core
+SUNWgnome-l10ndocument-sv
+SUNWgnome-l10nmessages-pl
+SUNWdesktop-other-l10n-rtl
+SUNWdesktop-other-l10n-fr
+SUNWsacom
+SUNWaget
+SUNWjaxb
+SUNWgnome-img-editor-help-cs
+SUNWtvnc
+SUNWdesktop-other-l10n-noinst
+SUNWdesktop-other-l10n-sv
+SUNWxvmdom
+SUNWscim-tables-extra
+SUNWmysql5test
+SUNWPython25
+SUNWthunderbirdl10n-fr-FR
+SUNWthunderbirdl10n-zh-CN
+SUNWadmlib-sysid
+SUNWdesktop-other-l10n-it
+SUNWmrxvt
+SUNWxvmipa
+SUNWlablgtk
+SUNWdesktop-other-l10n-cs
+SUNWthunderbirdl10n-ko-KR
+SUNWGlib
+SUNWpsm-lpd
+SUNWdesktop-other-l10n-ja
+SUNWthunderbirdl10n-zh-TW
+SUNWmysql-python
+SUNWjedit
+SUNWtavor
+SUNWgnome-system-tools
+SUNWdesktop-other-l10n-zhCN
+SUNWpython-notify
+SUNWgnome-l10ndocument-ptBR
+SUNWgnome-l10ndocument-zhTW
+SUNWgnome-img-editor-help-fr
+SUNWpython-setuptools
+SUNWdesktop-other-l10n-hu
+SUNWscim-tables-korean
+SUNWvirt-manager
+SUNWpc
+SUNWgnome-l10nmessages-ptBR
+SUNWmysql5
+SUNWgnome-hex-editor
+SUNWwebmin
+SUNWpsf
+SUNWgnome-l10ndocument-ja
+SUNWippcore
+SUNWdesktop-other-l10n-pl
+SUNWvirtinst
+SUNWGtk
+SUNWgnome-l10nmessages-noinst
+SUNWfirefoxl10n-zh-CN
+SUNWthunderbirdl10n-de-DE
+SUNWcea
+SUNWbonnieplus
+SUNWcedu
+SUNWpython-twisted
+SUNWgnome-l10nmessages-zhHK
+SUNWfirefoxl10n-fr-FR
+SUNWgnome-l10nmessages-rtl
+SUNWgnome-l10ndocument-hu
+SUNWtgnome-l10n-ui-fr
+SUNWgnome-a11y-gok
+SUNWfirefoxl10n-ja-JP
+SUNWgnome-l10nmessages-de
+SUNWdesktop-other-l10n-ko
+SUNWpen
+SUNWvdisk
+SUNWsimplewbem
+SUNWonzfs
+SUNWthunderbirdl10n-it-IT
+SUNWthunderbirdl10n-extra
+SUNWtgnome-l10n-ui-zhTW
+SUNWps
+SUNWfirefoxl10n-pt-BR
+SUNWlibyaz
+SUNWgnome-l10nmessages-hu
+SUNWpython24-ctypes
+SUNWtgnome-l10n-ui-es
+SUNWperl510usr
+SUNWpython-lxml
+SUNWtgnome-l10n-ui-de
+SUNWgnome-l10ndocument-cs
+SUNWscim-m17n
+SUNWtgnome-l10n-ui-ko
+SUNWdesktop-other-l10n-es
+SUNWproduct-registry-root
+SUNWrsm
+SUNWtnfc
+SUNWtgnome-l10n-ui-ru
+SUNWgnome-desklets
+SUNWgnome-python-libs
+SUNWurlgrabber
+SUNWfirefoxl10n-sv-SE
+SUNWaudiovia97
+SUNWgnome-l10nmessages-ru
+SUNWpython-imaging
+SUNWlxml-python
+SUNWgnome-img-editor-help-zhCN
+SUNWgtk2-print-papi
+SUNWpython24-simplejson
+SUNWscim-tables
+SUNWgnome-l10nmessages-zhTW
+SUNWbvi
+SUNWgnome-img-editor-help-extra
+SUNWlibosip2
+SUNWkonkretcmpi
+SUNWgnome-l10nmessages-zhCN
+SUNWscim-tables-india
+SUNWgnome-l10ndocument-hi
+SUNWlibpigment
+SUNWgnome-l10ndocument-noinst
+SUNWadmap
+SUNWlxsl-python
+SUNWdesktop-other-l10n-zhHK
+SUNWgnome-img-editor-help-ru
+SUNWtor
+SUNWgnome-desklets-extra
+SUNWwiseman
+SUNWjavamail
+SUNWgnome-print
+SUNWjrexx
+SUNWscim-hangul
+SUNWpython-zope-interface
+SUNWfirefoxl10n-extra
+SUNWpython-pyopenssl
+SUNWthunderbirdl10n-sv-SE
+SUNWscim-sunpinyin
+SUNWfirefoxl10n-ko-KR
+SUNWxdt
+SUNWdesktop-other-l10n-extra
+SUNWgnome-l10nmessages-cs
+SUNWbwm-ng
+SUNWvgl
+SUNWthunderbirdl10n-ru-RU
+SUNWgnome-l10ndocument-pl
+SUNWsongbird
+SUNWepydoc
+SUNWgnome-l10nmessages-it
+SUNWfirefoxl10n-es-ES
+SUNWxvm
+SUNWfftw2
+SUNWgnome-l10nmessages-hi
+SUNWpysqlite
+SUNWthunderbirdl10n-ja-JP
+SUNWscim-pinyin
+SUNWapch
+SUNWdesktop-other-l10n-de
+SUNWiozone
+SUNWgnome-l10nmessages-ko
+SUNWdtrt
+SUNWxwmod
+SUNWthunderbirdl10n-pt-BR
+SUNWgnome-l10nmessages-ja
+SUNWgnome-img-editor-help-de
+SUNWgnome-l10ndocument-de
+SUNWadmr
+SUNWgnome-img-editor-help-ko
+SUNWtgnome-l10n-ui-ptBR
+SUNWscplp
+SUNWgnome-l10ndocument-es
+SUNWgst-python
+SUNWshmux
+SUNWpsm-ipp
+SUNWgnome-img-editor-help-sv
+SUNWgnome-img-editor-help-it
+SUNWthunderbirdl10n-es-ES
+SUNWidzebra
+SUNWsn1int
+SUNWtgnome-l10n-ui-ja
+SUNWgnome-l10nmessages-es
+SUNWapchd
+SUNWtgnome-l10n-ui-sv
+SUNWPython
+SUNWactivation
+SUNWgnome-print-papi
+SUNWfirefoxl10n-ru-RU
+SUNWfirefoxl10n-it-IT
+SUNWxvmhvm
+SUNWfirefoxl10n-zh-TW
+SUNWmoovida-plugins
+SUNWgnome-l10nmessages-extra
+SUNWdesktop-other-l10n-ptBR
+SUNWwlan
+SUNWlibpigment-python26
+SUNWrsmo
+SUNWgnome-l10nmessages-sv
+SUNWlsimega
+SUNWpdsh
+SUNWippl
+SUNWgtk-vnc-python24
+SUNWgnome-img-editor-help-pl
+SUNWgir-repository
+SUNWgnome-l10nmessages-fr
+SUNWibsdpu
+SUNWgnome-l10ndocument-zhCN
+SUNWtrove
+SUNWgnome-l10ndocument-fr
+SUNWdosbox
+SUNWawstats
+SUNWmoovida
+SUNWtgnome-l10n-ui-zhCN
+SUNWpowerman
+SUNWscim
+SUNWtgnome-l10n-ui-it
+SUNWprint-monitor
+SUNWscim-anthy
+SUNWsysbench
+SUNWppm
+SUNWpython-xdg
+SUNWwsr2
+SUNWtgnome-l10n-ui-zhHK
+SUNWsaaj
+SUNWpyyaml24
+SUNWpython24-cssutils
+SUNWscim-tables-chinese
+SUNWunison
+SUNWgnome-l10ndocument-extra
+SUNWdesktop-other-l10n-ru
+SUNWthunderbirdl10n-pl-PL
+SUNWfirefoxl10n-pl-PL
+SUNWpython-twisted-web2
+SUNWscim-tables-japanese
+SUNWhamster
+
+Packages which are renamed by OpenIndiana Hipster but are unknown to Solaris 11.1:
+
+SUNWldskint
+SUNW0on
+SUNWonfmes
+SUNWinstallint
+SUNWwbint
+SUNWiot
+
+Packages which are obsoleted by OpenIndiana Hipster but are renamed by Solaris 11.1:
+
+SUNWlang-zhCN-extra
+SUNWlang-he-extra
+SUNWlang-common-extra
+SUNWdbus-bindings
+SUNWman
+SUNWlang-ky
+SUNWlang-sr-extra
+SUNWlang-sl-extra
+SUNWlang-common
+SUNWlang-sk-extra
+SUNWllc
+SUNWrmwb
+SUNWlang-ptBR-extra
+SUNWlang-zhTW-extra
+SUNWlang-et-extra
+SUNWtcpdS
+SUNWlang-ko-extra
+SUNWlang-ro-extra
+SUNWlang-zhHK-extra
+SUNWjdom
+SUNWlang-ks
+SUNWlang-sr
+SUNWlang-srRS
+SUNWlang-ku
+SUNWpppgS
+
+Packages which are unknown to OpenIndiana Hipster but are renamed by Solaris 11.1:
+
+SUNWj6rtx
+SUNWtls
+SUNWjhrt
+SUNWjavadb-docs
+SUNWjss
+SUNWaclg
+SUNWjavadb
+SUNWj6man
+SUNWjavadb-demo
+SUNWipkg
+SUNWipkg-gui
+SUNWipkg-brand
+SUNWcsd
+SUNWtlsu
+SUNWj6dvx
+SUNWtlsd
+SUNWcs
+SUNWjavadb-javadoc
+SUNWj6dmo
+SUNWj6dmx
+SUNWj6rt
+SUNWprd
+SUNWj6cfg
+SUNWipkg-um
+SUNWpr
+SUNWswmt
+SUNWjavadb-common
+SUNWjavadb-client
+SUNWjavadb-core
+SUNWj6jmp
+SUNWperl584man
+SUNWj6dev
+
+Packages which are unknown to OpenIndiana Hipster but are obsoleted by Solaris 11.1:
+
+SUNWgetting-started-l10n-de
+SUNWipkg-gui-data
+SUNWpostgr-82-server-data-root
+SUNWgetting-started-l10n-fr
+SUNWipkg-gui-l10n
+SUNWgetting-started-l10n-ko
+SUNWgetting-started-l10n-ru
+SUNWgetting-started-l10n-sv
+SUNWgetting-started-l10n-it
+SUNWgetting-started-l10n-zhHK
+SUNWgetting-started-l10n-ja
+SUNWgetting-started-l10n-extra
+SUNWgetting-started-l10n-zhTW
+SUNWgetting-started-l10n-es
+SUNWphp524-pgsql
+SUNWgetting-started-l10n-ptBR
+SUNWgetting-started-guide
+SUNWicdc
+SUNWgetting-started-l10n-zhCN
+
+Packages which are given a different new name by the two distributions:
+
+SUNWopensolaris-welcome  release/openindiana-welcome  release/opensolaris-welcome
+SUNWgnome-themes-hires   SUNWhicolor-icon-theme       SUNWnimbus-hires
+SUNWgnome-themes         SUNWblueprint                SUNWgnome-themes-only-extra
+
+
+SUNW packages marked as renamed or obsoleted identified on either distribution:  1812
+Packages renamed identically by the two distributions (including obsoletions):   1476
+Packages renamed identically by the two distributions:                           1180
+Packages obsoleted by both distributions:                                         296
+Packages handled differently by the two distributions:                            336
+
+Packages renamed by OpenIndiana Hipster but obsoleted Solaris 11.1: 251
+Packages renamed by OpenIndiana Hipster but unknown to Solaris 11.1: 6
+Packages obsoleted by OpenIndiana Hipster but renamed by Solaris 11.1: 25
+Packages obsoleted by OpenIndiana Hipster but unknown to Solaris 11.1: 0
+Packages unknown to OpenIndiana Hipster but renamed by Solaris 11.1: 32
+Packages unknown to OpenIndiana Hipster but obsoleted by Solaris 11.1: 19
+
+Packages renamed differently, obsoleted by neither distribution, and known to both: 3
