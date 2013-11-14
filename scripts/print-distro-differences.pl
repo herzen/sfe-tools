@@ -1,6 +1,9 @@
 #!/usr/bin/perl
 use v5.12;
 
+my $distro1 = "OpenIndiana Hipster";
+my $distro2 = "Solaris 11.1";
+
 =pod
 print_distro_differences.pl
     distro1_mapping_filename distro2_mapping_filename differences_report_filename
@@ -15,7 +18,6 @@ Print out the old and new names of packages that are handled the same
 Do the same where they are different, printing new name used by each distro
 Print out these totals: distros_same, distros_different, renamed for both
     distros, obsolete for both distros
-Print date
 =cut
 
 
@@ -30,7 +32,10 @@ my $distro1_renames; my $distro2_renames; my @all_pkgs;
     @all_pkgs = keys %union;
 }
 
-my @identical_renames; my @differing_renames; my $p;
+my @identical_renames; my @differing_renames;
+my @distro1_obsoleted; my @distro2_obsoleted; my @not_obsoleted;
+my @distro1_unknown; my @distro2_unknown;
+my $p;
 
 foreach $p (@all_pkgs) {
     my $s1 = $distro1_renames->{$p}; my $s2 = $distro2_renames->{$p};
@@ -42,20 +47,54 @@ foreach $p (@all_pkgs) {
     else { push @differing_renames, ($p) }
 }
 
+foreach $p (@differing_renames) {
+    if ($distro1_renames->{$p} eq "(Obsolete)") {
+	push @distro1_obsoleted, ($p);
+    } elsif ($distro2_renames->{$p} eq "(Obsolete)") {
+	push @distro2_obsoleted, ($p);
+    } elsif ($distro1_renames->{$p} eq "") {
+	push @distro1_unknown, ($p);
+    } elsif ($distro2_renames->{$p} eq "") {
+	push @distro2_unknown, ($p);
+    } else {
+	push @not_obsoleted, ($p);
+    }
+}
+
 say "Packages for which both distributions give the same new name:\n";
 foreach $p (@identical_renames) { printf "%-30s%s\n", $p, $distro1_renames->{$p}; }
 
-say "\nPackages which are given a different new name:\n";
-foreach $p (@differing_renames) {
-#    printf "%-20s%30s %s\n", $p, $distro1_renames->{$p}, $distro2_renames->{$p};
+say "\nPackages which are obsoleted by $distro1 but not by $distro2:\n";
+foreach $p (@distro1_obsoleted) { say $p }
+say "\nPackages which are obsoleted by $distro2 but not by $distro1:\n";
+foreach $p (@distro2_obsoleted) { say $p }
+say "\nPackages which are obsoleted by $distro1 but unknown to $distro2:\n";
+foreach $p (@distro1_unknown) { say $p }
+say "\nPackages which are obsoleted by $distro2 but unknown to $distro1:\n";
+foreach $p (@distro1_unknown) { say $p }
+
+say "\nPackages which are given a different new name by the two distributions:\n";
+#foreach $p (@differing_renames) {
+foreach $p (@not_obsoleted) {
     printf "%-30s %-40s %s\n", $p, $distro1_renames->{$p}, $distro2_renames->{$p};
-#    printf "%s %s %s\n", $p, $distro1_renames->{$p}, $distro2_renames->{$p};
 }
 
 print "\n";
-printf "Packages renamed identically by the two distributions: %d\n",
+printf "SUNW packages marked as renamed or deleted identified on either distribution: %d\n",
+    scalar(@all_pkgs);
+printf "Packages renamed identically by the two distributions (including obsoletions): %d\n",
     scalar(@identical_renames);
 printf "Packages not renamed identically: %d\n", scalar(@differing_renames);
+printf "Packages obsoleted by $distro1 but not by $distro2: %d\n",
+    scalar(@distro1_obsoleted);
+printf "Packages obsoleted by $distro2 but not by $distro1: %d\n",
+    scalar(@distro2_obsoleted);
+printf "Packages renamed by $distro1 but unknown to $distro2: %d\n",
+    scalar(@distro2_unknown);
+printf "Packages renamed by $distro2 but unknown to $distro1: %d\n",
+    scalar(@distro1_unknown);
+printf "Packages renamed differently, obsoleted by neither distribution, and known to both: %d\n",
+    scalar(@not_obsoleted);
 
 
 sub process_mapping_file {
