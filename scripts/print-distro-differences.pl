@@ -28,7 +28,7 @@ renamed/renamed		Two possibilities: renamed the same, or differently
 renamed/obsoleted
 renamed/unknown
 obsoleted/renamed
-obsoleted/obsoleted	Not a separate category: belongs with renamed the same
+obsoleted/obsoleted	Added to @handled_identically
 obsoleted/unknown
 unknown/renamed
 unknown/obsoleted
@@ -50,21 +50,26 @@ my $p;
     @all_pkgs = keys %union;
 }
 
-my @identical_renames; my @handled_differently;
+my @handled_identically; my @handled_differently;
 
 foreach $p (@all_pkgs) {
     my $s1 = $distro1_renames->{$p}; my $s2 = $distro2_renames->{$p};
     if ($s1 eq $s2) {
 # The following doesn't work for some odd reason
 #   if ($distro2_renames->{$p} eq $distro1_renames>{$p}) {
-	push @identical_renames, $p
+	push @handled_identically, $p
     }
     else { push @handled_differently, $p }
 }
 
+my @identical_renames; my @differing_renames; my @obsoleted;
 my @renamed_obsoleted; my @renamed_unknown; my @obsoleted_renamed;
 my @obsoleted_unknown; my @unknown_renamed; my @unknown_obsoleted;
-my @differing_renames;
+
+foreach $p (@handled_identically) {
+    if ($distro1_renames->{$p} eq "(Obsolete)") { push @obsoleted, $p }
+    else {push @identical_renames, $p }
+}
 
 foreach $p (@handled_differently) {
     if ($distro1_renames->{$p} eq "(Obsolete)") {
@@ -82,6 +87,8 @@ foreach $p (@handled_differently) {
 
 say "Packages to which both distributions give the same new name:\n";
 foreach $p (@identical_renames) { printf "%-29s %s\n", $p, $distro1_renames->{$p}; }
+say "\nPackages which are obsoleted by both distributions:\n";
+foreach $p (@obsoleted) { say $p }
 
 say "\nPackages which are renamed by $distro1 but are obsoleted by $distro2:\n";
 foreach $p (@renamed_obsoleted) { say $p }
@@ -103,11 +110,15 @@ foreach $p (@differing_renames) {
     printf "%-24s %-28s %s\n", $p, $distro1_renames->{$p}, $distro2_renames->{$p};
 }
 
-printf "\n\nSUNW packages marked as renamed or deleted identified on either distribution:  %u\n",
+printf "\n\nSUNW packages marked as renamed or obsoleted identified on either distribution:  %u\n",
     scalar(@all_pkgs);
-printf "Packages renamed identically by the two distributions (including obsoletions): %u\n",
+printf "Packages renamed identically by the two distributions (including obsoletions): %6u\n",
+    scalar(@handled_identically);
+printf "Packages renamed identically by the two distributions: %30u\n",
     scalar(@identical_renames);
-printf "Packages handled differently by the two distributions: %28u\n", scalar(@handled_differently);
+printf "Packages obsoleted by both distributions: %43u\n", scalar(@obsoleted);
+printf "Packages handled differently by the two distributions: %30u\n\n",
+    scalar(@handled_differently);
 
 printf "Packages renamed by $distro1 but obsoleted $distro2: %d\n",
     scalar(@renamed_obsoleted);
@@ -122,7 +133,7 @@ printf "Packages unknown to $distro1 but renamed by $distro2: %d\n",
 printf "Packages unknown to $distro1 but obsoleted by $distro2: %d\n",
     scalar(@unknown_obsoleted);
 
-printf "Packages renamed differently, obsoleted by neither distribution, and known to both: %d\n",
+printf "\nPackages renamed differently, obsoleted by neither distribution, and known to both: %d\n",
     scalar(@differing_renames);
 
 
