@@ -1,12 +1,12 @@
 sfe-tools contains patches to pkgbuild and scripts which may be useful to Spec
-Files Extra contributors.  Spec Files Extra (SFE) is a collection of rpmbuild-
-like spec files that define packages which complement the official packages
-shipped by the Solaris 11 and OpenIndiana distributions.
+Files Extra contributors, as well as anyone who wants to build packages for
+Solaris using pkgbuild, a build tool derived from rpmbuild.  Spec Files Extra
+(SFE) is a collection of spec files that define packages which complement the
+official packages shipped by the Solaris 11 and OpenIndiana distributions.
 
-So far, the only objects of interested contained in sfe-tools is a patch to
-pkgbuild (the modified rpmbuild used to build Solaris IPS packages) to make it
-set the facet tag for developer and documentation packages, and Perl scripts
-which generate a report of how Solaris 11 and OpenIndiana differ in their
-renaming of old OpenSolaris packages.
+So far, the only objects of interest contained in sfe-tools are a patch to
+pkgbuild to make it set the facet action attribute for developer and
+documentation files, and Perl scripts generating a report of how Solaris 11 and
+OpenIndiana differ in their renaming of old OpenSolaris packages.
 
-The URL of SFE is http://pkgbuild.sourceforge.net/spec-files-extra/ .
+The URL of SFE is http://pkgbuild.sourceforge.net/spec-files-extra/.
