@@ -1,0 +1,205 @@
+What's new in 1.7.0:
+
+What's new in 1.6.0:
+
+  - (SFpkgbuild) pkgbuild update to 1.2.0.  See http://pkgbuild.sf.net/
+    for details.  The most important changes:
+    - support for hard links (%hard modifier in %files)
+    - support for source download mirror sites
+  - (CBEautoconf) autoconf update to 2.61
+  - (CBEautomake) automake 1.10 included (as well as 1.9.6)
+  - (CBEenv) env.sh and env.csh update to preserve XAUTHORITY and https_proxy
+
+What's new in 1.5.1:
+
+  - cbe-install: SUNWvolu dependency deleted as it has been replaced by
+    HAL.
+  - (CBEsvn): disable parallel build
+
+What's new in 1.5:
+
+  - cbe-install: binary distributions of the JDS CBE are now available;
+    fix the script so that it doesn't ask again whether you want to uninstall
+    existing packages if you choose to always skip them.
+
+  - (SFpkgbuild) pkgbuild updated to 1.1.1.  For the long list of changes
+    see http://pkgbuild.sf.net/
+
+    What you absolutely need to know:
+
+    - pkgtool won't let you build as root anymore; use have to use an
+      account with the Software Installation profile
+
+    - each user has their own build directory structure, the default
+      is $HOME/packages, redefine it by adding
+
+	%_topdir /path/to/my/topdir
+
+      to $HOME/.pkgbuildmacros.  The cbe-install script will do this
+      for the user who installs the CBE.
+
+    - pkgbuild's default buildroot is also per-user:
+
+	/var/tmp/pkgbuild-$USER/
+
+      this is where $RPM_BUILD_ROOT (per-package proto area) is set up
+
+  - changed the default install location to /opt/jdsbld
+
+  - update required compiler version to latest Sun Studio 11
+
+  - update file attributes (root:other -> root:bin/root:sys) 
+
+  - (CBEant) update to 1.6.5; now a required part of the JDS CBE
+
+  - (CBEbison) update to 2.3
+
+  - (CBEm4) update to 1.4.5
+
+  - (CBEautoconf) update to 2.60
+
+  - (CBElibtool) update to 1.5.22
+
+  - (CBEsvn) subversion: 1.3.2, with ssl support
+
+  - (CBEflex) update to 2.5.33
+
+  - (CBErsync) update to 2.6.8
+
+  - Default compiler updated to Sun Studio 11 + the patches listed in the
+    README file in this directory
+
+What's new in 1.4:
+
+  - (SFpkgbuild) pkgbuild updated to 1.0.1.
+
+  - (CBEautomake) include /usr/share/aclocal in the default aclocal search
+    path
+
+  - cbe-install: make it more user friendly for people installing the
+    Solaris pkgs from CDs; add Sun Studio 11 to supported compiler versions
+
+  - (CBEenv)
+    - include a script called "ld-wrapper" which calls ld(1) with the -z
+      ignore -Bdirect -z combreloc options.
+    - env.sh and env.csh now set LD to ld-wrapper
+    - env.sh and env.csh no longer unset DBUS_*
+    - if JDS_CBE_ENV_QUIET is set to 1, env.sh and env.csh work silently
+      (useful if you want to put them into .bashrc, like I do ;)
+
+  - (CBEcvs) include %_datadir (share/cvs/contrib)
+
+  - (CBEdiff) add gendiff: a handy little script for generating patches
+    from changed sources.  Taken from rpm 3.0.6.
+
+What's new in 1.3:
+
+  (Note: CBE versions 1.1 and 1.2 were never officially released)
+
+  - (SFpkgbuild) pkgbuild updated to 1.0.0.  Lots of changes.  Refer
+    to http://pkgbuild.sf.net/ for details
+
+  - (CBEautomake) automake updated to version 1.9.6
+
+  - (CBErsync) new optional tool, rsync included
+
+  - (CBEpatch) removed.  pkgbuild now uses /usr/bin/gpatch.
+
+  - (CBElibtool) updated to 1.5.20
+
+  - (CBEsnv) new: subversion client version 1.2.3
+
+  - Support building the CBE using gcc
+
+What's new in 0.18:
+
+  - (SUNWpkgbuild) pkgbuild update to 0.8.2.  Changes in this release include:
+    - add support for predefined (system) class action scripts: scripts
+      found in /usr/sadm/install/contents need not be defined using
+      %iclass/%rclass.
+    - fix "-bs" command line option not to build anything
+
+  - (CBEenv) fix env.csh after the 32-bit/64-bit compiler support
+    broke it in CBE 0.17
+
+What's new in 0.17:
+
+  - amd64 support: cbe-install will ask for 2 compilers on amd64
+    systems, SOS8 for building 32-bit objects and Vulcan for 64-bit.
+    No change on SPARC systems in this respect.
+
+  - (SUNWpkgbuild) pkgbuild updated to 0.8.1.  Changes in this release:
+    - allow multiple OSs/architectures listed in %ifos/%ifarch
+    - make %ifarch match any architecture listed by the isainfo command
+    - print the correct error message when an error found in a %use'd
+      spec file
+
+What's new in 0.16:
+
+  - (SUNWpkgbuild) pkgbuild was updated to 0.8.0. This release includes
+    several bug fixes and enhancements including:
+    - implement NoSource and NoPatch
+    - %setup macro accepts multiple -a and -b options
+    - error messages print file name and line number
+    - check length of package name
+    - handle compressed patches
+    - don't create empty package if %files missing
+    - don't create empty depend file when no dependencies specified
+    - include a script called pkgbuild-postprocess for stripping
+      binaries, set ELF .comments and set sane permissions; to be used
+      at the end of %install sections through the %{pkgbuild_postprocess}
+      macro
+  - (CBEgettext) include %_datadir/gettext so that gettextize works properly
+
+What's new in 0.15:
+
+  - (SUNWpkgbuild) pkgbuild was upgraded to 0.7.0. This release includes the
+    following enhancements:
+    - support for SUNW_PkgList and SUNW_Loc tags
+    - class action script support
+    - source packages created automatically
+    - rebuild of source packages using --rebuild
+  - (CBEgettext) gettext was updated to 0.14.1, gettext tools are now included
+  - enabled parallel build of CBE components on multiprocessor systems to
+    speed up CBE installation
+
+What's new in 0.14:
+
+  - (SUNWpkgbuild) pkgbuild was upgraded to 0.6.2. This release fixes 4 bugs:
+    - requires tags should not be treated as buildrequires
+    - empty preremove script is created if %post script exists
+    - no way to set REV part of the pkg version string
+    - SUNW_Copyright tag is ignored
+  - cbe-install script bug fixes/enhancements
+
+What's new in 0.13:
+
+  - (SUNWpkgbuild) pkgbuild was upgraded to 0.6.1. This release fixes 2 bugs:
+    - bug 5056932: directory symlinks cannot be created
+    - basedir checking incorrect when basedir = prefix
+
+  - (CBEenv) env.sh and env.csh print the CBE version
+
+What's new in 0.12:
+
+  - the required compiler patch level has changed since 0.11
+
+  - pkgbuild was upgraded from 0.5.3 to 0.6.0.  Changes:
+    - implemented the conflicts/buildconflicts tags
+    - allow "?" in attr/defattr: (see prototype(4) for details)
+    - implement the %config (.*) tag in %files (makes the file type 'v')
+    - improve interactive mode (--interactive)
+    - correctly ignore missing %prep/%build/%install sections
+    - save the %build and %install scripts in the source directory
+      as .pkgbuild.build.sh and .pkgbuild.install.sh
+    - handle %define's correctly in %{?foo:bar} expressions
+    - print a meaningful error message for relative paths in %files
+
+  - Apache ant is new in CBE 0.12.
+
+  - Non-root users can now install the CBE, if they have the 'Software
+    Installation' profile. See user_attr(4) and profiles(1) for
+    details.
+
+  - env.csh is provided for csh/tcsh users; env.sh and env.csh are
+    now included in the CBEenv package.
