@@ -98,9 +98,9 @@ if [ $invalid_env != yes ]; then
 
     CCDIR=`dirname $CC`
     if [ $CCDIR != /usr/bin ]; then
-	PATH="$CBE_PREFIX/bin:$CCDIR:/usr/ccs/bin:/usr/gnu/bin:/usr/bin:/usr/sbin:/bin:/usr/sfw/bin"
+	PATH="$CBE_PREFIX/bin:$CCDIR:/usr/gnu/bin:/usr/bin:/usr/sbin:/bin:/usr/sfw/bin"
     else
-	PATH="$CBE_PREFIX/bin:/usr/ccs/bin:/usr/gnu/bin:/usr/bin:/usr/sbin:/bin:/usr/sfw/bin"
+	PATH="$CBE_PREFIX/bin:/usr/gnu/bin:/usr/bin:/usr/sbin:/bin:/usr/sfw/bin"
     fi
 
     test "x$JDS_CBE_ENV_QUIET" != x1  && \
