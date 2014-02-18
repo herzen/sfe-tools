@@ -47,10 +47,6 @@ quiet_install=no
 default_compiler=
 orig_CC="${CC}"
 
-# Obsolete packages to be pkgrm'd.  Mostly renamed packages.
-OLD_PKGS="JDSautomake JDSautoconf JDSlibtool JDSm4 JDSgettext JDSfileutils 
-          JDSmake JDSpatch CBEpatch JDSflex JDScvs SUNWpkgbuild CBEfileutils"
-
 # default log file.  Changed to /tmp/cbe-install* if the user
 # installing is not root
 LOGFILE=/tmp/cbe-install-`date +%Y-%m-%d-%H:%M`.log
@@ -945,14 +941,6 @@ main () {
     cd $mydir
 
     pkg_try_install $CBE_PACKAGES $CBE_DEPENDENCIES || return 1
-
-    test -f /usr/share/aclocal/gettext.m4 || {
-	logrun bash -c "cp $tardir/gettext-macros.tar.bz2 $rootdir$pkgbuild_topdir/SOURCES/" || \
-	    return 1
-	msg "Building gettext-macros"
-	logrun_quiet /usr/bin/pkgbuild --define "cbe_version $CBE_VERSION" -ba $mydir/CBEgettext-macros.spec || return 1
-	pkg_try_install cbe/desktop/gettext-macros || return 1
-    }
 
     log "Creating env.sh"
     logrun mkdir -p $rootdir$pkgbuild_topdir/SOURCES || return 1
