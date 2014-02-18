@@ -389,17 +389,13 @@ ask_compilers () {
 # install gcc and/or Sun Studio
 install_compilers_pkg () {
     # ask if gcc should be installed
-    ask_yes_no "Would you like to install gcc (GNU C compiler)?" \
+    ask_yes_no "Would you like to install gcc 4.7.3 (GNU C compiler)?" \
 	ans_install_gcc yes
-    test "$ans_install_gcc" = yes && pkg_try_install SUNWgcc
-    # ask if sun studio express should be installed
-    ask_yes_no "Would you like to install Sun Studio Express (cc 5.10)?" \
-	ans_install_ssexp yes
-    test "$ans_install_ssexp" = yes && pkg_try_install sunstudioexpress
+    test "$ans_install_gcc" = yes && pkg_try_install developer/gcc-47
     # ask if sun studio 12 update 1 should be installed
     ask_yes_no "Would you like to install Sun Studio 12 Update 1 (cc 5.10)?" \
 	ans_install_ss12_1 yes
-    test "$ans_install_ss12_1" = yes && pkg_try_install sunstudio12u1
+    test "$ans_install_ss12_1" = yes && pkg_try_install developer/sunstudio12u1
 }
 
 check_compilers_kde () {
