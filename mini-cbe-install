@@ -273,6 +273,14 @@ identify_compiler () {
 	    id_CC_label='sexp'
 	    id_CC_release='Ceres'
 	    id_CC_name='Sun Studio Express'
+	elif [ "x$id_CC_version" = x5.11 -a "x$id_CC_date" = x2010/08/13 ];then
+	    id_CC_label='ss12_2'
+	    id_CC_release="$id_CC_version"
+	    id_CC_name='Solaris Studio 12.2'
+	elif [ "x$id_CC_version" = x5.12 -a "x$id_CC_date" = x2011/11/16 ];then
+	    id_CC_label='ss12_3'
+	    id_CC_release="$id_CC_version"
+	    id_CC_name='Solaris Studio 12.3'
 	else
 	    id_CC_label="Studio_$id_CC_version"
 	    id_CC_release="$id_CC_version"
@@ -323,7 +331,7 @@ find_compilers () {
     # FIXME: if CC = gcc, set CFLAGS to -std=c99
     msg "Locating compilers..."
     arch=$(uname -p)
-    known_compilers="/sgnome/onnv-tools/$arch/SS12/bin/cc /sgnome/onnv-tools/$arch/SS11/bin/cc /ws/onnv-tools/SUNWspro/SS12/bin/cc /ws/onnv-tools/SUNWspro/SS11/bin/cc /opt/SUNWspro/bin/cc /opt/SS12/SUNWspro/bin/cc /opt/Studio12/bin/cc /opt/SSX0903/bin/cc /opt/sunstudio12.1/bin/cc /usr/bin/cc /opt/SunStudioExpress/bin/cc /usr/bin/gcc /usr/sfw/bin/gcc /usr/gnu/bin/gcc"
+    known_compilers="/opt/SUNWspro/bin/cc /opt/SS12/SUNWspro/bin/cc /opt/Studio12/bin/cc /opt/SSX0903/bin/cc /opt/sunstudio12.1/bin/cc /usr/bin/cc /opt/SunStudioExpress/bin/cc /opt/solstudio12.2/bin/cc /opt/solarisstudio12.3/bin/cc /usr/bin/gcc /usr/sfw/bin/gcc /usr/gnu/bin/gcc"
     if [ "x$orig_CC" != x ]; then
 	if [ -x $orig_CC ]; then
 	    echo " $known_compilers " | grep " $orig_CC " > /dev/null || \
