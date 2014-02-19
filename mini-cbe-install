@@ -29,7 +29,7 @@
 IFS=' 	
 '
 
-CBE_PACKAGES="developer/build/ant developer/macro/gnu-m4
+CBE_PACKAGES="developer/macro/gnu-m4
               developer/build/autoconf developer/build/libtool
               developer/build/automake-110 developer/build/automake-111
               developer/parser/bison file/gnu-coreutils
