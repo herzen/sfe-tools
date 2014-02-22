@@ -52,9 +52,10 @@ LOGFILE=/tmp/cbe-install-`date +%Y-%m-%d-%H:%M`.log
 
 # OpenSolaris pkg(5) packages:
 CBE_DEPENDENCIES="text/gnu-patch system/header web/wget archiver/gnu-tar
-                  system/xopen/xcu4 developer/build/make x11/header/x11-protocols
-                  x11/header/xcb-protocols developer/object-file
-                  system/library/math/header-math"
+                  system/xopen/xcu4 developer/build/make
+                  x11/header/x11-protocols x11/header/xcb-protocols
+                  developer/object-file system/library/math/header-math
+                  text/gnu-sed text/gawk"
 
 # default cbe install location
 cbe_prefix=${CBE_PREFIX:-/opt/dtbld}
