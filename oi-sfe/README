@@ -1,0 +1,6 @@
+The files in this directory were used to produce the initial OpenIndiana
+IPS repository which contained packages built from specs at the Spec
+Files Extra repository.  The file packages.xml was read by a patched
+pkgbuild to assign modern hierarchical names to SFE packages.  The
+directory xslt contains scripts to make the information in that xml
+file more readable.

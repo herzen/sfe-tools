@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+pfexec svcadm disable pkg/server
+pfexec zfs rollback -r rpool/zones/sfebuilda.uk.openindiana.org/ROOT/ipsrepo@clean
+pfexec svcadm enable pkg/server
+pfexec pkgsend -s file:///export/repo create-repository --set-property publisher.prefix=sfebuild
+pfexec svcadm refresh pkg/server
+pfexec svcadm restart pkg/server

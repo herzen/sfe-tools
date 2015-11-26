@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+mkdir -p ~/logs/$1
+# g++ sometimes picks up libstdcxx4 if it is present
+pfexec pkg uninstall -r stdcxx
+time pkgtool --nonotify --report=/export/home/herzen/reports/$1-gcc-first.html --logdir=/export/home/herzen/logs/$1 --autodeps --download build SFEgcc
+time pkgtool --nonotify --report=/export/home/herzen/reports/$1.html --logdir=/export/home/herzen/logs/$1 --autodeps --download build `xsltproc ../oi-sfe-tools/specfiles.xsl ../oi-sfe-tools/packages.xml`

@@ -1,0 +1,11 @@
+#!/usr/bin/bash
+pfexec pkg uninstall pkg://sfebuild/codec/* pkg://sfebuild/compress/* \
+pkg://sfebuild/database/* pkg://sfebuild/desktop/* pkg://sfebuild/developer/* \
+pkg://sfebuild/diagnostic/* pkg://sfebuild/editor/* pkg://sfebuild/file/* \
+pkg://sfebuild/games/* pkg://sfebuild/gnome/* pkg://sfebuild/image/* \
+pkg://sfebuild/library/* pkg://sfebuild/lxde/* pkg://sfebuild/mail/* \
+pkg://sfebuild/media/* pkg://sfebuild/network/* pkg://sfebuild/runtime/* \
+pkg://sfebuild/service/* pkg://sfebuild/shell/* pkg://sfebuild/storage/* \
+pkg://sfebuild/system/* pkg://sfebuild/terminal/* pkg://sfebuild/text/* \
+pkg://sfebuild/web/* pkg://sfebuild/xfce/* pkg://sfebuild/package/* \
+pkg://sfebuild/archiver/* pkg://sfebuild/x11/*

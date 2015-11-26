@@ -1,0 +1,1515 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pkgs>
+  <!-- Development -->
+  <pkg>
+    <name>SFEgmp</name>
+    <ips_package_name>system/library/gmp</ips_package_name>
+    <group>System/Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFEmpfr</name>
+    <ips_package_name>system/library/mpfr</ips_package_name>
+    <group>System/Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFElibmpc</name>
+    <ips_package_name>system/library/libmpc</ips_package_name>
+    <group>System/Libraries</group>
+  </pkg>
+  <pkg filename="OI-SFEgcc.spec">
+    <!-- This is the "standard" SFE gcc: this package creates
+	 symlinks from /usr/gnu/bin/gcc to /usr/gcc/4.6/bin/gcc. -->
+    <name>SFEgccruntime</name>
+    <ips_package_name>runtime/gcc</ips_package_name>
+    <group>Development/C</group>
+  </pkg>
+  <pkg filename="SFEgcc-45.spec" skip="true">
+    <name>SFEgcc-45-runtime</name>
+    <ips_package_name>runtime/gcc-45</ips_package_name>
+    <group>Development/C</group>
+  </pkg>
+  <pkg>
+    <name>SFEyasm</name>
+    <ips_package_name>developer/yasm</ips_package_name>
+    <group>Development/Other Languages</group>
+  </pkg>
+  <pkg>
+    <name>SFEnasm</name>
+    <ips_package_name>developer/nasm</ips_package_name>
+    <group>Development/Other Languages</group>
+  </pkg>
+  <pkg>
+    <name>SFEphysfs</name>
+    <ips_package_name>developer/physfs</ips_package_name>
+    <group>Development/Other Languages</group>
+  </pkg>
+  <pkg filename="experimental/SFEllvm-svn.spec">
+    <name>SFEllvm</name>
+    <ips_package_name>developer/llvm</ips_package_name>
+    <group>Development/C</group>
+  </pkg>
+  <pkg skip="true">
+    <name>SFEgawk</name>
+    <ips_package_name>text/gawk</ips_package_name>
+    <group>Applications/System Utilities</group>
+    <summary>GNU implementation of awk, a pattern scanning and processing filter</summary>
+  </pkg>
+  <pkg>
+    <name>SFEghc</name>
+    <ips_package_name>runtime/ghc</ips_package_name>
+    <group>Development/Other Languages</group>
+  </pkg>
+  <pkg>
+    <name>SFEsbcl</name>
+    <ips_package_name>runtime/sbcl</ips_package_name>
+  </pkg>
+  <pkg>
+    <name>SFEparrot</name>
+    <ips_package_name>runtime/parrot</ips_package_name>
+    <group>Development/Other Languages</group>
+  </pkg>
+  <pkg>
+    <name>SFErakudo-perl</name>
+    <ips_package_name>runtime/rakudo-perl</ips_package_name>
+    <group>Development/Perl</group>
+  </pkg>
+  <pkg skip="true">
+    <name>SFEqemu</name>
+    <ips_package_name>runtime/qemu</ips_package_name>
+    <group>System/Virtualization</group>
+  </pkg>
+  <pkg>
+    <name>SFEpython3</name>
+    <ips_package_name>runtime/python-32</ips_package_name>
+  </pkg>
+  <pkg>
+    <name>SFEnodejs</name>
+    <ips_package_name>runtime/javascript/nodejs</ips_package_name>
+    <group>System/Libraries</group>
+  </pkg>
+  <pkg skip="true">  <!-- System package is older, but don't build anyway -->
+    <name>SFEvala</name>
+    <ips_package_name>developer/vala</ips_package_name>
+    <group>Development/Other Languages</group>
+  </pkg>
+  <pkg>
+    <name>SFEre2c</name>
+    <ips_package_name>developer/lexer/re2c</ips_package_name>
+    <group>Development/Other Languages</group>
+    <summary>A tool for writing very fast and very flexible text scanners</summary>
+  </pkg>
+  <pkg skip="true">
+    <name>SFEicu</name>
+    <ips_package_name>library/c++/icu</ips_package_name>
+    <group>System/Internationalization</group>
+  </pkg>
+  <pkg>
+    <name>SFEicu-gpp</name>
+    <ips_package_name>library/g++/icu</ips_package_name>
+    <group>System/Internationalization</group>
+  </pkg>
+  <pkg skip="true">
+    <name>SFEboost-stdcxx</name>
+    <ips_package_name>system/library/c++/boost</ips_package_name>
+    <group>System/Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFEboost-gpp</name>
+    <ips_package_name>system/library/g++/boost</ips_package_name>
+    <group>System/Libraries</group>
+  </pkg>
+  <pkg skip="true">
+    <name>SFElibgc-gpp</name>
+    <ips_package_name>library/g++/gc</ips_package_name>
+    <group>Development/C++</group>
+  </pkg>
+  <pkg>
+    <name>SFEorc</name>
+    <ips_package_name>system/library/orc</ips_package_name>
+    <group>System/Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFElibiconv</name>
+    <ips_package_name>library/libiconv</ips_package_name>
+    <group>System/Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFEgsl</name>
+    <ips_package_name>library/gsl</ips_package_name>
+    <group>System/Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFEblas</name>
+    <ips_package_name>library/blas</ips_package_name>
+    <group>System/Libraries</group>
+    <summary>Basic Linear Algebra Subprograms</summary>
+  </pkg>
+  <pkg>
+    <name>SFElapack</name>
+    <ips_package_name>library/lapack</ips_package_name>
+    <group>System/Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFElibconfig</name>
+    <ips_package_name>library/libconfig</ips_package_name>
+  </pkg>
+  <pkg>
+    <name>SFEfreeglut</name>
+    <ips_package_name>x11/library/freeglut</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFEbullet</name>
+    <ips_package_name>library/bullet</ips_package_name>
+    <group>System/Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFElibmaa</name>
+    <ips_package_name>library/libmaa</ips_package_name>
+    <group>System/Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFElibtar</name>
+    <ips_package_name>library/libtar</ips_package_name>
+    <group>System/Libraries</group>
+  </pkg>
+
+  <!-- Perl modules -->
+  <pkg>
+    <name>SFEperl-xml-xpath</name>
+    <ips_package_name>library/perl-5/xml-xpath</ips_package_name>
+  </pkg>
+  <pkg>
+    <name>SFEperl-uri</name>
+    <ips_package_name>library/perl-5/uri</ips_package_name>
+    <group>Development/Perl</group>
+  </pkg>
+  <pkg>
+    <name>SFEperl-tk</name>
+    <ips_package_name>library/perl-5/tk</ips_package_name>
+    <group>Development/Perl</group>
+  </pkg>
+  <pkg>
+    <name>SFEperl-digest-sha1</name>
+    <ips_package_name>library/perl-5/digest-sha1</ips_package_name>
+    <group>Development/Perl</group>
+  </pkg>
+  <pkg>
+    <name>SFEperl-html-parser</name>
+    <ips_package_name>library/perl-5/html-parser</ips_package_name>
+  </pkg>
+  <pkg>
+    <name>SFEperl-html-tagset</name>
+    <ips_package_name>library/perl-5/html-tagset</ips_package_name>
+    <group>Development/Perl</group>
+  </pkg>
+  <pkg>
+    <name>SFEperl-module-build</name>
+    <ips_package_name>library/perl-5/module-build</ips_package_name>
+    <group>Development/Perl</group>
+  </pkg>
+  <pkg>
+    <name>SFEperl-razor-agents</name>
+    <ips_package_name>library/perl-5/razor-agents</ips_package_name>
+    <group>Development/Perl</group>
+  </pkg>
+  <pkg>
+    <name>SFEperl-archive-zip</name>
+    <ips_package_name>library/perl-5/archive-zip</ips_package_name>
+    <group>Development/Perl</group>
+  </pkg>
+
+  <!-- Development utilities -->
+  <pkg>
+    <name>SFEemacs</name>
+    <ips_package_name>editor/emacs</ips_package_name>
+    <group>Development/Editors</group>
+  </pkg>
+  <pkg>
+    <name>SFEjoe</name>
+    <ips_package_name>editor/joe</ips_package_name>
+    <group>Development/Editors</group>
+  </pkg>
+  <pkg>
+    <name>SFEleafpad</name>
+    <ips_package_name>editor/leafpad</ips_package_name>
+    <group>Development/Editors</group>
+    <summary>GTK+ based text editor</summary>
+  </pkg>
+  <pkg>
+    <name>SFEcmake</name>
+    <ips_package_name>developer/build/cmake</ips_package_name>
+    <group>Development/Distribution Tools</group>
+  </pkg>
+  <pkg>
+    <name>SFEjam</name>
+    <ips_package_name>developer/build/jam</ips_package_name>
+    <group>Development/Distribution Tools</group>
+  </pkg>
+  <pkg>
+    <name>SFEscons</name>
+    <ips_package_name>developer/build/scons</ips_package_name>
+    <group>Development/Distribution Tools</group>
+  </pkg>
+  <pkg>
+    <name>SFEgob</name>
+    <ips_package_name>developer/build/gob2</ips_package_name>
+  </pkg>
+  <pkg>
+    <name>SFEasciidoc</name>
+    <ips_package_name>developer/documentation-tool/asciidoc</ips_package_name>
+    <group>Development/Distribution Tools</group>
+  </pkg>
+  <pkg>
+    <name>SFEtexi2html</name>
+    <ips_package_name>developer/documentation-tool/texi2html</ips_package_name>
+    <group>Development/Distribution Tools</group>
+  </pkg>
+  <pkg skip="true">  <!-- Doesn't build -->
+    <name>SFEdoxygen</name>
+    <ips_package_name>developer/documentation-tool/doxygen</ips_package_name>
+    <group>Development/Distribution Tools</group>
+    <summary>Documentation generator for C, C++, and some other languages</summary>
+  </pkg>
+  <pkg>
+    <name>SFErcs</name>
+    <ips_package_name>developer/versioning/rcs</ips_package_name>
+    <group>Development/Source Code Management</group>
+  </pkg>
+  <pkg>
+    <name>SFEgit</name>
+    <ips_package_name>sfe.openindiana.org/developer/versioning/git</ips_package_name>
+    <group>Development/Source Code Management</group>
+  </pkg>
+  <pkg>
+    <name>SFEbzr</name>
+    <ips_package_name>developer/versioning/bzr</ips_package_name>
+    <group>Development/Source Code Management</group>
+  </pkg>
+  <pkg>
+    <name>SFEgeany</name>
+    <ips_package_name>developer/geany</ips_package_name>
+    <group>Development/Integrated Development Environments</group>
+  </pkg>
+  <pkg>
+    <name>SFElv</name>
+    <ips_package_name>text/lv</ips_package_name>
+    <group>Applications/System Utilities</group>
+  </pkg>
+
+  <!-- System -->
+  <pkg>
+    <name>SFEdovecot</name>
+    <ips_package_name>service/network/dovecot</ips_package_name>
+    <group>System/Services</group>
+    <summary>Maildir based pop3/imap email daemon</summary>
+  </pkg>
+  <pkg>
+    <name>SFEgpsd</name>
+    <ips_package_name>service/network/gpsd</ips_package_name>
+    <group>System/Services</group>
+  </pkg>
+  <pkg>
+    <name>SFEpure-ftpd</name>
+    <ips_package_name>service/network/pure-ftpd</ips_package_name>
+    <group>System/Services</group>
+  </pkg>
+  <pkg>
+    <name>SFEiodine</name>
+    <ips_package_name>service/network/iodine</ips_package_name>
+    <group>System/Services</group>
+  </pkg>
+  <pkg>
+    <name>SFEnginx</name>
+    <ips_package_name>web/server/nginx</ips_package_name>
+    <group>Web Services/Application and Web Servers</group>
+  </pkg>
+  <pkg>
+    <name>SFEenet</name>
+    <ips_package_name>system/library/enet</ips_package_name>
+    <group>System/Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFElibupnp</name>
+    <ips_package_name>system/library/libupnp</ips_package_name>
+    <group>System/Libraries</group>
+  </pkg>
+  <pkg skip="true"> <!-- Only used by pulseaudio, which desn't build -->
+    <name>SFElibatomic-ops</name>
+    <ips_package_name>system/library/libatomic-ops</ips_package_name>
+    <group>System/Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFEldns</name>
+    <ips_package_name>system/library/ldns</ips_package_name>
+  </pkg>
+  <pkg>
+    <name>SFEunbound</name>
+    <ips_package_name>service/network/unbound</ips_package_name>
+    <group>System/Services</group>
+  </pkg>
+  <pkg>
+    <name>SFEgeoip</name>
+    <ips_package_name>library/geoip</ips_package_name>
+    <group>System/Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFElibassuan</name>
+    <ips_package_name>system/library/security/libassuan</ips_package_name>
+    <group>System/Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFElibksba</name>
+    <ips_package_name>system/library/security/libksba</ips_package_name>
+    <group>System/Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFEeditline</name>
+    <ips_package_name>library/editline</ips_package_name>
+    <group>System/Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFEpostgres-90</name>
+    <ips_package_name>database/postgres-90</ips_package_name>
+    <group>System/Databases</group>
+  </pkg>
+  <pkg>
+    <name>SFEpostgres-91</name>
+    <ips_package_name>database/postgres-91</ips_package_name>
+    <group>System/Databases</group>
+  </pkg>
+  <pkg>
+    <name>SFEbdb</name>
+    <ips_package_name>database/bdb</ips_package_name>
+    <group>System/Databases</group>
+  </pkg>
+  <pkg>
+    <name>SFEdictd</name>
+    <ips_package_name>service/network/dictd</ips_package_name>
+    <group>System/Services</group>
+  </pkg>
+  <pkg>
+    <name>SFEe2fsprogs</name>
+    <ips_package_name>system/file-system/e2fsprogs</ips_package_name>
+    <group>System/File System</group>
+  </pkg>
+  <pkg>
+    <name>SFEfusefs</name>
+    <ips_package_name>system/file-system/fusefs</ips_package_name>
+    <group>System/File System</group>
+  </pkg>
+  <pkg>
+    <name>SFElibfuse</name>
+    <ips_package_name>system/file-system/libfuse</ips_package_name>
+    <group>System/File System</group>
+  </pkg>
+  <pkg>
+    <name>SFEfuse-ext2</name>
+    <ips_package_name>system/file-system/fuse-ext2</ips_package_name>
+    <group>System/File System</group>
+  </pkg>
+  <pkg>
+    <name>SFEfuse-exfat</name>
+    <ips_package_name>system/file-system/fuse-exfat</ips_package_name>
+    <group>System/File System</group>
+  </pkg>
+  <pkg>
+    <name>SFEntfs-3g</name>
+    <ips_package_name>system/file-system/ntfs-3g</ips_package_name>
+    <group>System/File System</group>
+  </pkg>
+  <pkg>
+    <name>SFEgnugetopt</name>
+    <ips_package_name>shell/gnu-getopt</ips_package_name>
+    <group>Applications/System Utilities</group>
+    <summary>getopt - parse command options (enhanced)</summary>
+  </pkg>
+  <pkg>
+    <name>SFElibevent2</name>
+    <ips_package_name>sfe.openindiana.org/library/libevent</ips_package_name>
+  </pkg>
+  <pkg>
+    <name>SFEtun</name>
+    <ips_package_name>system/network/tuntap</ips_package_name>
+    <group>System/Core</group>
+  </pkg>
+  <pkg>
+    <name>SFEopenvpn</name>
+    <ips_package_name>service/network/openvpn</ips_package_name>
+  </pkg>
+  <pkg>
+    <name>SFEc-ares</name>
+    <ips_package_name>library/c-ares</ips_package_name>
+    <group>System/Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFEvpnc</name>
+    <ips_package_name>system/network/vpnc</ips_package_name>
+    <group>Applications/Internet</group>
+    <summary>Client for Cisco VPN concentrator</summary>
+  </pkg>
+  <pkg>
+    <name>SFExerces-c-gpp</name>
+    <ips_package_name>library/g++/xerces</ips_package_name>
+  </pkg>
+  <pkg>
+    <name>SFElzo</name>
+    <ips_package_name>library/lzo</ips_package_name>
+  </pkg>
+  <pkg>
+    <name>SFEnetatalk</name>
+    <ips_package_name>system/library/netatalk</ips_package_name>
+  </pkg>
+  <pkg>
+    <name>SFEwordpress</name>
+    <ips_package_name>web/service/wordpress</ips_package_name>
+    <group>Web Services/Portals</group>
+    <summary>Blogging software</summary>
+  </pkg>
+  <pkg>
+    <name>SFEdrupal7</name>
+    <ips_package_name>web/service/drupal</ips_package_name>
+    <group>Web Services/Portals</group>
+    <summary>Open-source content-management platform</summary>
+  </pkg>
+  <pkg>
+    <name>SFEossp-uuid</name>
+    <ips_package_name>library/ossp-uuid</ips_package_name>
+  </pkg>
+  <pkg>
+    <name>SFEsigcpp-gpp</name>
+    <ips_package_name>library/g++/sigcpp</ips_package_name>
+  </pkg>
+  <pkg>
+    <name>SFEpcre-gpp</name>
+    <ips_package_name>library/g++/pcre</ips_package_name>
+  </pkg>
+  <pkg>
+    <name>SFEglibmm-gpp</name>
+    <ips_package_name>library/g++/glibmm</ips_package_name>
+  </pkg>
+  <pkg>
+    <name>SFEcairomm-gpp</name>
+    <ips_package_name>library/desktop/g++/cairomm</ips_package_name>
+  </pkg>
+  <pkg>
+    <name>SFEpangomm-gpp</name>
+    <ips_package_name>library/desktop/g++/pangomm</ips_package_name>
+  </pkg>
+  <pkg>
+    <name>SFEgtkmm-gpp</name>
+    <ips_package_name>library/desktop/g++/gtkmm</ips_package_name>
+  </pkg>
+  <pkg>
+    <name>SFElibglademm-gpp</name>
+    <ips_package_name>library/desktop/g++/libglademm</ips_package_name>
+  </pkg>
+  <pkg>
+    <name>SFEgtksourceviewmm-gpp</name>
+    <ips_package_name>library/desktop/g++/gtksourceviewmm</ips_package_name>
+  </pkg>
+  <pkg>
+    <name>SFEpoppler-gpp</name>
+    <ips_package_name>library/g++/poppler</ips_package_name>
+  </pkg>
+
+  <!-- Qt -->
+  <pkg skip="true">
+    <name>SFEqt47</name>
+    <ips_package_name>library/desktop/c++/qt</ips_package_name>
+    <group>Desktop (GNOME)/Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFEqt-gpp</name>
+    <ips_package_name>library/desktop/g++/qt</ips_package_name>
+    <group>Desktop (GNOME)/Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFElyx</name>
+    <ips_package_name>desktop/publishing/lyx</ips_package_name>
+    <group>Applications/Office</group>
+  </pkg>
+  <pkg>
+    <name>SFEscribus</name>
+    <ips_package_name>desktop/publishing/scribus</ips_package_name>
+  </pkg>
+  <pkg>
+    <name>SFEarora</name>
+    <ips_package_name>web/browser/arora</ips_package_name>
+    <group>Applications/Internet</group>
+  </pkg>
+  <pkg>
+    <name>SFEdjview</name>
+    <ips_package_name>desktop/djview</ips_package_name>
+    <group>Applications/Office</group>
+  </pkg>
+  <pkg>
+    <name>SFEkchmviewer</name>
+    <ips_package_name>desktop/chm-viewer/kchmviewer</ips_package_name>
+    <group>Applications/Office</group>
+  </pkg>
+  <pkg>
+    <name>SFExpdf</name>
+    <ips_package_name>desktop/pdf-viewer/xpdf</ips_package_name>
+  </pkg>
+
+  <!-- Audio -->
+  <pkg encumbered="true">
+    <name>SFElibmad</name>
+    <ips_package_name>library/audio/libmad</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+  </pkg>
+  <pkg encumbered="true">
+    <name>SFEmpg123</name>  <!-- Renamed from library/audio/mpg123 -->
+    <ips_package_name>audio/mpg123</ips_package_name>
+    <summary>Fast console MPEG Audio Player and decoder library</summary>
+    <group>System/Multimedia Libraries</group>
+  </pkg>
+  <pkg encumbered="true">
+    <name>SFElame</name>  <!-- Was incorrectly named library/audio/lame< -->
+    <ips_package_name>audio/lame</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+  </pkg>
+  <pkg encumbered="true">
+    <name>SFEtwolame</name>  <!-- Renamed from library/audio/twolame -->
+    <ips_package_name>audio/twolame</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+    <summary>MP3 encoder</summary>
+  </pkg>
+  <pkg encumbered="true">
+    <name>SFEfaac</name>
+    <ips_package_name>library/audio/faac</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+  </pkg>
+  <pkg encumbered="true">
+    <name>SFEfaad2</name>
+    <ips_package_name>library/audio/faad2</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFEladspa</name>
+    <ips_package_name>library/audio/ladspa</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFElibao</name>
+    <ips_package_name>library/audio/libao</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+  </pkg>
+  <pkg encumbered="true">
+    <name>SFElibmpcdec</name>
+    <ips_package_name>library/audio/libmpcdec</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+    <summary>Portable Musepack decoder library</summary>
+  </pkg>
+  <pkg>
+    <name>SFElibsamplerate</name>
+    <ips_package_name>library/audio/libsamplerate</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+    <summary>Sample Rate Converter for audio</summary>
+  </pkg>
+  <pkg>
+    <name>SFEopenal</name>
+    <ips_package_name>library/audio/openal</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+    <summary>Cross-platform 3D audio API</summary>
+  </pkg>
+  <pkg>
+    <name>SFElibshout</name>
+    <ips_package_name>library/audio/libshout</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+  </pkg>
+  <pkg encumbered="true">
+    <name>SFElibgsm</name>
+    <ips_package_name>library/audio/libgsm</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFEliba52</name>
+    <ips_package_name>library/audio/liba52</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+    <summary>A free library for decoding ATSC A/52 streams</summary>
+  </pkg>
+  <pkg encumbered="true">
+    <name>SFEopencore-amr</name>
+    <ips_package_name>codec/opencore-amr</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFElibcdio</name>
+    <ips_package_name>library/audio/libcdio</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFElibcddb</name>
+    <ips_package_name>library/audio/libcddb</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFEalsa-lib</name>
+    <ips_package_name>library/audio/alsa-lib</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+    <summary>Advanced Linux Sound Architecture library</summary>
+  </pkg>
+  <pkg>
+    <name>SFEalsa-plugins</name>
+    <ips_package_name>library/audio/alsa-plugins</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+  </pkg>
+  <pkg skip="true">  <!-- Does not build yet -->
+    <name>SFEpulseaudio</name>
+    <ips_package_name>library/audio/pulseaudio</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFElibid3tag</name>
+    <ips_package_name>library/audio/libid3tag</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFEtaglib</name>
+    <ips_package_name>library/audio/taglib</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+    <summary>Library for reading and editing the meta-data of several popular audio formats</summary>
+  </pkg>
+  <pkg>
+    <name>SFEsoundtouch</name>
+    <ips_package_name>library/audio/soundtouch</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFEportaudio</name>
+    <ips_package_name>library/audio/portaudio</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFEsdl-mixer</name>
+    <ips_package_name>library/audio/sdl-mixer</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFElibofa</name>
+    <ips_package_name>library/audio/libofa</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+  </pkg>
+  <pkg encumbered="true">
+    <name>SFElibdts</name>
+    <ips_package_name>library/audio/libdca</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFElibaudioio</name>
+    <ips_package_name>library/audio/libaudioio</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFEvorbis-tools</name>
+    <ips_package_name>media/vorbis-tools</ips_package_name>
+    <group>Applications/Sound and Video</group>
+  </pkg>
+  <pkg>
+    <name>SFEaudacity</name>  <!-- Renamed from media/audacity -->
+    <ips_package_name>audio/editor/audacity</ips_package_name>
+    <group>Applications/Sound and Video</group>
+  </pkg>
+  <pkg>
+    <name>SFEeasytag</name>
+    <ips_package_name>audio/easytag</ips_package_name>
+    <group>Applications/Sound and Video</group>
+    <summary>Tag editor for MP3, Ogg Vorbis files and more</summary>
+  </pkg>
+  <pkg>
+    <name>SFEtimidity</name>
+    <ips_package_name>media/timidity</ips_package_name>
+    <group>Applications/Sound and Video</group>
+  </pkg>
+  <pkg>
+    <name>SFEwildmidi</name>
+    <ips_package_name>media/wildmidi</ips_package_name>
+    <group>Applications/Sound and Video</group>
+    <summary>Software MIDI synthesizer</summary>
+  </pkg>
+  <!-- NOTE: SFEmpd can be built without encumbered codecs -->
+  <pkg encumbered="true">
+    <name>SFEmpd</name>
+    <ips_package_name>media/mpd</ips_package_name>
+    <group>Applications/Sound and Video</group>
+    <summary>Music Player Daemon - plays music and manages playlists</summary>
+  </pkg>
+  <pkg>
+    <name>SFElibmpd</name>
+    <ips_package_name>library/audio/libmpd</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFElibmpdclient</name>
+    <ips_package_name>library/audio/libmpdclient</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFEmpc</name>
+    <ips_package_name>media/mpc</ips_package_name>
+    <group>Applications/Sound and Video</group>
+  </pkg>
+  <pkg>
+    <name>SFEncmpcpp</name>
+    <ips_package_name>media/ncmpcpp</ips_package_name>
+    <group>Applications/Sound and Video</group>
+  </pkg>
+  <pkg>
+    <name>SFEmpdscribble</name>
+    <ips_package_name>media/mpdscribble</ips_package_name>
+    <group>Applications/Sound and Video</group>
+  </pkg>
+  <pkg>
+    <name>SFEgmpc</name>
+    <ips_package_name>gnome/media/gmpc</ips_package_name>
+    <group>Applications/Sound and Video</group>
+    <summary>Gnome Music Player Daemon client</summary>
+  </pkg>
+  <pkg>
+    <name>SFEqmpdclient</name>
+    <ips_package_name>media/qmpdclient</ips_package_name>
+  </pkg>
+  <pkg>
+    <name>SFEpython26-mpd</name>
+    <ips_package_name>library/python2/python-mpd-26</ips_package_name>
+  </pkg>
+  <pkg>
+    <name>SFEsonata</name>
+    <ips_package_name>gnome/media/sonata</ips_package_name>
+  </pkg>
+  <pkg>
+    <name>SFElibmowgli</name>
+    <ips_package_name>library/libmowgli</ips_package_name>
+  </pkg>
+  <pkg>
+    <name>SFElibmcs</name>
+    <ips_package_name>library/libmcs</ips_package_name>
+  </pkg>
+
+  <!-- Video -->
+  <pkg encumbered="true" filename="encumbered/SFElibx264-no-mp4.spec">
+    <name>SFElibx264</name>
+    <ips_package_name>library/video/x264</ips_package_name>
+  </pkg>
+  <pkg encumbered="true">
+    <name>SFExvid</name>
+    <ips_package_name>library/video/xvid</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFElibschroedinger</name>
+    <ips_package_name>library/video/libschroedinger</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+  </pkg>
+  <pkg encumbered="true">
+    <name>SFErtmpdump</name>
+    <ips_package_name>video/rtmpdump</ips_package_name>
+    <summary>RTMP (Real Time Messaging Protocol) streams toolkit</summary>
+  </pkg>
+  <pkg>
+    <name>SFElibmp4v2</name>
+    <ips_package_name>library/video/mp4v2</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFEliveMedia</name>
+    <ips_package_name>library/video/liveMedia</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+  </pkg>
+  <pkg encumbered="true" filename="encumbered/SFEffmpeg-sse2-only.spec">
+    <name>SFEffmpeg</name>    <!-- Renamed from library/video/ffmpeg -->
+    <ips_package_name>video/ffmpeg</ips_package_name>
+    <group>Applications/Sound and Video</group>
+  </pkg>
+  <pkg>
+    <name>SFEliveMedia</name>
+    <ips_package_name>library/video/liveMedia</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFElibass</name>
+    <ips_package_name>library/video/libass</ips_package_name>
+  </pkg>
+  <!-- Do not build mplayer: mplayer2 works fine -->
+  <pkg skip="true" encumbered="true" filename="encumbered/SFEmplayer-snap.spec">
+    <name>SFEmplayer</name>
+    <ips_package_name>media/mplayer</ips_package_name>
+    <group>Applications/Sound and Video</group>
+    <summary>The Movie Player</summary>
+  </pkg>
+  <pkg encumbered="true">
+    <name>SFEmplayer2</name>
+    <ips_package_name>media/mplayer2</ips_package_name>
+    <group>Applications/Sound and Video</group>
+  </pkg>
+  <pkg encumbered="true" filename="SFEsmplayer.spec">
+    <name>SFEsmplayer</name>
+    <ips_package_name>media/smplayer</ips_package_name>
+  </pkg>
+  <pkg encumbered="true" filename="SFEsmplayer2.spec">
+    <name>SFEsmplayer2</name>
+    <ips_package_name>media/smplayer2</ips_package_name>
+  </pkg>
+  <pkg encumbered="true" filename="experimental/SFEvlc-1.1.4.1.spec">
+    <name>SFEvlc</name>
+    <ips_package_name>media/vlc</ips_package_name>
+    <group>Applications/Sound and Video</group>
+    <summary>Cross-platform media player and streaming server</summary>
+  </pkg>
+  <pkg skip="true" encumbered="true">  <!-- Does not build -->
+    <name>SFExine-lib</name>
+    <ips_package_name>library/video/xine-lib</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+  </pkg>
+  <pkg encumbered="true">
+    <name>SFElibmpeg2</name>
+    <ips_package_name>library/video/libmpeg2</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFElibvpx</name>
+    <ips_package_name>library/video/libvpx</ips_package_name>
+  </pkg>
+  <!-- The following two are not really encumbered, but tag them -->
+  <!-- as such because libdvdread uses libdvdcss. -->
+  <pkg encumbered="true">
+    <name>SFElibdvdread</name>
+    <ips_package_name>library/video/libdvdread</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+    <summary>Library for reading DVD video disks</summary>
+  </pkg>
+  <pkg>
+    <name>SFElibdvdnav</name>
+    <ips_package_name>library/video/libdvdnav</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+    <summary>DVD navigation library</summary>
+  </pkg>
+  <pkg encumbered="true">
+    <name>SFElibdvdcss</name>
+    <ips_package_name>library/video/libdvdcss</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+  </pkg>
+  <pkg encumbered="true">
+    <name>SFElibmms</name>
+    <ips_package_name>library/video/libmms</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+  </pkg>
+  <pkg encumbered="true">
+    <name>SFElibdvbpsi</name>
+    <ips_package_name>library/video/libdvbpsi</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+  </pkg>
+  <pkg encumbered="true" skip="true">  <!-- Unmaintained -->
+    <name>SFEgnome-media-extras</name>
+    <ips_package_name>gnome/media/gnome-media-extras</ips_package_name>
+    <group>Applications/Sound and Video</group>
+  </pkg>
+  <!-- Currently, mkvtoolnix links only statically to libebml and libmatroska -->
+  <pkg skip="true">
+    <name>SFElibebml</name>
+    <ips_package_name>library/libebml</ips_package_name>
+    <group>System/Libraries</group>
+  </pkg>
+  <pkg skip="true">
+    <name>SFElibmatroska</name>
+    <ips_package_name>library/video/libmatroska</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFEmkvtoolnix</name>  <!-- Renamed from /media/mkvtoolnix -->
+    <ips_package_name>video/mkvtoolnix</ips_package_name>
+  </pkg>
+  <pkg>
+    <name>SFEogmtools</name>
+    <ips_package_name>media/ogmtools</ips_package_name>
+  </pkg>
+  <pkg>
+    <name>SFEtransmageddon</name>
+    <ips_package_name>gnome/media/transmageddon</ips_package_name>
+    <group>Applications/Sound and Video</group>
+    <summary>Video transcoder using GStreamer</summary>
+  </pkg>
+  <pkg>
+    <name>SFEswftools</name>
+    <ips_package_name>media/swftools</ips_package_name>
+    <group>Applications/Sound and Video</group>
+    <summary>Adobe Flash (SWF) manipulation and generation utilities</summary>
+  </pkg>
+  <pkg>
+    <name>SFEvcdimager</name>
+    <ips_package_name>media/vcdimager</ips_package_name>
+    <group>Applications/Sound and Video</group>
+  </pkg>
+
+  <!-- Graphics -->
+  <pkg>
+    <name>SFEgtkimageview</name>
+    <ips_package_name>image/library/gtkimageview</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFEgiflib</name>
+    <ips_package_name>image/library/giflib</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFEimlib2</name>
+    <ips_package_name>image/library/imlib2</ips_package_name>
+  </pkg>
+  <pkg>
+    <name>SFEsdl-image</name>
+    <ips_package_name>image/library/sdl-image</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFEosg</name>
+    <ips_package_name>library/graphics/openscenegraph</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFElibast</name>
+    <ips_package_name>library/desktop/libast</ips_package_name>
+    <group>Desktop (GNOME)/Libraries</group>
+  </pkg>
+  <pkg encumbered="true"> <!-- Encumbered on account of some dependencies -->
+    <name>SFEwine</name>  <!-- Renamed from library/desktop/wine -->
+    <ips_package_name>desktop/wine</ips_package_name>
+    <group>Desktop (GNOME)/Sessions</group>
+  </pkg>
+  <pkg>
+    <name>SFEjasper</name>
+    <ips_package_name>codec/jasper</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFEaaphoto</name>
+    <ips_package_name>image/editor/aaphoto</ips_package_name>
+    <summary>Auto Adjust Photo - automatic color correction of photos</summary>
+    <group>Applications/Graphics and Imaging</group>
+  </pkg>
+  <pkg>
+    <name>SFEufraw</name>
+    <ips_package_name>image/editor/ufraw</ips_package_name>
+    <group>Applications/Graphics and Imaging</group>
+    <summary>Raw Photo Converter</summary>
+  </pkg>
+  <pkg>
+    <name>SFEimagemagick</name>
+    <ips_package_name>image/editor/imagemagick</ips_package_name>
+    <summary>Image Manipulation Utilities and Libraries</summary>
+  </pkg>
+  <pkg>
+    <name>SFEgraphicsmagick</name>
+    <ips_package_name>image/editor/graphicsmagick</ips_package_name>
+    <summary>Image Manipulation Utilities and Libraries</summary>
+    <group>Applications/Graphics and Imaging</group>
+  </pkg>
+  <pkg>
+    <name>SFEinkscape</name>
+    <ips_package_name>image/editor/inkscape</ips_package_name>
+  </pkg>
+  <pkg>
+    <name>SFEnetpbm</name>
+    <ips_package_name>image/editor/netpbm</ips_package_name>
+    <summary>Network Portable Bitmap Tools</summary>
+    <group>Applications/Graphics and Imaging</group>
+  </pkg>
+  <pkg>
+    <name>SFEopenjpeg</name>
+    <ips_package_name>image/library/openjpeg</ips_package_name>
+    <group>System/Multimedia Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFEargyll</name>
+    <ips_package_name>image/argyll</ips_package_name>
+  </pkg>
+  <pkg>
+    <name>SFEblender</name>
+    <ips_package_name>image/editor/blender</ips_package_name>
+    <summary>Open source 3D creation tools</summary>
+  </pkg>
+  <pkg>
+    <name>SFEtransfig</name>
+    <ips_package_name>image/transfig</ips_package_name>
+    <group>Applications/Graphics and Imaging</group>
+  </pkg>
+  <pkg>
+    <name>SFEunpaper</name>
+    <ips_package_name>image/editor/unpaper</ips_package_name>
+    <group>Applications/Graphics and Imaging</group>
+    <summary>Post-process scanned and photocopied book pages</summary>
+  </pkg>
+  <pkg>
+    <name>SFEviking</name>
+    <ips_package_name>image/viewer/viking</ips_package_name>
+    <group>Applications/Graphics and Imaging</group>
+  </pkg>
+  <pkg skip="true">  <!-- (in userland-gate) -->
+    <name>SFEgraphviz</name>
+    <ips_package_name>image/graphviz</ips_package_name>
+  </pkg>
+  <pkg>
+    <name>SFExcircuit</name>
+    <ips_package_name>image/xcircuit</ips_package_name>
+  </pkg>
+  <pkg skip="true">
+    <name>SFER</name>
+    <ips_package_name>image/R</ips_package_name>
+  </pkg>
+  <pkg filename="SFEstellarium-gpp.spec">
+    <name>SFEstellarium</name>
+    <ips_package_name>image/stellarium</ips_package_name>
+    <group>Applications/Graphics and Imaging</group>
+  </pkg>
+
+  <!-- Utilities -->
+  <pkg skip="true">
+    <name>SFExz</name>
+    <ips_package_name>compress/xz</ips_package_name>
+    <group>Applications/System Utilities</group>
+    <summary>LZMA compression utilities</summary>
+  </pkg>
+  <pkg>
+    <name>SFEp7zip</name>
+    <ips_package_name>compress/p7zip</ips_package_name>
+  </pkg>
+  <pkg>
+    <name>SFEsakura</name>
+    <ips_package_name>terminal/sakura</ips_package_name>
+  </pkg>
+  <pkg>
+    <name>SFEeterm</name>
+    <ips_package_name>terminal/eterm</ips_package_name>
+  </pkg>
+  <pkg>
+    <name>SFEtmux</name>
+    <ips_package_name>terminal/tmux</ips_package_name>
+  </pkg>
+  <pkg>
+    <name>SFEfile</name>
+    <ips_package_name>file/file</ips_package_name>
+    <group>Applications/System Utilities</group>
+  </pkg>
+  <pkg>
+    <name>SFErsync</name>
+    <ips_package_name>sfe.openindiana.org/network/rsync</ips_package_name>
+    <group>Applications/System Utilities</group>
+    <summary>Utility providing fast incremental file transfer</summary>
+  </pkg>
+  <pkg>
+    <name>SFEsmfgui</name>
+    <ips_package_name>gnome/smfgui</ips_package_name>
+    <group>Applications/System Utilities</group>
+    <summary>Graphical user interface for service management facility</summary>
+  </pkg>
+  <pkg>
+    <name>SFExmlto</name>
+    <ips_package_name>developer/documentation-tool/xmlto</ips_package_name>
+    <group>Development/Distribution Tools</group>
+    <summary>Converts a DocBook XML file into a specified format</summary>
+  </pkg>
+  <pkg>
+    <name>SFEmtr</name>
+    <ips_package_name>diagnostic/mtr</ips_package_name>
+    <group>Applications/System Utilities</group>
+  </pkg>
+  <pkg>
+    <name>SFEclamav</name>
+    <ips_package_name>security/clamav</ips_package_name>
+    <group>Applications/System Utilities</group>
+  </pkg>
+  <pkg>
+    <name>SFEscalpel</name>
+    <ips_package_name>file/scalpel</ips_package_name>
+    <group>Applications/System Utilities</group>
+    <summary>A frugal, high performance file carver</summary>
+  </pkg>
+  <pkg>
+    <name>SFEsmartmontools</name>
+    <ips_package_name>storage/smartmontools</ips_package_name>
+    <group>Applications/System Utilities</group>
+  </pkg>
+  <pkg>
+    <name>SFEenscript</name>
+    <ips_package_name>text/enscript</ips_package_name>
+  </pkg>
+  <pkg>
+    <name>SFEmultitail</name>
+    <ips_package_name>text/multitail</ips_package_name>
+  </pkg>
+  <pkg>
+    <name>SFEcabextract</name>
+    <ips_package_name>archiver/cabextract</ips_package_name>
+  </pkg>
+  <pkg>
+    <name>SFExclip</name>
+    <ips_package_name>x11/library/xclip</ips_package_name>
+    <summary>Command line interface to the X11 clipboard</summary>
+    <group>System/X11</group>
+  </pkg>
+
+  <!-- Internet -->
+  <pkg skip="true">
+    <name>SFElibtorrent-rasterbar</name>
+    <ips_package_name>library/g++/libtorrent-rasterbar</ips_package_name>
+  </pkg>
+  <pkg skip="true">
+    <name>SFEqbittorrent</name>
+    <ips_package_name>desktop/torrent/qbittorrent</ips_package_name>
+  </pkg>
+  <pkg>
+    <name>SFEtransmission</name>
+    <ips_package_name>sfe.openindiana.org/desktop/torrent/transmission</ips_package_name>
+    <group>Applications/Internet</group>
+  </pkg>
+  <pkg>
+    <name>SFEpostfix</name>
+    <ips_package_name>service/network/smtp/postfix</ips_package_name>
+    <group>System/Services</group>
+    <summary>Mailer system</summary>
+  </pkg>
+  <pkg>
+    <name>SFEmsmtp</name>
+    <ips_package_name>mail/msmtp</ips_package_name>
+    <group>Applications/Internet</group>
+  </pkg>
+  <pkg>
+    <name>SFEbogofilter</name>
+    <ips_package_name>mail/bogofilter</ips_package_name>
+    <group>Applications/Internet</group>
+  </pkg>
+  <pkg>
+    <name>SFEalpine</name>
+    <ips_package_name>mail/alpine</ips_package_name>
+    <group>Applications/Internet</group>
+  </pkg>
+  <pkg>
+    <name>SFEsylpheed</name>
+    <ips_package_name>mail/sylpheed</ips_package_name>
+    <group>Applications/Internet</group>
+  </pkg>
+  <pkg>
+    <name>SFEclaws-mail</name>
+    <ips_package_name>mail/claws-mail</ips_package_name>
+    <group>Applications/Internet</group>
+    <summary>An e-mail client (and news reader) based on GTK+</summary>
+  </pkg>
+  <pkg>
+    <name>SFElibetpan</name>
+    <ips_package_name>library/mail/libetpan</ips_package_name>
+    <group>System/Libraries</group>
+    <summary>A mail library supporting IMAP, POP3, SMTP, NNTP, and Hotmail</summary>
+  </pkg>
+  <pkg>
+    <name>SFEaxel</name>
+    <ips_package_name>web/axel</ips_package_name>
+    <group>Applications/Internet</group>
+  </pkg>
+  <pkg skip="true">
+    <name>SFEdillo</name>
+    <ips_package_name>web/browser/dillo</ips_package_name>
+    <group>Applications/Internet</group>
+  </pkg>
+  <pkg>
+    <name>SFEcadaver</name>
+    <ips_package_name>web/cadaver</ips_package_name>
+    <group>Applications/Internet</group>
+  </pkg>
+  <pkg>
+    <name>SFEasterisk</name>
+    <ips_package_name>service/network/asterisk</ips_package_name>
+    <group>System/Services</group>
+  </pkg>
+  <pkg>
+    <name>SFEc-icap</name>
+    <ips_package_name>web/proxy/c-icap</ips_package_name>
+    <group>Web Services/Application and Web Servers</group>
+    <summary>ICAP server implementation</summary>
+  </pkg>
+  <pkg>
+    <name>SFEc-icap-modules</name>
+    <ips_package_name>web/proxy/c-icap/modules</ips_package_name>
+    <group>Web Services/Application and Web Servers</group>
+    <summary>Modules for the C-ICAP server</summary>
+  </pkg>
+  <pkg>
+    <name>SFExchat</name>
+    <ips_package_name>sfe.openindiana.org/desktop/irc/xchat</ips_package_name>
+    <group>Applications/Internet</group>
+  </pkg>
+  <pkg>
+    <name>SFEweechat</name>
+    <ips_package_name>communication/irc/weechat</ips_package_name>
+    <group>Applications/Internet</group>
+  </pkg>
+  <pkg>
+    <name>SFEgajim</name>
+    <ips_package_name>communication/jabber/gajim</ips_package_name>
+    <group>Applications/Internet</group>
+  </pkg>
+
+  <!-- Desktop -->
+  <pkg>
+    <name>SFEwebkitgtk</name>
+    <ips_package_name>library/desktop/webkitgtk</ips_package_name>
+    <group>Desktop (GNOME)/Libraries</group>
+    <summary>GTK+ port of the WebKit Web content rendering engine</summary>
+  </pkg>
+  <pkg>
+    <name>SFEgtkglext</name>
+    <ips_package_name>library/desktop/gtkglext</ips_package_name>
+    <group>Desktop (GNOME)/Libraries</group>
+    <summary>OpenGL extension to GTK+ 2.0 or later</summary>
+  </pkg>
+  <pkg>
+    <name>SFEpessulus</name>
+    <ips_package_name>gnome/pessulus</ips_package_name>
+    <group>Desktop (GNOME)</group>
+    <summary>A lockdown editor for GNOME</summary>
+  </pkg>
+  <pkg>
+    <name>SFEfvwm</name>
+    <ips_package_name>desktop/window-manager/fvwm</ips_package_name>
+    <group>Desktop (GNOME)/Window Managers</group>
+    <summary>F Virtual Window Manager</summary>
+  </pkg>
+  <pkg>
+    <name>SFEfvwm-themes</name>
+    <ips_package_name>desktop/window-manager/fvwm/themes</ips_package_name>
+    <group>Desktop (GNOME)/Window Managers</group>
+    <summary>F Virtual Window Manager themes</summary>
+  </pkg>
+  <pkg>
+    <name>SFEemerald</name>
+    <ips_package_name>desktop/window-manager/emerald</ips_package_name>
+    <group>Desktop (GNOME)/Window Managers</group>
+  </pkg>
+  <pkg>
+    <name>SFEgarcon</name>
+    <ips_package_name>library/desktop/garcon</ips_package_name>
+    <group>Desktop (GNOME)/Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFElibstroke</name>
+    <ips_package_name>library/desktop/libstroke</ips_package_name>
+    <group>Desktop (GNOME)/Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFEfltk</name>
+    <ips_package_name>library/desktop/c++/fltk</ips_package_name>
+    <group>Desktop (GNOME)/Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFEfltk-gpp</name>
+    <ips_package_name>library/desktop/g++/fltk</ips_package_name>
+    <group>Desktop (GNOME)/Libraries</group>
+  </pkg>
+  <pkg skip="true">
+    <name>SFEfltk2</name>
+    <ips_package_name>library/desktop/fltk2</ips_package_name>
+    <group>Desktop (GNOME)/Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFEwxwidgets-gpp</name>
+    <ips_package_name>library/graphics/g++/wxwidgets</ips_package_name>
+  </pkg>
+  <pkg>
+    <name>SFEopenbox</name>
+    <ips_package_name>desktop/window-manager/openbox</ips_package_name>
+    <group>Desktop (GNOME)/Window Managers</group>
+    <summary>A free window manager for the X Window System</summary>
+  </pkg>
+  <pkg>
+    <name>SFEcairo-dock</name>
+    <ips_package_name>desktop/dock/cairo-dock</ips_package_name>
+    <group>Applications/Panels and Applets</group>
+    <summary>A dock, providing a GUI for the launching of applications and other actions</summary>
+  </pkg>
+  <pkg>
+    <name>SFEcairo-dock-plugins</name>
+    <ips_package_name>desktop/dock/cairo-dock/plugins</ips_package_name>
+    <group>Applications/Plug-ins and Run-times</group>
+    <summary>Plugins for Cairo-Dock</summary>
+  </pkg>
+  <pkg>
+    <name>SFElightdm</name>
+    <ips_package_name>desktop/display-manager/lightdm</ips_package_name>
+    <group>System/X11</group>
+  </pkg>
+  <pkg>
+    <name>SFElibfribidi</name>
+    <ips_package_name>library/fribidi</ips_package_name>
+  </pkg>
+  <pkg>
+    <name>SFEdjvulibre</name>
+    <ips_package_name>library/desktop/djvulibre</ips_package_name>
+    <group>Desktop (GNOME)/Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFEtightvnc</name>
+    <ips_package_name>desktop/remote-desktop/tightvnc</ips_package_name>
+    <group>Applications/Internet</group>
+  </pkg>
+  <pkg>
+    <name>SFElibexo</name>
+    <ips_package_name>library/xfce/libexo</ips_package_name>
+    <group>Desktop (GNOME)/Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFElibxfce4ui</name>
+    <ips_package_name>library/xfce/libxfceui</ips_package_name>
+    <group>Desktop (GNOME)/Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFElibxfce4util</name>
+    <ips_package_name>library/desktop/libxfceutil</ips_package_name>
+    <group>Desktop (GNOME)/Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFElibxfcegui4</name>
+    <ips_package_name>library/desktop/libxfcegui</ips_package_name>
+    <group>Desktop (GNOME)/Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFExfce4-settings</name>
+    <ips_package_name>xfce/config/xfce-settings</ips_package_name>
+    <group>Desktop (GNOME)/Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFExfce-utils</name>
+    <ips_package_name>xfce/xfce-utils</ips_package_name>
+    <group>Desktop (GNOME)/Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFExfdesktop</name>
+    <ips_package_name>xfce/xfce-desktop</ips_package_name>
+    <group>Desktop (GNOME)/Sessions</group>
+  </pkg>
+  <pkg>
+    <name>SFExfwm4</name>
+    <ips_package_name>xfce/window-manager/xfwm</ips_package_name>
+    <group>Desktop (GNOME)/Window Managers</group>
+  </pkg>
+  <pkg>
+    <name>SFExfce4-session</name>
+    <ips_package_name>xfce/xfce-session</ips_package_name>
+    <group>Desktop (GNOME)/Sessions</group>
+  </pkg>
+  <pkg>
+    <name>SFExfce-terminal</name>
+    <ips_package_name>terminal/xfce-terminal</ips_package_name>
+    <group>Applications/System Utilities</group>
+  </pkg>
+  <pkg>
+    <name>SFExfconf</name>
+    <ips_package_name>xfce/config/xfce-config</ips_package_name>
+    <group>Desktop (GNOME)/Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFExfce4-mixer</name>
+    <ips_package_name>xfce/xfce-mixer</ips_package_name>
+    <group>Applications/Sound and Video</group>
+  </pkg>
+  <pkg>
+    <name>SFExfce4-panel</name>
+    <ips_package_name>xfce/xfce-panel</ips_package_name>
+    <group>Applications/Panels and Applets</group>
+  </pkg>
+  <pkg>
+    <name>SFExfce4-power-manager</name>
+    <ips_package_name>xfce/xfce-power-manager</ips_package_name>
+    <group>Applications/System Utilities</group>
+  </pkg>
+  <pkg>
+    <name>SFExfce4-appfinder</name>
+    <ips_package_name>xfce/xfce-appfinder</ips_package_name>
+    <group>Applications/Accessories</group>
+  </pkg>
+  <pkg>
+    <name>SFExfce-calendar</name>
+    <ips_package_name>xfce/xfce-calendar</ips_package_name>
+    <group>Applications/Office</group>
+  </pkg>
+  <pkg>
+    <name>SFExfce4-dev-tools</name>
+    <ips_package_name>developer/xfce/xfce-dev-tools</ips_package_name>
+    <group>Development/Distribution Tools</group>
+  </pkg>
+  <pkg>
+    <name>SFEthunar</name>
+    <ips_package_name>xfce/file-manager/thunar</ips_package_name>
+    <group>Desktop (GNOME)/File Managers</group>
+  </pkg>
+  <pkg>
+    <name>SFEtumbler</name>
+    <ips_package_name>xfce/tumbler</ips_package_name>
+    <group>Applications/Plug-ins and Run-times</group>
+  </pkg>
+  <pkg skip="true">  <!-- midori is buggy, although not observed to crash -->
+    <name>SFEmidori</name>
+    <ips_package_name>web/browser/midori</ips_package_name>
+  </pkg>
+  <pkg>
+    <name>SFEmenu-cache</name>
+    <ips_package_name>lxde/menu-cache</ips_package_name>
+    <group>Applications/Plug-ins and Run-times</group>
+  </pkg>
+  <pkg>
+    <name>SFElibfm</name>
+    <ips_package_name>library/lxde/libfm</ips_package_name>
+    <group>Desktop (GNOME)/Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFEpcmanfm</name>
+    <ips_package_name>lxde/file-manage/pcmanfm</ips_package_name>
+    <group>Desktop (GNOME)/File Managers</group>
+  </pkg>
+  <pkg>
+    <name>SFEabiword</name>
+    <ips_package_name>desktop/word-processor/abiword</ips_package_name>
+    <group>Applications/Office</group>
+  </pkg>
+  <pkg>
+    <name>SFExournal</name>
+    <ips_package_name>desktop/note-taking/xournal</ips_package_name>
+    <group>Applications/Office</group>
+  </pkg>
+  <pkg>
+    <name>SFEgnote</name>
+    <ips_package_name>gnome/note-taking/gnote</ips_package_name>
+    <group>Applications/Office</group>
+  </pkg>
+  <pkg>
+    <name>SFEgnucash</name>
+    <ips_package_name>desktop/finance/gnucash</ips_package_name>
+  </pkg>
+  <pkg>
+    <name>SFEchmlib</name>
+    <ips_package_name>library/desktop/chmlib</ips_package_name>
+    <group>Desktop (GNOME)/Libraries</group>
+  </pkg>
+  <pkg>
+    <name>SFEwv</name>
+    <ips_package_name>library/desktop/wv</ips_package_name>
+    <group>Desktop (GNOME)/Libraries</group>
+  </pkg>
+  <pkg skip="true">  <!-- Deprecated and does not build anyway -->
+    <name>SFEaspell</name>
+    <ips_package_name>library/spell-checking/aspell</ips_package_name>
+    <group>Applications/Accessories</group>
+    <summary>Spell Checker</summary>
+  </pkg>
+  <pkg>
+    <name>SFEhunspell</name>
+    <ips_package_name>library/spell-checking/hunspell</ips_package_name>
+    <group>Applications/Accessories</group>
+  </pkg>
+
+  <!-- Games -->
+  <pkg>
+    <name>SFEopenttd</name>
+    <ips_package_name>games/openttd</ips_package_name>
+  </pkg>
+</pkgs>

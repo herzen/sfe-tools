@@ -1,0 +1,34 @@
+#!/usr/bin/bash
+pfexec pkg set-publisher --enable oi-extras
+
+echo 'Installing pkgbuild from oi-extras ...'
+pfexec pkg install pkgbuild xml-parser
+pushd /usr/lib/pkgbuild-1.3.104
+#sed 's/`uname -v`/"oi_151"/' rpm_package.pm > /var/tmp/pkgbuild-herzen/rpm_package.pm
+#pfexec mv /var/tmp/pkgbuild-herzen/rpm_package.pm .
+sed 's/-ba/-bb/' pkgtool.pl > /var/tmp/pkgbuild-herzen/pkgtool.pl
+pfexec mv /var/tmp/pkgbuild-herzen/pkgtool.pl .
+popd
+
+echo 'Building perl/SFEperl-xml-xpath...'
+mkdir -p ../logs/$1
+pkgtool build --update --logdir=/export/home/herzen/logs/$1 SFEperl-xml-xpath.spec
+
+echo 'Building pkgbuild ...'
+pkgtool build-only --logdir=/export/home/herzen/logs/$1 --patches=/export/home/herzen/oi-sfe-tools/pkgbuild/patches ../oi-sfe-tools/pkgbuild/pkgbuild.spec
+
+echo 'Unistalling oi-extras' pkgbuild and installing our pkgbuild
+pfexec pkg uninstall pkgbuild
+pfexec pkg set-publisher --disable oi-extras
+pfexec pkg install pkgbuild
+pushd /usr/lib/pkgbuild-1.3.103
+#sed 's/`uname -v`/"oi_151"/' rpm_package.pm > /var/tmp/pkgbuild-herzen/rpm_package.pm
+#pfexec mv /var/tmp/pkgbuild-herzen/rpm_package.pm .
+#pfexec chown root:bin rpm_package.pm
+popd
+
+# Might as well build xz now, so as not to disturb the ordering in packages.xml
+echo 'Building SFExz ...'
+pkgtool build-only --logdir=/export/home/herzen/logs/$1 SFExz.spec
+pfexec pkg uninstall xz
+pfexec pkg install xz

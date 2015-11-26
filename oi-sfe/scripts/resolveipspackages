@@ -1,0 +1,21 @@
+#!/usr/bin/bash
+#20090818 Thomas Wagner - install missing packages from the current package repository based on what pkgtool build-order cannot resolve
+MISSING=`pkgtool build-order --autodeps $* | awk '/No spec/ { print $6 }' | sed -e 's/-devel$//' -e 's/-root$//' -e 's/-doc$//' | sort -u`
+if [ -z $MISSING ]
+  then
+   echo "Lucky you, no packages from outside the build recipe repository seem to be missing"
+   exit 0
+  else
+   echo "Found the packages listed below to be missing, will try to install them from the"
+   echo "local repository (should not hit packages from your build recipe repository)."
+   echo "Watch for errors in the output."
+   echo "========="
+   echo "$MISSING"
+   echo "========="
+   echo "Now we try to automatically install missing packages by:"
+   echo "pfexec pkg install $MISSING"
+   echo "Please watch out for lines indicating that packages are not found in the catalog"
+   echo ""
+   pfexec pkg install $MISSING
+   echo "Done. Exit code: $?"
+  fi
