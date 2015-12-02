@@ -39,26 +39,6 @@ cp %SOURCE4 $RPM_BUILD_ROOT%{_bindir}
 chmod 755 $RPM_BUILD_ROOT%{_bindir}/*
 mkdir -p $RPM_BUILD_ROOT%{_libdir}/cbe-env
 
-%if %(pkginfo -q CBEautomake && echo 0 || echo 1)
-# create the "automake" symlink to automake 1.10 when using the
-# Solaris default automake, because it only includes versioned
-# entries in /usr/bin
-test -f %{?altroot}/usr/bin/automake-1.10 && {
-    cd $RPM_BUILD_ROOT%{_bindir}
-    ln -s %relroot/usr/bin/automake-1.10 automake
-} || {
-    echo 'automake-1.10 not found'
-    exit 1
-}
-test -f %{?altroot}/usr/bin/aclocal-1.10 && {
-    cd $RPM_BUILD_ROOT%{_bindir}
-    ln -s %relroot/usr/bin/aclocal-1.10 aclocal
-} || {
-    echo 'aclocal-1.10 not found'
-    exit 1
-}
-%endif
-
 %if %(pkginfo -q CBEmake && echo 0 || echo 1)
 # create the "make" symlink to gmake when using SUNWgmake
 GMAKE=xx
@@ -139,7 +119,7 @@ rm -f $BASEDIR/lib/cbe-env/*
 %defattr(-, root, bin)
 %dir %attr (0755, root, bin) %{_bindir}
 %{_bindir}/*
-%dir %attr (0755, %build_user, other) %{_libdir}/cbe-env
+%dir %attr (0755, -, other) %{_libdir}/cbe-env
 
 %changelog
 * Thu Jul 23 2009 - oboril.lukas@gmail.com
