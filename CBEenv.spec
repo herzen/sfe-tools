@@ -9,10 +9,10 @@
 %include CBE.inc
 
 Name:			CBEenv
-IPS_Package_Name:       cbe/desktop/CBEenv
+IPS_Package_Name:	developer/build/buildenv
+Group:			Development/Distribution Tools
 Version:		%{?cbe_version}%{?!cbe_version:0.0}
-Vendor:			Sun Microsystems, Inc.
-Summary:		Desktop CBE: env setup scripts for the Desktop CBE
+Summary:		environment setup scripts for building Spec Files Extra packages
 Source:			env.sh
 Source1:                env.csh
 Source2:                env_include.sh
