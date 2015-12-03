@@ -32,16 +32,16 @@ Requires:	compress/xz
 %prep
 mkdir -p %name-%version
 
-%define relroot %(echo %{_bindir} | sed -e 's,[^/][^/]*,..,g' | cut -c2-)
+%define relroot %(echo %_bindir | sed -e 's,[^/][^/]*,..,g' | cut -c2-)
 
 %install
-rm -rf $RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT%{_bindir}
-cp %SOURCE0 $RPM_BUILD_ROOT%{_bindir}
-cp %SOURCE1 $RPM_BUILD_ROOT%{_bindir}
-cp %SOURCE2 $RPM_BUILD_ROOT%{_bindir}
-cp %SOURCE3 $RPM_BUILD_ROOT%{_bindir}
-cp %SOURCE4 $RPM_BUILD_ROOT%{_bindir}
+rm -rf %buildroot
+mkdir -p %buildroot%_bindir
+cp %SOURCE0 %buildroot%_bindir
+cp %SOURCE1 %buildroot%_bindir
+cp %SOURCE2 %buildroot%_bindir
+cp %SOURCE3 %buildroot%_bindir
+cp %SOURCE4 %buildroot%_bindir
 
 pushd %buildroot%_bindir
 sed -e "s|@CBE_PREFIX@|%cbe_prefix|" \
@@ -51,7 +51,7 @@ sed -e "s|@CBE_PREFIX@|%cbe_prefix|" \
 mv env.sh.new env.sh
 popd
 
-chmod 755 $RPM_BUILD_ROOT%{_bindir}/*
+chmod 755 %buildroot%{_bindir}/*
 
 %if %(pkginfo -q CBEmake && echo 0 || echo 1)
 # create the "make" symlink to gmake when using SUNWgmake
@@ -66,13 +66,13 @@ if [ "x$GMAKE" == xxx ]; then
     echo 'GNU make not found, please install SUNWgmake or CBEmake'
     exit 1
 fi
-cd $RPM_BUILD_ROOT%{_bindir}
+cd %buildroot%_bindir
 ln -s %relroot$GMAKE make
 %endif
 
 %if %(pkginfo -q CBEcoreutils && echo 0 || echo 1)
 # create the "install" symlink to ginstall when using SUNWgnu-coreutils
-cd $RPM_BUILD_ROOT%{_bindir}
+cd %buildroot%_bindir
 # break if ginstall is not found
 test -x /usr/bin/ginstall
 ln -s %relroot/usr/bin/ginstall install
@@ -80,7 +80,7 @@ ln -s %relroot/usr/bin/ginstall install
 
 %if %(pkginfo -q CBEdiff && echo 0 || echo 1)
 # create the "diff" symlink to gdiff when using SUNWgnu-diffutils
-cd $RPM_BUILD_ROOT%{_bindir}
+cd %buildroot%_bindir
 # break if gdiff is not found
 test -x /usr/bin/gdiff
 ln -s %relroot/usr/bin/gdiff diff
@@ -99,7 +99,7 @@ if [ "x$GM4" == xxx ]; then
     echo 'GNU m4 not found, please install SUNWgm4 or CBEm4'
     exit 1
 fi
-cd $RPM_BUILD_ROOT%{_bindir}
+cd %buildroot%_bindir
 ln -s %relroot$GM4 m4
 %endif
 
@@ -118,13 +118,13 @@ if [ "x$GGREP" == xxx ]; then
     echo 'GNU grep not found, please install SUNWggrp or CBEgnugrep'
     exit 1
 fi
-cd $RPM_BUILD_ROOT%{_bindir}
+cd %buildroot%_bindir
 ln -s %relroot$GGREP grep
 %endif
 
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %buildroot
 
 %files
 %defattr(-, root, bin)
