@@ -42,6 +42,15 @@ cp %SOURCE1 $RPM_BUILD_ROOT%{_bindir}
 cp %SOURCE2 $RPM_BUILD_ROOT%{_bindir}
 cp %SOURCE3 $RPM_BUILD_ROOT%{_bindir}
 cp %SOURCE4 $RPM_BUILD_ROOT%{_bindir}
+
+pushd %buildroot%_bindir
+sed -e "s|@CBE_PREFIX@|%cbe_prefix|" \
+	-e "s|@CBE_VERSION@|%version|" \
+        -e "s|@BUILD_INFO@||" \
+	env.sh > env.sh.new
+mv env.sh.new env.sh
+popd
+
 chmod 755 $RPM_BUILD_ROOT%{_bindir}/*
 
 %if %(pkginfo -q CBEmake && echo 0 || echo 1)

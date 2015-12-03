@@ -73,14 +73,8 @@ if [ "x$1" != x ]; then
 	invalid_env=yes
     fi
 else
-    if [ -f "$CBE_PREFIX/lib/cbe-env/default" ]; then
-	. "$CBE_PREFIX/lib/cbe-env/default"
-	export CC
-	export CXX
-    else
-	echo "ERROR: Default CBE environment missing" 1>&2
-	invalid_env=yes
-    fi
+    export CC=cc
+    export CXX=CC
 fi
 
 if [ $invalid_env != yes ]; then
