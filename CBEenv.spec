@@ -17,8 +17,7 @@ Source1:                env.csh
 Source2:                env_include.sh
 Source3:                ld-wrapper
 Source4:                gendiff
-BuildRoot:		%{_tmppath}/%{name}-%{version}-build
-SUNW_BaseDir:		%{_prefix}
+SUNW_BaseDir:		%_prefix
 SUNW_Category:          CBE,application
 
 Requires:	system/header, system/library/math
@@ -44,7 +43,6 @@ cp %SOURCE2 $RPM_BUILD_ROOT%{_bindir}
 cp %SOURCE3 $RPM_BUILD_ROOT%{_bindir}
 cp %SOURCE4 $RPM_BUILD_ROOT%{_bindir}
 chmod 755 $RPM_BUILD_ROOT%{_bindir}/*
-mkdir -p $RPM_BUILD_ROOT%{_libdir}/cbe-env
 
 %if %(pkginfo -q CBEmake && echo 0 || echo 1)
 # create the "make" symlink to gmake when using SUNWgmake
@@ -119,14 +117,9 @@ ln -s %relroot$GGREP grep
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%preun
-rm -f $BASEDIR/lib/cbe-env/*
-
 %files
 %defattr(-, root, bin)
-%dir %attr (0755, root, bin) %{_bindir}
-%{_bindir}/*
-%dir %attr (0755, -, other) %{_libdir}/cbe-env
+%_bindir
 
 %changelog
 * Thu Jul 23 2009 - oboril.lukas@gmail.com
