@@ -23,11 +23,12 @@ SUNW_Category:          CBE,application
 Requires:	system/header, system/library/math
 Requires:	developer/base-developer-utilities
 Requires:	web/wget, archiver/gnu-tar, text/gnu-patch
-Requires:	file/gnu-binutils, file/gnu-findutils
+Requires:	developer/gnu-binutils, file/gnu-findutils
 Requires:	text/gnu-sed, text/gawk, text/gnu-grep, developer/build/gnu-make
 Requires:	developer/build/automake, developer/build/autoconf
 Requires:	developer/versioning/git, developer/versioning/subversion
-Requires:	compress/xz
+Requires:	compress/xz, developer/documentation-tool/gtk-doc
+Requires:	package/pkgbuild 
 
 %prep
 mkdir -p %name-%version
