@@ -1,7 +1,6 @@
 #
 # spec file for package CBEenv
 #
-# Copyright 2009 Sun Microsystems, Inc.
 # This file and all modifications and additions to the pristine
 # package are under the same license as the package itself.
 #
@@ -23,11 +22,13 @@ SUNW_BaseDir:		%{_prefix}
 SUNW_Category:          CBE,application
 
 Requires:	system/header, system/library/math
-Requires:	text/gnu-patch, web/wget, archiver/gnu-tar
-Requires:	system/xopen/xcu4, developer/build/make
-Requires:	developer/build/automake, developer/build/automake-111
-Requires:	text/gnu-sed, text/gawk, compress/xz
+Requires:	developer/base-developer-utilities
+Requires:	web/wget, archiver/gnu-tar, text/gnu-patch
+Requires:	file/gnu-binutils, file/gnu-findutils
+Requires:	text/gnu-sed, text/gawk, text/gnu-grep, developer/build/gnu-make
+Requires:	developer/build/automake, developer/build/autoconf
 Requires:	developer/versioning/git, developer/versioning/subversion
+Requires:	compress/xz
 
 %prep
 mkdir -p %name-%version
