@@ -21,7 +21,13 @@ Source4:                gendiff
 BuildRoot:		%{_tmppath}/%{name}-%{version}-build
 SUNW_BaseDir:		%{_prefix}
 SUNW_Category:          CBE,application
-%include default-depend.inc
+
+Requires:	system/header, system/library/math
+Requires:	text/gnu-patch, web/wget, archiver/gnu-tar
+Requires:	system/xopen/xcu4, developer/build/make
+Requires:	developer/build/automake, developer/build/automake-111
+Requires:	text/gnu-sed, text/gawk, compress/xz
+Requires:	developer/versioning/git, developer/versioning/subversion
 
 %prep
 mkdir -p %name-%version
