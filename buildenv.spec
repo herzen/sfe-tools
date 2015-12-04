@@ -1,5 +1,5 @@
 #
-# spec file for package CBEenv
+# spec file for package buildenv
 #
 # This file and all modifications and additions to the pristine
 # package are under the same license as the package itself.
@@ -7,7 +7,7 @@
 
 %include CBE.inc
 
-Name:			CBEenv
+Name:			buildenv
 IPS_Package_Name:	developer/build/buildenv
 Group:			Development/Distribution Tools
 Version:		%{?cbe_version}%{?!cbe_version:0.0}
