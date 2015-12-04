@@ -1,0 +1,959 @@
+#!/bin/bash
+#
+# Script for setting up the Desktop Build Environment on Solaris
+#
+# CDDL HEADER START
+#
+# The contents of this file are subject to the terms of the
+# Common Development and Distribution License, Version 1.0 only
+# (the "License").  You may not use this file except in compliance
+# with the License.
+#
+# You can obtain a copy of the license at usr/src/OPENSOLARIS.LICENSE
+# or http://www.opensolaris.org/os/licensing.
+# See the License for the specific language governing permissions
+# and limitations under the License.
+#
+# When distributing Covered Code, include this CDDL HEADER in each
+# file and include the License file at usr/src/OPENSOLARIS.LICENSE.
+# If applicable, add the following below this CDDL HEADER, with the
+# fields enclosed by brackets "[]" replaced with your own identifying
+# information: Portions Copyright [yyyy] [name of copyright owner]
+#
+# CDDL HEADER END
+#
+#
+# Copyright (c) 2010, Oracle and/or its affiliates. All rights reserved.
+#
+
+IFS=' 	
+'
+
+CBE_PACKAGES="developer/macro/gnu-m4
+              developer/build/autoconf developer/build/libtool
+              developer/build/automake-110 developer/build/automake-111
+              developer/parser/bison file/gnu-coreutils
+              text/gnu-diffutils developer/lexer/flex
+              text/gnu-gettext developer/build/gnu-make
+              developer/versioning/subversion developer/versioning/git
+              developer/build/cmake"
+
+interactive_install=yes
+quiet_install=no
+default_compiler=
+orig_CC="${CC}"
+
+# default log file.  Changed to /tmp/cbe-install* if the user
+# installing is not root
+LOGFILE=/tmp/cbe-install-`date +%Y-%m-%d-%H:%M`.log
+
+# packages required for building things.  cbe-install will check if they
+# are installed and install them if not.
+
+# OpenSolaris pkg(5) packages:
+CBE_DEPENDENCIES="text/gnu-patch system/header web/wget archiver/gnu-tar
+                  system/xopen/xcu4 developer/build/make
+                  x11/header/x11-protocols x11/header/xcb-protocols
+                  developer/object-file system/library/math/header-math
+                  text/gnu-sed text/gawk"
+
+# default cbe install location
+cbe_prefix=${CBE_PREFIX:-/opt/dtbld}
+# this should be set to a reasonable value in install_pkgbuild()
+pkgbuild_topdir=/fix/me
+
+# default value for the "who is the build user" question
+logname=${LOGNAME:-`logname`}
+if [ -x /usr/xpg4/bin/id ]; then
+    uid=`/usr/xpg4/bin/id -u`
+    username=`/usr/xpg4/bin/id -un`
+else
+    uid=`/bin/id | cut -f2 -d= | cut -f1 -d'('`
+    username=`/bin/id |cut -f2 -d'(' | cut -f1 -d')'`
+fi
+export HOME="$(eval cd ~$username; pwd)"
+
+always_uninstall_existing=
+always_skip_existing=
+
+# write a message to the log file
+# not visible to the user
+log () {
+    for msg in "${@}"; do
+	echo "`date`: $msg" >> $LOGFILE
+    done
+}
+
+# print a message to the user and also write it to the log file
+msg () {
+    for msg in "${@}"; do
+	if [ $quiet_install = no ]; then
+	    echo $msg
+	fi
+	echo "`date`: $msg" >> $LOGFILE
+    done
+}
+
+# print a message to the user and also write it to the log file
+msg_err () {
+    for msg in "${@}"; do
+	if [ $quiet_install = no ]; then
+	    echo ERROR: $msg 1>&2
+	fi
+	echo "`date`: ERROR: $msg" >> $LOGFILE
+    done
+}
+
+# clean up if installation is aborted
+tempdirs=
+remove_tempdirs () {
+    IFS=:
+    for tdir in $tempdirs; do
+	case "$tdir" in
+	    /tmp/* )
+                cd /tmp
+		rm -rf "$tdir"
+		;;
+	esac
+    done
+}
+trap remove_tempdirs QUIT EXIT
+
+
+# alternate root directory
+rootdir=/
+
+process_cl () {
+    while [ $# != 0 ]; do
+	case "$1" in
+	    -R )
+		shift
+		if [ $# == 0 ]; then
+		    echo "Option -R requires an argument." 1>&2
+		    exit 1
+		fi
+		rootdir=$1
+		case "$rootdir" in
+		    /* )
+			;;
+		    * )
+			echo "The argument to -R must be an absolute path name" 1>&2
+			exit 1
+		esac
+		;;
+	    -h|--help)
+		echo "Usage: $0 [options]"
+		echo "options:"
+		echo "   -h, --help        print this usage info"
+		echo "   -R rootdir        install CBE packages in alternate root directory rootdir"
+		echo "   -n                non-interactive installation -- assumes the default"
+		echo "                     answers to all questions"
+		echo "   -q, --quiet       quiet install, messages are printed in the log only"
+		echo "   -p dir, --prefix dir"
+                echo "                     install the Desktop CBE to dir"
+		exit 0
+		;;
+	    --ask-alt)
+		ask_alt=yes
+		;;
+	    -c|--compiler)
+		shift
+		if [ $# == 0 ]; then
+		    echo "Option -R requires an argument." 1>&2
+		    exit 1
+		fi
+		default_compiler=$1
+		test -x $default_compiler || {
+		    echo "Compiler $default_compiler not found" 1>&2
+		    exit 1
+		}
+		;;
+	    -q|--quiet)
+		quiet_install=yes
+		;;
+	    --no-alt)
+		install_alt=no
+		;;
+	    -k|--kde)
+		install_kde=yes
+		;;
+	    -g|--gnome)
+		install_gnome=yes
+		;;
+	    -s|--sfe)
+		install_gnome=yes
+		;;
+	    -o|--optional)
+		install_opt=yes
+		;;
+	    -n)
+		interactive_install=no
+		;;
+	    -p|--prefix)
+                shift
+		test $# = 0 && {
+		    echo "ERROR: argument required after -p or --prefix option" 1>&2
+		}
+		cbe_prefix="$1"
+		test ${cbe_prefix:0:1} = / || {
+		    echo "ERROR: the prefix must be an absolute path" 1>&2
+		}
+		;;
+	    *)
+		echo "Unknown option: $1" 1>&2
+		exit 1
+		;;
+	esac
+	shift
+    done
+
+    if [ $interactive_install = yes ]; then
+	quiet_install=no
+    fi
+}
+
+# check the type and name of the compiler
+# set CXX to match CC
+identify_compiler () {
+    id_CC=$1
+    id_CC_name=unknown
+    id_CC_release=
+    id_CC_version=
+    id_CC_rev=
+    id_CC_label=unknown
+
+    id_CC_dir=$(dirname $id_CC)
+
+    # check if it's gcc
+    cc_version=$($id_CC --version 2>&1)
+    echo "$cc_version" | grep 'gcc[^ ]* (GCC)' > /dev/null && {
+	id_CC_name='GNU gcc'
+	id_CC_version=$(echo "$cc_version" | grep 'gcc[^ ]* (GCC)' | cut -f3 -d' ')
+	id_CC_release=$(echo $id_CC_version | cut -f1 -d.)
+	id_CC_label=gcc${id_CC_release}
+	CXX=$(echo "$id_CC" | sed -e 's/gcc/g++/')
+	if [ ! -x "$CXX" ]; then
+	    msg "WARNING: $CXX not found"
+	fi
+	log "$id_CC is $id_CC_name release $id_CC_release"
+	return
+    }
+    cc_version=$($id_CC -V 2>&1)
+    echo "$cc_version" | grep '^cc: Sun ' > /dev/null && {
+	id_CC_name='Sun Studio'
+	id_CC_version=$(echo "$cc_version" | grep '^cc: Sun ' | sed -e 's/^cc: Sun.* C \([0-9][0-9.]*\) .*/\1/')
+	id_CC_rev=$(echo "$cc_version" | grep '^cc: Sun ' | sed -e 's/^cc: Sun.* C [0-9][0-9.]* \(.\)*/\1/')
+	id_CC_rev=$(echo "$id_CC_rev" | grep '^cc: Sun ' | sed -e 's/SunOS_[^ ]* //')
+	id_CC_date=$(echo "$cc_version" | grep '^cc: Sun ' | sed -e 's/^cc: Sun.* C [0-9][0-9.]* //' | sed -e 's/SunOS_[^ ]* //' | sed -e 's/[a-zA-Z]* [-0-9]* //')
+	id_CC_patch_level=$(echo "$cc_version" | grep '^cc: Sun ' | sed -e 's/^cc: Sun.* C [0-9][0-9.]* //' | sed -e 's/SunOS_[^ ]* //' | sed -e 's/[a-zA-Z]* //'| sed -e 's/[0-9]*\/[0-9]*\/[0-9]*//')
+	if [ "x$id_CC_version" = x5.7 ]; then
+	    id_CC_label='ss10'
+	    id_CC_release='Vulcan'
+	    id_CC_name='Sun Studio 10'
+	elif [ "x$id_CC_version" = x5.8 ]; then
+	    id_CC_label='ss11'
+	    id_CC_release='Venus'
+	    id_CC_name='Sun Studio 11'
+	elif [ "x$id_CC_version" = x5.9 ]; then
+	    id_CC_label='ss12'
+	    id_CC_release='Mars'	    
+	    id_CC_name='Sun Studio 12'
+	elif [ "x$id_CC_version" = x5.10 -a "x$id_CC_date" = x2009/06/03 ];then
+	    id_CC_label='ss12_1'
+	    id_CC_release='Ceres'
+	    id_CC_name='Sun Studio 12 Update 1'
+	elif [ "x$id_CC_version" = x5.10 ]; then
+	    id_CC_label='sexp'
+	    id_CC_release='Ceres'
+	    id_CC_name='Sun Studio Express'
+	elif [ "x$id_CC_version" = x5.11 -a "x$id_CC_date" = x2010/08/13 ];then
+	    id_CC_label='ss12_2'
+	    id_CC_release="$id_CC_version"
+	    id_CC_name='Solaris Studio 12.2'
+	elif [ "x$id_CC_version" = x5.12 -a "x$id_CC_date" = x2011/11/16 ];then
+	    id_CC_label='ss12_3'
+	    id_CC_release="$id_CC_version"
+	    id_CC_name='Solaris Studio 12.3'
+	else
+	    id_CC_label="Studio_$id_CC_version"
+	    id_CC_release="$id_CC_version"
+	fi
+	CXX="$id_CC_dir/CC"
+	if [ ! -x "$CXX" ]; then
+	    msg "WARNING: $CXX not found"
+	fi
+	log "$id_CC is $id_CC_name release $id_CC_release"
+	return
+    }
+    msg "WARNING: could not identify $id_CC = $cc_version"
+}
+
+# create a build environent config file for the given build compiler
+make_env () {
+    env_compiler=$1
+    envdir=$tempdir/env
+    logrun mkdir -p $envdir
+    identify_compiler $env_compiler
+    if [ "$id_CC_name" = unknown ]; then
+	log "Compiler $1 is unknown, ignoring"
+	return 1
+    fi
+    # identify_compiler sets CXX to match CC
+    # also id_CC_name, id_CC_label, id_CC_version, id_CC_release, id_CC_rev
+    env_file="$envdir/$id_CC_label"
+    env_nr=1
+    while test -f $env_file; do
+	env_file="$envdir/${id_CC_label}.${env_nr}"
+	env_nr=$(($env_nr + 1))
+    done
+    log "creating env file for compiler $1 ($id_CC_name)"
+    echo '# Build environment config file for the Desktop CBE' > "$env_file"
+    echo "CC_name='$id_CC_name'"       >> "$env_file"
+    echo "CC_version='$id_CC_version'" >> "$env_file"
+    echo "CC_release='$id_CC_release'" >> "$env_file"
+    echo "CC_rev='$id_CC_rev'"         >> "$env_file"
+    echo "cc_dir='$id_CC_dir'"         >> "$env_file"
+    echo "CC='$env_compiler'"          >> "$env_file"
+    echo "CXX='$CXX'"                  >> "$env_file"
+    return 0
+}
+
+# look for compilers in known locations
+find_compilers () {
+    compiler_found=no
+    # FIXME: if CC = gcc, set CFLAGS to -std=c99
+    msg "Locating compilers..."
+    arch=$(uname -p)
+    known_compilers="/opt/SUNWspro/bin/cc /opt/SS12/SUNWspro/bin/cc /opt/Studio12/bin/cc /opt/SSX0903/bin/cc /opt/sunstudio12.1/bin/cc /usr/bin/cc /opt/SunStudioExpress/bin/cc /opt/solstudio12.2/bin/cc /opt/solarisstudio12.3/bin/cc /usr/bin/gcc /usr/sfw/bin/gcc /usr/gnu/bin/gcc"
+    if [ "x$orig_CC" != x ]; then
+	if [ -x $orig_CC ]; then
+	    echo " $known_compilers " | grep " $orig_CC " > /dev/null || \
+		known_compilers="$orig_CC $known_compilers"
+	fi
+    fi
+    for compiler in $known_compilers; do
+	# expand globs
+	compiler=$(eval echo $compiler)
+	if [ -x $compiler -a ! -d $compiler ]; then
+	    make_env $compiler
+	    compiler_found=yes
+	fi
+    done
+}
+
+ask_compiler () {
+    ask 'Enter the path to the C compiler' ans_compiler
+    if [ ! -x $ans_compiler ]; then
+	msg "Invalid answer: $ans_compiler is not an executable"
+	return 1
+    fi
+    if [ -d $ans_compiler ]; then
+	msg "Invalid answer: $ans_compiler is a directory"
+	return 1
+    fi
+    identify_compiler "$ans_compiler"
+    if [ x$ans_compiler == xunknown ]; then
+	msg "Unknown compiler: $ans_compiler"
+	return 1
+    fi
+    compiler_found=yes
+    make_env "$ans_compiler"
+    return 0
+}
+
+# ask the user for additional compiler locations
+ask_compilers () {
+    first=$1
+    ans_more_compilers=yes
+    while [ $ans_more_compilers = yes ]; do
+	if [ "x$first" = xfirst ]; then
+	    msg "You need a C compiler in order to use the Desktop CBE"
+	    ask_compiler && first=no
+	else
+	    ask_yes_no 'Would you like to configure more compilers for use with the Desktop CBE?' ans_more_compilers no
+	    if [ $ans_more_compilers = yes ]; then
+		ask_compiler
+	    fi
+	fi
+    done
+}
+
+# install gcc and/or Sun Studio
+install_compilers_pkg () {
+    # ask if gcc should be installed
+    ask_yes_no "Would you like to install gcc 4.7.3 (GNU C compiler)?" \
+	ans_install_gcc yes
+    test "$ans_install_gcc" = yes && pkg_try_install developer/gcc-47
+    # ask if sun studio 12 update 1 should be installed
+    ask_yes_no "Would you like to install Sun Studio 12 Update 1 (cc 5.10)?" \
+	ans_install_ss12_1 yes
+    test "$ans_install_ss12_1" = yes && pkg_try_install developer/sunstudio12u1
+}
+
+check_compilers_kde () {
+    # KDE4 needs at least Sun Studio 12 with specific patch level (cc -V CC -V)
+    if [ "x$id_CC_label" = xss10 -o "x$id_CC_label" = xss11 -o "x$id_CC_label" = xssexp ]; then
+	log "Compiler id_CC_name is not suitable for building KDE4, please use Sun Studio 12 or Sun Studio 12 Update 1"
+	return 1
+    fi
+}
+
+# print the details of a compiler specified by its env config file
+display_compiler () {
+    . $1
+    msg "$2 - $CC_name $CC_version ($CC_release) in $cc_dir"
+}
+
+# select the default compiler configuration
+select_default_compiler () {
+    if [ "x$default_compiler" != x ]; then
+	grep "^CC='$default_compiler'\$" $envdir/* > /dev/null || {
+	    make_env $default_compiler && compiler_found=yes
+	}
+    fi
+    found_default_compiler=
+    found_CC=
+    if [ $compiler_found = yes ]; then
+	msg ""
+	msg "The following compilers were found on your system:"
+	i=1
+	for env in $envdir/*; do
+	    display_compiler $env $i
+	    test "x$default_compiler" != x && \
+		grep "^CC='$default_compiler'\$" $env > /dev/null && \
+		found_default_compiler=$i
+	    test "x$CC" != x && \
+		grep "^CC='$orig_CC'\$" $env > /dev/null && \
+		found_CC=$i
+	    eval env_$i="$env"
+	    i=$((i + 1))
+	done
+	i=$(($i - 1))
+	if [ "x$1" != xdont_ask -a "x$found_default_compiler" = x ]; then
+	    ask_compilers
+	    # don't ask again if the user whats to configure more compilers
+	    select_default_compiler dont_ask
+	    return
+	fi
+    else
+	msg "No compilers were found on your system."
+	if [ $PKG_SYSTEM = pkg ]; then
+	    ask_yes_no "Would you like the CBE installer to install compilers now?" \
+		ans_install_compiler yes
+	    if [ $ans_install_compiler = yes ]; then
+		install_compilers_pkg && {
+		    find_compilers
+	            # don't ask again if the user whats
+		    # to configure more compilers
+		    select_default_compiler dont_ask
+		    return
+		}
+	    fi
+	fi
+	ask_compilers first
+	select_default_compiler dont_ask
+	return
+    fi
+
+    if [ $i = 1 ]; then
+	# there's only one compiler no need to ask which one's the default
+	ans_default_compiler=1
+    elif [ "x$found_default_compiler" != x ]; then
+	# found the compiler specified with the --compiler or -c option
+	ans_default_compiler=$found_default_compiler
+	msg "Selected #${found_default_compiler} $default_compiler"
+    else
+	if [ "x$found_CC" != x ]; then
+	    # found the compiler in the CC env var
+	    default_default_compiler=$found_CC
+	else
+	    default_default_compiler=$i
+	fi
+	ans_default_compiler=9999
+	while [ $ans_default_compiler -gt $i ]; do
+	    ask 'Please select the default compiler' ans_default_compiler \
+		$default_default_compiler
+	    is_number "$ans_default_compiler" || {
+		msg "Please enter a number from 1 to $i"
+		ans_default_compiler=9999
+	    }
+	done
+    fi
+    eval default_env="\$env_$ans_default_compiler"
+    if [ ! -f $default_env ]; then
+	msg "Internal error in cbe-install, please report to desktop-discuss"
+    fi
+    . $default_env
+    export CC
+    export CXX
+    log "Default environment: `basename $default_env` (CC=$CC, CXX=$CXX)"
+}
+
+# verify that the running system is suitable for the Desktop CBE
+# and set up some variables
+init () {
+    myos=`uname -s`
+    if [ "x$myos" != xSunOS ]; then
+	echo "Run this script on a Solaris system." 1>&2
+	exit 1
+    fi
+    
+    umask 0022
+    the_cpu=`uname -p`
+    if [ "x$the_cpu" != xsparc ]; then
+	the_cpu=x86
+    fi
+
+    myos_rel=`uname -r`
+    if [ "x$myos_rel" = "x5.11" ]; then
+	:
+    else
+	echo "OpenSolaris required build 133 or later is required." 1>&2
+	exit 1
+    fi
+
+    myos_bld=`uname -v | tr -cd '[0-9]'`
+    
+    if [ "$myos_bld" -lt "133" ]; then
+	echo "OpenSolaris build 133 or later is required." 1>&2
+	exit 1
+    fi
+
+    mydir=$(cd $(dirname $0); pwd);
+    tardir=${mydir}/tarballs
+
+    CBE_VERSION=`cat $mydir/CBE_VERSION`
+    if [ $quiet_install = no ]; then
+	echo "Desktop Common Build Environment (CBE) Installer version $CBE_VERSION"
+    fi
+
+    my_id=`/usr/xpg4/bin/id -u`
+    prof_sw_inst=`/bin/profiles | nl -s: | grep 'Software Installation' | cut -f1 -d:`
+    prof_pri_adm=`/bin/profiles | nl -s: | grep 'Primary Administrator' | cut -f1 -d:`
+    prof_basic_usr=`/bin/profiles | nl -s: | grep 'Basic Solaris User' | cut -f1 -d:`
+    if [ "x$prof_pri_adm" = x -o "x$my_id" = x0 ]; then
+	echo 'Run this script as a user with the "Primary Administrator" profile' 1>&2
+	test -x /usr/bin/users-admin && {
+	    echo 1>&2
+	    echo 'You can also use the users-admin program (System -> Administration ->' 1>&2
+	    echo 'Users and Groups in the GNOME menu) to assign profiles.' 1>&2
+	    echo 1>&2
+	}
+	echo 'See the user_attr(4) and profiles(1) manual pages for further details' 1>&2
+	exit 1
+    else
+	if [ "x$prof_basic_usr" != x ]; then
+	    if [ "x$prof_pri_adm" != x ]; then
+		if [ $prof_pri_adm -gt $prof_basic_usr ]; then
+		    echo 'The "Primary Administrator" profile in /etc/user_attr should appear' 1>&2
+		    echo 'before Basic Solaris User.' 1>&2
+		    exit 1
+		fi
+	    fi
+	fi
+    fi
+
+    if [ -f /usr/sfw/include/glib.h ]; then
+	echo "WARNING: /usr/sfw/include/glib.h is in conflict with the Desktop headers." 1>&2
+	echo "WARNING: Please remove this file or SUNWGlib to avoid build problems." 1>&2
+	echo 1>&2
+	if [ $interactive_install = yes ]; then
+	    echo "Press Enter to continue"
+	    read dummy
+	else
+	    echo "Aborting installation" 1>&2
+	    exit 1
+	fi
+    fi
+
+    log "Running on `uname -a`"
+    log "My directory is $mydir"
+
+    ENV_SET=`env | grep '^[a-zA-Z0-9_]*=' | cut -f1 -d=`
+    for var in $ENV_SET; do
+	case $var in
+	    PS1|PS2|HZ|TERM|SHELL|OLDPWD|PATH|MAIL|PWD|TZ|SHLVL|HOME|LOGNAME|PRINTER|HOSTNAME|_|CC|CXX|EDITOR|SSH_*|DISPLAY|LESS*|LS_COLORS|LS_OPTIONS|TERMINFO|PAGER|MANPATH|VISUAL|PKGBUILD_IPS_SERVER|PKGBUILD_SRC_IPS_SERVER)
+		;;
+	    *)
+		val=`eval echo "\\\$$var"`
+		log "Unsetting $var (=\"$val\")"
+		unset $var
+		;;
+	esac
+    done
+
+    tempdir=`mktemp -d /tmp/cbe-install-XXXX`
+    tempdirs="$tempdirs:$tempdir"
+    if [ ! -d $tempdir ]; then
+	msg_err "Failed to create temporary directory in /tmp"
+	exit 1
+    fi
+
+    server_state=`svcs -H -o STATE svc:/application/pkg/server:default`
+    read_only=`svcprop -c -p pkg/readonly svc:/application/pkg/server:default`
+
+    if [ "x$server_state" != "xonline" -a "x$PKGBUILD_IPS_SERVER" = x ]; then
+	msg "ERROR: the local IPS server is in $server_state state"
+	msg "See pkg.depotd(1) for information about enabling it."
+	msg "If you wish to use a different package repository for publishing"
+	msg "packages, set the PKGBUILD_IPS_SERVER environment variable."
+	exit 1
+    fi
+
+    if [ "x$server_state" = "xonline" -a "x$read_only" = "xtrue" -a \
+	"x$PKGBUILD_IPS_SERVER" = x ]; then
+	msg "ERROR: the local IPS server is running in read-only mode"
+	msg "HINT: use svccfg -s svc:/application/pkg/server setprop pkg/readonly = false"
+	msg "HINT: followed by svcadm refresh svc:/application/pkg/server"
+	msg "HINT: to switch to read-write mode, or set PKGBUILD_IPS_SERVER"
+	msg "HINT: to a different publisher URL"
+	exit 1
+    fi
+}
+
+is_number () {
+    if [ "x$1" = xOK ]; then
+	return 1
+    fi
+    temp=$(echo "$1" | sed -e 's/[1-9][0-9]*/OK/')
+    if [ "x$temp" == xOK ]; then
+	return 0
+    fi
+    return 1
+}
+
+# ask "question" variable_name "default answer"
+#
+# answer is stored in variable variable_name
+ask () {
+    if [ $quiet_install = no ]; then
+	echo -n "$1"
+    fi
+    log "Question: $1"
+    if [ $interactive_install = no ]; then
+	if [ ! -z $3 ]; then
+	    if [ $quiet_install = no ]; then
+		echo ' => '$3
+	    fi
+	    eval "$2=\"$3\""
+	    log "Answer (non-interactive): $3"
+	    return
+	else
+	    msg ""
+	    msg_err "No default answer found for this question"
+	    msg_err "Cannot continue with non-interactive installation"
+	    log "No default answer, aborting"
+	    exit 1
+	fi
+    fi
+ 
+    if [ ! -z $3 ]; then
+	echo -n " [$3]: "
+    else
+	echo -n ": "
+    fi
+
+    read -e val
+    log "Answer: $val"
+    if [ "x$val" = x ]; then
+	eval "$2=\"$3\""
+    else
+	eval "$2=\"$val\""
+    fi
+}
+
+# ask_yes_no "question" variable_name "default answer"
+#
+# Answer ("yes" or "no") is stored in variable variable_name.
+# Keep asking the user until the answer is yes or no.
+ask_yes_no () {
+    yes_no_repeat=yes
+    while [ $yes_no_repeat = yes ]; do
+	yes_no_repeat=no
+	ask "${@}"
+	eval "the_ans=\"\$$2\""
+	case "$the_ans" in
+	    [yY]|[yY][eE][sS] )
+                eval "$2=yes"
+		;;
+ 	    [nN]|[nN][oO] )
+		eval "$2=no"
+		;;
+	    * )
+	        echo "Please answer yes or no"
+		yes_no_repeat=yes
+	esac
+    done
+}
+
+# get_dir "question" "answer_var" "default answer" "owner"
+#
+# Ask for a directory name and make sure it exists or create it
+# for the user
+get_dir () {
+    repeat=yes
+    while [ $repeat = yes ]; do
+	repeat=no
+	ask "$1" new_dir "$3"
+	case "$new_dir" in
+	    /* )
+                # absolute path name, nothing to do
+                ;;
+	    ~* )
+	        if [ "x$rootdir" != x/ ]; then
+		    msg "The Desktop CBE is being installed to an alternate root directory."
+		    msg "You need to specify the full path to directories within the alternate root."
+		    repeat=yes
+		    continue
+	        fi
+		d1=`echo "$new_dir" | cut -f1 -d/`
+		d2=`echo "$new_dir/" | cut -f2- -d/`
+		d1n=$(eval echo "$d1")
+		test -d "$d1n" || {
+		    repeat=yes
+		    msg "Directory not found: $d1"
+		    continue
+                }
+		d1n=$(cd "$d1n" 2>/dev/null && pwd) || {
+		    repeat=yes
+		    msg "Failed to access directory: $d1"
+		    continue
+		}
+		msg "Directory $new_dir expanded to $d1n/$d2"
+		new_dir="$d1n/$d2"
+		;;
+	    * )
+	        if [ "x$rootdir" != x/ ]; then
+		    msg "The Desktop CBE is being installed to an alternate root directory."
+		    msg "You need to specify the full path to directories within the alternate root."
+		    repeat=yes
+		    continue
+	        fi
+		d1=`echo "$new_dir" | cut -f1 -d/`
+		d2=`echo "$new_dir/" | cut -f2- -d/`
+		d1n=$(eval echo "$d1")
+		test -d "$d1n" || {
+		    repeat=yes
+		    msg "Directory not found: $d1"
+		    continue
+                }
+		d1n=$(cd "$d1n" 2>/dev/null && pwd) || {
+		    repeat=yes
+		    msg "Failed to access directory: $d1"
+		    continue
+		}
+		msg "Directory $new_dir expanded to $d1n/$d2"
+		new_dir="$d1n/$d2"
+		;;
+	esac
+    done
+    if [ "x$new_dir" != "x/" ]; then
+	new_dir=`echo "$new_dir" | sed -e 's%/*$%%'`
+    fi
+    eval "$2=\"$new_dir\""
+}
+
+# gather info for the installation from the user
+ask_defaults () {
+    repeat=yes
+    while [ $repeat = yes ]; do
+	repeat=no
+	get_dir "Enter the base directory (prefix) of the cbe" \
+	    cbe_prefix $cbe_prefix root
+	if [ "$cbe_prefix" = "/" -o "$cbe_prefix" = "/tmp" ]; then
+	    msg "This directory is not allowed."
+	    msg "Please choose a different one as the cbe prefix"
+	    repeat=yes
+	fi
+    done
+
+    if [ ! -f "$HOME/.pkgbuildmacros" -a ! -d "$HOME/packages" ]; then
+	# the user probably hasn't used pkgbuild >= 1.1.0 yet
+	# so let's ask if they want to use a specific topdir
+	# instead of $HOME/packages
+	msg "The default build directory (%_topdir) is \$HOME/packages."
+	msg "If you wish to use a different build directory, you can define it"
+	msg "in \$HOME/.pkgbuildmacros as follows:"
+	msg ""
+	msg "       %_topdir    /path/to/my/build/area"
+	msg ""
+	if [ "$uid" = 0 ]; then
+	    if [ $interactive_install = yes ]; then
+		echo
+		echo Press Enter to continue
+		read dummy
+	    fi
+	else
+	    ask_yes_no "Would you like to do this now?" \
+		set_topdir no
+	    if [ $set_topdir = no ]; then
+		log "the user chose not to change the default topdir"
+		msg "The default topdir ($HOME/packages) will be used"
+	    else
+		get_dir "Enter your build directory" default_topdir \
+		    "$cbe_prefix/packages" $logname
+		log "the user selected $default_topdir for topdir"
+		echo "%_topdir $default_topdir" > $HOME/.pkgbuildmacros
+		log "created $HOME/.pkgbuildmacros"
+	    fi
+	fi
+    else
+	log "the user already has a .pkgbuildmacros file or ~/packages dir"
+    fi
+
+    find_compilers
+    select_default_compiler
+
+}
+
+# run a command, redirect the output to a log file and also print it
+# on stdout
+logrun () {
+    status_file=/tmp/.command_status.$$
+    /usr/bin/rm -f $status_file
+    log "running $*"
+    log "*** command output follows ***"
+    if [ $quiet_install = yes ]; then
+	"${@}" >>$LOGFILE 2>&1
+	status=$?
+    else
+	( "${@}" 2>&1 ; echo $? > $status_file ) | tee -a $LOGFILE
+	status=`cat $status_file`
+	/usr/bin/rm -f $status_file
+    fi
+    log "*** command output ends ***"
+    return $status
+}
+
+# run a command, redirect the output to a log file and also print it
+# on stdout
+logrun_quiet () {
+    log "running $*"
+    log "*** command output follows ***"
+    "${@}" >>$LOGFILE 2>&1
+    status=$?
+    log "*** command output ends ***"
+    return $status
+}
+
+
+pkg_refreshed=no
+pkg_refresh () {
+    if [ $pkg_refreshed = no ]; then
+	msg "Refeshing the package catalogs..."
+	logrun_quiet pfexec pkg -R $rootdir refresh
+	pkg_refreshed=yes
+    fi
+}
+
+pkg_try_install () {
+    pkg_refresh
+    msg "Installing package(s) $* -- this may take a while"
+    pfexec pkg -R $rootdir install -q "${@}"
+    ret=$?
+    if [ $ret == 4 ]; then
+	msg "package(s) already installed"
+    elif [ $ret == 0 ]; then
+	msg "package(s) installed successfully"
+	return 0
+    else
+	msg "Failed to install package(s)"
+	msg "Retrying in verbose mode:"
+	pfexec pkg -R $rootdir install -v "${@}" && {
+	    msg "package(s) installed successfully"
+	    return 0
+	} || {
+	    msg "Installation of "${@}" failed again."
+	    ask_yes_no "Would you like to continue? (no means exit)" ans_continue no
+	    if [ $ans_continue = no ]; then
+		exit 1
+	    fi
+	    DEPS_INSTALLED=no
+	    return 0
+	}
+    fi
+}
+
+
+main () {
+    init
+    ask_defaults
+
+    pkg_try_install "package/pkgbuild" || return 1
+    PKGBUILD_VERSION=$($(/usr/bin/pkgbuild --version 2>&1) | grep '^pkgbuild version ' | sed -e 's/^pkgbuild version \(1.3.[0-9][0-9.]*\)$/\1/')
+    pkgbuild_topdir=`/usr/bin/pkgbuild -bp /usr/lib/pkgbuild-$PKGBUILD_VERSION/get_rpm_topdir 2>&1 | grep '^TOPDIR=' | cut -f2- -d=`
+
+    cd $mydir
+
+    pkg_try_install $CBE_PACKAGES $CBE_DEPENDENCIES || return 1
+
+    log "Creating env.sh"
+    logrun mkdir -p $rootdir$pkgbuild_topdir/SOURCES || return 1
+    build_info="built on `date +%Y-%m-%d` by ${logname}@`hostname`"
+    logrun_quiet bash -c "sed -e \"s%@CBE_PREFIX@%$cbe_prefix%\" \
+        -e \"s%@JDS_PREFIX@%$JDS_PREFIX%\" \
+	-e \"s%@CC32@%$cc32dir/$cc_name%\" \
+	-e \"s%@CXX32@%$cc32dir/$cxx_name%\" \
+	-e \"s%@CC64@%$cc64dir/$cc_name%\" \
+	-e \"s%@CXX64@%$cc64dir/$cxx_name%\" \
+	-e \"s%@CBE_VERSION@%$CBE_VERSION%\" \
+        -e \"s%@BUILD_INFO@%$build_info%\" \
+	$mydir/ext-sources/env.sh > $rootdir$pkgbuild_topdir/SOURCES/env.sh" || \
+	return 1
+    log "Creating env_include.sh"
+    build_info="built on `date +%Y-%m-%d` by ${logname}@`hostname`"
+    logrun_quiet bash -c "sed -e \"s%@CBE_PREFIX@%$cbe_prefix%\" \
+        -e \"s%@JDS_PREFIX@%$JDS_PREFIX%\" \
+	-e \"s%@CC32@%$cc32dir/$cc_name%\" \
+	-e \"s%@CXX32@%$cc32dir/$cxx_name%\" \
+	-e \"s%@CC64@%$cc64dir/$cc_name%\" \
+	-e \"s%@CXX64@%$cc64dir/$cxx_name%\" \
+	-e \"s%@CBE_VERSION@%$CBE_VERSION%\" \
+        -e \"s%@BUILD_INFO@%$build_info%\" \
+	$mydir/ext-sources/env_include.sh > $rootdir$pkgbuild_topdir/SOURCES/env_include.sh" || \
+	return 1
+    log "Creating env.csh"
+    logrun_quiet bash -c "sed -e \"s%@CBE_PREFIX@%$cbe_prefix%\" \
+        -e \"s%@JDS_PREFIX@%$JDS_PREFIX%\" \
+	-e \"s%@CC32@%$cc32dir/$cc_name%\" \
+	-e \"s%@CXX32@%$cc32dir/$cxx_name%\" \
+	-e \"s%@CC64@%$cc64dir/$cc_name%\" \
+	-e \"s%@CXX64@%$cc64dir/$cxx_name%\" \
+	-e \"s%@CBE_VERSION@%$CBE_VERSION%\" \
+        -e \"s%@BUILD_INFO@%$build_info%\" \
+	$mydir/ext-sources/env.csh > $rootdir$pkgbuild_topdir/SOURCES/env.csh" || \
+	return 1
+    log "Copying ld-wrapper, gendiff"
+    logrun bash -c "cp $mydir/ext-sources/ld-wrapper $rootdir$pkgbuild_topdir/SOURCES" || \
+	return 1
+    logrun bash -c "cp $mydir/ext-sources/gendiff $rootdir$pkgbuild_topdir/SOURCES" || \
+	return 1
+    logrun bash -c "mkdir -p $rootdir$pkgbuild_topdir/SPECS" || \
+	return 1
+    logrun bash -c "cp $mydir/include/CBE.inc $rootdir$pkgbuild_topdir/SPECS/" || \
+	return 1
+    logrun bash -c "cp $mydir/include/default-depend.inc $rootdir$pkgbuild_topdir/SPECS/" || \
+	return 1
+    msg "Building CBEenv"
+    logrun_quiet /usr/bin/pkgbuild --define "cbe_prefix $cbe_prefix" --define "cbe_version $CBE_VERSION" --define "build_user $logname" -ba CBEenv.spec || return 1
+    pkg_try_install cbe/desktop/CBEenv || return 1
+    logrun cp ${envdir}/* $cbe_prefix/lib/cbe-env/
+    def_env_name=$(basename $default_env)
+    cd $cbe_prefix/lib/cbe-env; rm -f default; ln -s $def_env_name default
+    cd $mydir
+    msg "CBE setup complete"
+    msg "Run"
+    msg "  . $cbe_prefix/bin/env.sh [environment]"
+    msg "or"
+    msg "  source $cbe_prefix/bin/env.csh [environment]"
+    msg "depending on your shell, to use this build environment."
+    msg "You can also run $cbe_prefix/bin/env.sh [environment] to start subshell."
+}
+
+process_cl "${@}"
+main || {
+    msg "CBE setup FAILED"
+    msg "Installation log saved in $LOGFILE"
+    exit 1
+}
+msg "Installation log saved in $LOGFILE"

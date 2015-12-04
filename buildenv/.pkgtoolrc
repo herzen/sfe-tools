@@ -1,0 +1,16 @@
+# tarballdirs [string]: colon (:) separated list of directories where source tarballs are searched for
+tarballdirs:   ${MYDIR}/tarballs
+
+download_to: ${MYDIR}/tarballs
+
+# logdir [string]: the directory for saving log files
+# logdir:	/tmp
+
+# patchdirs [string]: colon (:) separated list of directories where source patches are searched for
+patchdirs:	${MYDIR}/patches
+
+# specdirs [string]: colon (:) separated list of directories where spec files are searched for
+specdirs:	${MYDIR}:${MYDIR}/include
+
+# sourcedirs [string]: colon (:) separated list of directories where extra sources (not tarballs) are searched for
+sourcedirs:	${MYDIR}/ext-sources:${MYDIR}/copyright
