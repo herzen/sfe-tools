@@ -78,24 +78,13 @@ else
 fi
 
 if [ $invalid_env != yes ]; then
-    # backward compat with old JDS CBEs:
-    CC32="$CC"
-    CC64="$CC"
-    CXX32="$CXX"
-    CXX64="$CXX"
-    export CC32 CC64 CXX32 CXX64
 
     if [ "x$JDS_CBE_ENV_QUIET" != x1 ]; then
 	echo Using CC=$CC
 	echo Using CXX=$CXX
     fi
 
-    CCDIR=`dirname $CC`
-    if [ $CCDIR != /usr/bin ]; then
-	PATH="$CBE_PREFIX/bin:$CCDIR:/usr/gnu/bin:/usr/bin:/usr/sbin:/bin:/usr/sfw/bin"
-    else
-	PATH="$CBE_PREFIX/bin:/usr/gnu/bin:/usr/bin:/usr/sbin:/bin:/usr/sfw/bin"
-    fi
+    PATH="$CBE_PREFIX/bin:/usr/gnu/bin:/usr/bin:/usr/sbin"
 
     test "x$JDS_CBE_ENV_QUIET" != x1  && \
 	echo Setting PATH=$PATH
