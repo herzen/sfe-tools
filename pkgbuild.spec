@@ -1,6 +1,6 @@
 # To build, enter the directory containing this file (sfe-tools/pkgbuild)
 # and give this command:
-#	pkgtool build-only --download --patches=. pkgbuild.spec
+#	pkgtool build-only --download pkgbuild.spec
 # After that, install with
 #	pkg uninstall pkgbuild
 #	pkg install pkg://<your repository name>/package/pkgbuild
@@ -13,20 +13,20 @@
 # to define a different install prefix.
 
 %{?!pkgbuild_prefix:%define pkgbuild_prefix /usr}
-%define _prefix %{pkgbuild_prefix}
+%define _prefix %pkgbuild_prefix
+%define branch_name maint
 
 Name:         pkgbuild
 IPS_Package_Name: package/pkgbuild
 License:      GPLv2
 Group:        Development/Tools/Other
-URL:	      http://pkgbuild.sourceforge.net/
+URL:	      http://github.com/herzen/pkgbuild
 Version:      1.3.105
 Release:      1
 BuildArch:    noarch
 Vendor:	      OpenSolaris Community
 Summary:      rpmbuild-like tool for building Solaris packages
-Source:       http://prdownloads.sourceforge.net/pkgbuild/pkgbuild-%{version}.tar.bz2
-BuildRoot:    %{_tmppath}/%{name}-%{version}-build
+Source:       http://github.com/herzen/pkgbuild/archive/%branch_name.zip
 # OpenSolaris IPS Package Manifest Fields
 Meta(info.upstream):	 	Laszlo (Laca) Peter <laszlo.peter@oracle.com>
 Meta(info.maintainer):	 	Laszlo (Laca) Peter <laca@opensolaris.org>
@@ -36,20 +36,15 @@ Requires:     SUNWbash
 BuildRequires: runtime/perl-512
 Requires:     SUNWgpch
 
-Patch1:		configure-sed.patch
-Patch2:		pkgbuild.pl.in-facets.patch
-
-
 %description
 A tool for building Solaris SVr4 packages based on RPM spec files.
 Most features and some extensions of the spec format are implemented.
 
 %prep
-%setup -q -n pkgbuild-%version
-%patch1 -p1
-%patch2 -p1
+%setup -q -n pkgbuild-%branch_name
 
 %build
+./autogen.sh
 ./configure --prefix=%{pkgbuild_prefix}
 make
 
