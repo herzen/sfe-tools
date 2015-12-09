@@ -17,7 +17,7 @@
 
 Name:         pkgbuild
 IPS_Package_Name: package/pkgbuild
-License:      GPL
+License:      GPLv2
 Group:        Development/Tools/Other
 URL:	      http://pkgbuild.sourceforge.net/
 Version:      1.3.105
@@ -26,29 +26,15 @@ BuildArch:    noarch
 Vendor:	      OpenSolaris Community
 Summary:      rpmbuild-like tool for building Solaris packages
 Source:       http://prdownloads.sourceforge.net/pkgbuild/pkgbuild-%{version}.tar.bz2
-
 BuildRoot:    %{_tmppath}/%{name}-%{version}-build
-
-%if %_is_pkgbuild
-SUNW_Pkg:                  SFpkgbuild
-SUNW_MaxInst:              1000
-SUNW_BaseDir:              %{pkgbuild_prefix}
-SUNW_Copyright:            http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt
 # OpenSolaris IPS Package Manifest Fields
-Meta(info.upstream):	 	Laszlo (Laca) Peter <laca@sun.com>
+Meta(info.upstream):	 	Laszlo (Laca) Peter <laszlo.peter@oracle.com>
 Meta(info.maintainer):	 	Laszlo (Laca) Peter <laca@opensolaris.org>
 Meta(info.repository_url):	http://pkgbuild.cvs.sourceforge.net/viewvc/pkgbuild/pkgbuild/
 Meta(info.classification):	org.opensolaris.category.2008:System/Packaging
-%endif
-
-%ifos Solaris
 Requires:     SUNWbash
-Requires:     SUNWperl584core
+BuildRequires: runtime/perl-512
 Requires:     SUNWgpch
-%else
-Requires:     perl >= 5.0.0
-Requires:     patch
-%endif
 
 Patch1:		configure-sed.patch
 Patch2:		pkgbuild.pl.in-facets.patch
