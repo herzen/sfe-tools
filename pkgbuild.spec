@@ -7,17 +7,16 @@
 # This assumes that you already have pkgbuild installed and have a build
 # environment and a local IPS repository set up.
 
-# Vanilla pkgbuild.spec's default install prefix is /opt/pkgbuild.
-# We follow the SFE convention of installing in /usr.
+# Install in /opt/dtbld to avoid conflict with system pkgbuild
 # Use pkgbuild --define 'pkgbuild_prefix /path/to/dir'
 # to define a different install prefix.
 
-%{?!pkgbuild_prefix:%define pkgbuild_prefix /usr}
+%{?!pkgbuild_prefix:%define pkgbuild_prefix /opt/dtbld}
 %define _prefix %pkgbuild_prefix
 %define branch_name maint
 
 Name:         pkgbuild
-IPS_Package_Name: package/pkgbuild
+IPS_Package_Name: sfe/package/pkgbuild
 License:      GPLv2
 Group:        Development/Tools/Other
 URL:	      http://github.com/herzen/pkgbuild
@@ -45,7 +44,7 @@ Most features and some extensions of the spec format are implemented.
 
 %build
 ./autogen.sh
-./configure --prefix=%{pkgbuild_prefix}
+./configure --prefix=%_prefix
 make
 
 %install
