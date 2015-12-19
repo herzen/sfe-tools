@@ -85,6 +85,7 @@ if [ $invalid_env != yes ]; then
     fi
 
     PATH="$CBE_PREFIX/bin:/usr/gnu/bin:/usr/bin:/usr/sbin"
+    MANPATH="$CBE_PREFIX/share/man:/usr/gnu/share/man:/usr/share/man"
 
     test "x$JDS_CBE_ENV_QUIET" != x1  && \
 	echo Setting PATH=$PATH
