@@ -20,7 +20,6 @@ Source4:                gendiff
 SUNW_BaseDir:		%_prefix
 SUNW_Category:          CBE,application
 
-Requires:	group/feature/developer-gnu
 Requires:	web/wget, archiver/gnu-tar, text/gnu-patch
 Requires:	text/gnu-sed, text/gawk, text/gnu-grep, file/gnu-findutils
 Requires:	compress/xz, developer/documentation-tool/gtk-doc
