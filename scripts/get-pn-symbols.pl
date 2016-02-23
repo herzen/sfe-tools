@@ -10,8 +10,13 @@ my @matches = `ggrep '^BuildRequires:[[:space:]]\\+%{pnm_' *.spec encumbered/*.s
 my %pkg_names;
 
 for (@matches) {
-    /%{pnm_buildrequires_(\w+)}/;
-    $pkg_names{$1} = undef;
+    # Most of these start with "pnm_buildrequires_".
+    # Do not treat ones that start with "pnm_requires_" differently.
+    if (/%{pnm_(?:build)?requires_(\w+)}/) {
+	$pkg_names{$1} = undef;
+    } else {
+	die "Symbol does not start with \"pnm_(build)requires_\": $_";
+    }
 }
 
 for (sort keys %pkg_names) { say $_ }
