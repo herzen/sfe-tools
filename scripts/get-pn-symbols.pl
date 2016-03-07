@@ -2,6 +2,7 @@
 use v5.12;
 
 =pod
+
 Get list of all package name macros referred to by BuildRequires in all
 SFE specs, removing the leading "pnm_buildrequires_" from the symbols.
 =cut

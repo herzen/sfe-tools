@@ -2,6 +2,7 @@
 use v5.12;
 
 =pod
+
 This script goes through SFE spec files and, if they declare an IPS package
 name, prints out that name and the old SFE package name.
 It expects to be run in the SFE directory.

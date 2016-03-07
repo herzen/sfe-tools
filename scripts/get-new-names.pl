@@ -2,13 +2,14 @@
 use v5.12;
 
 =pod
-Get list of all packages using pkg(1).
-Filter out packages that have not been renamed
-Strip the lines down to a string just containing the package name
-For each SUNW package name
-  run "pkg info -r <name>"
-  get the new name from the output
-  print the old and new names
+
+ Get list of all packages using pkg(1).
+ Filter out packages that have not been renamed
+ Strip the lines down to a string just containing the package name
+ For each SUNW package name
+   run "pkg info -r <name>"
+   get the new name from the output
+   print the old and new names
 =cut
 
 my @lines = `pkg list -n SUNW\*`;

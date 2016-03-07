@@ -5,34 +5,35 @@ my $distro1 = "OpenIndiana Hipster";
 my $distro2 = "Solaris 11.1";
 
 =pod
-print_distro_differences.pl
-    distro1_mapping_filename distro2_mapping_filename differences_report_filename
 
-Print the date
-Read in old to new name mappings of both distros
-For both disros, create both an array of old names and a dictionary
-    of the mapping
-Merge the arrays to get an array of old names defined in either or both distros
-Filter this array to get two new arrays:
-    @identical_renames and @handled_differently
-Print out the old and new names of packages that are handled in the same way
-Do the same where they are different, printing new name used by each distro
-Print out the totals
-
-For each distro, there are three possibilities for its stance on a given package:
-    renamed, obsoleted, and unknown.  This means that there are seven possibilities
-    for packages that are handled differently by the two distributions: their using
-    a different new name, and six others.  The cases are:
-
-renamed/renamed		Two possibilities: renamed the same, or differently
-renamed/obsoleted
-renamed/unknown
-obsoleted/renamed
-obsoleted/obsoleted	Added to @handled_identically
-obsoleted/unknown
-unknown/renamed
-unknown/obsoleted
-unknown/unknown		This would not end up in @all_pkgs
+ print_distro_differences.pl
+     distro1_mapping_filename distro2_mapping_filename differences_report_filename
+ 
+ Print the date
+ Read in old to new name mappings of both distros
+ For both disros, create both an array of old names and a dictionary
+     of the mapping
+ Merge the arrays to get an array of old names defined in either or both distros
+ Filter this array to get two new arrays:
+     @identical_renames and @handled_differently
+ Print out the old and new names of packages that are handled in the same way
+ Do the same where they are different, printing new name used by each distro
+ Print out the totals
+ 
+ For each distro, there are three possibilities for its stance on a given package:
+     renamed, obsoleted, and unknown.  This means that there are seven possibilities
+     for packages that are handled differently by the two distributions: their using
+     a different new name, and six others.  The cases are:
+ 
+ renamed/renamed		Two possibilities: renamed the same, or differently
+ renamed/obsoleted
+ renamed/unknown
+ obsoleted/renamed
+ obsoleted/obsoleted	Added to @handled_identically
+ obsoleted/unknown
+ unknown/renamed
+ unknown/obsoleted
+ unknown/unknown		This would not end up in @all_pkgs
 =cut
 
 printf "%s\n\n", `date -u`;
