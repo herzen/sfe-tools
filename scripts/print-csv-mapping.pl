@@ -14,6 +14,7 @@ symbol can be printed as one array.
 =cut
 
 my @distros = qw( PNsymbol S11.3 OIhipster OmniOS );
+my @uname_ver_regexs = qw( uname 11.3 illumos- omnios- );
 my @input_file_names = ( '../data/pnm-with-req.list', '../../s11.result',
 			 '../../oi.result', '../../omnios.result' );
 my @pkgname_arrays = ();
@@ -30,7 +31,8 @@ for my $filename (@input_file_names) {
     $filenum++;
 }
 
-say join ',', @distros ;
+say join ',', @distros;
+say join ',', @uname_ver_regexs;
 
 for my $pkg (@pkgname_arrays) {
     say join ',', @$pkg;
