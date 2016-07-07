@@ -1,4 +1,5 @@
 SFEasciidoc
+SFEautomake_115
 SFEgnugetopt
 SFElibggz
 SFElibggz_devel
@@ -7,6 +8,7 @@ SFElibgpg_error_devel
 SFElibschroedinger
 SFElibsndfile
 SFElibsndfile_devel
+SFElibyaml
 SFEopenjpeg
 SFEorc
 SFEorc_devel
@@ -14,6 +16,7 @@ SFEperl_extutils_cbuilder
 SFEpulseaudio
 SFEpulseaudio_devel
 SFExz_gnu
+SFEzlib_pkgconfig
 SUNWGlib
 SUNWGtk
 SUNWPython26
@@ -21,6 +24,8 @@ SUNWPython26_devel
 SUNWTcl
 SUNWTiff
 SUNWTiff_devel
+SUNWTk
+SUNWTk_devel
 SUNWaalib
 SUNWaalib_devel
 SUNWant
@@ -94,6 +99,8 @@ SUNWgtk2
 SUNWgtk2_devel
 SUNWgtk_doc
 SUNWhea
+SUNWimagick
+SUNWimagick_devel
 SUNWjpg
 SUNWjpg_devel
 SUNWkrb
@@ -155,6 +162,7 @@ SUNWopenssl_libraries
 SUNWpango
 SUNWpango_devel
 SUNWpcre
+SUNWpcre_devel
 SUNWphp52
 SUNWphp52_mysql
 SUNWpr
@@ -173,7 +181,6 @@ SUNWsndm_devel
 SUNWspeex
 SUNWspeex_devel
 SUNWsqlite3
-SUNWsshu
 SUNWtexi
 SUNWunrar
 SUNWwget
@@ -194,17 +201,21 @@ avahi_bridge_dsd
 boost_gpp_default
 compatibility_ucb
 data_docbook
+developer_build_autogen
 developer_build_cmake
 developer_build_make
 developer_cppunit
 developer_documentation_tool_doxygen
 developer_documentation_tool_gtk_doc
+developer_documentation_tool_xmlto
 developer_gnome_gettext
 developer_gperf
+driver_graphics_nvidia
 icu_gpp_default
 image_library_libexif
 java_runtime_default
 library_desktop_gtk2
+library_gnome_gnome_libs
 library_guile
 library_libidn
 library_pcre
@@ -216,9 +227,11 @@ perl_default
 perl_xml_parser
 pulseaudio
 python_default
+service_gnome_desktop_cache
 system_header_header_audio
 system_library_math_header_math
 system_management_snmp_net_snmp
 system_network_avahi
 text_gnu_diffutils
+web_browser_w3m
 x11_library_freeglut
