@@ -13,27 +13,21 @@
 
 %{?!pkgbuild_prefix:%define pkgbuild_prefix /opt/dtbld}
 %define _prefix %pkgbuild_prefix
-%define branch_name maint
+%define branch_name sfe
 
 Name:         pkgbuild
 IPS_Package_Name: sfe/package/pkgbuild
 License:      GPLv2
-Group:        Development/Tools/Other
+Group:        System/Packaging
 URL:	      http://github.com/herzen/pkgbuild
-Version:      1.3.105
+Version:      1.4.0
 Release:      1
 BuildArch:    noarch
 Vendor:	      OpenSolaris Community
 Summary:      rpmbuild-like tool for building Solaris packages
-Source:       http://github.com/herzen/pkgbuild/archive/%branch_name.zip
-# OpenSolaris IPS Package Manifest Fields
-Meta(info.upstream):	 	Laszlo (Laca) Peter <laszlo.peter@oracle.com>
-Meta(info.maintainer):	 	Laszlo (Laca) Peter <laca@opensolaris.org>
-Meta(info.repository_url):	http://pkgbuild.cvs.sourceforge.net/viewvc/pkgbuild/pkgbuild/
-Meta(info.classification):	org.opensolaris.category.2008:System/Packaging
-Requires:     SUNWbash
-BuildRequires: runtime/perl-512
-Requires:     SUNWgpch
+Source:       http://github.com/herzen/pkgbuild/archive/pkgbuild-%branch_name.zip
+BuildRequires:	library/perl-5/yaml-libyaml
+Requires:	library/perl-5/yaml-libyaml
 
 %description
 A tool for building Solaris SVr4 packages based on RPM spec files.
