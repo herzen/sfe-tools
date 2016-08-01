@@ -73,8 +73,13 @@ if [ "x$1" != x ]; then
 	invalid_env=yes
     fi
 else
-    export CC=cc
-    export CXX=CC
+    if [[ `uname -v` =~ ^illumos-|^omnios- ]]; then
+	export CC=gcc
+	export CXX=g++
+    else
+	export CC=cc
+	export CXX=CC
+    fi
 fi
 
 if [ $invalid_env != yes ]; then
