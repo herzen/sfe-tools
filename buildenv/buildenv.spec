@@ -10,10 +10,9 @@
 Name:			buildenv
 IPS_Package_Name:	developer/build/buildenv
 Group:			Development/Distribution Tools
-Version:		%{?cbe_version}%{?!cbe_version:0.0}
+Version:		0.99
 Summary:		environment setup scripts for building Spec Files Extra packages
 Source:			env.sh
-Source1:                env.csh
 Source2:                env_include.sh
 Source3:                ld-wrapper
 Source4:                gendiff
@@ -35,7 +34,6 @@ mkdir -p %name-%version
 rm -rf %buildroot
 mkdir -p %buildroot%_bindir
 cp %SOURCE0 %buildroot%_bindir
-cp %SOURCE1 %buildroot%_bindir
 cp %SOURCE2 %buildroot%_bindir
 cp %SOURCE3 %buildroot%_bindir
 cp %SOURCE4 %buildroot%_bindir
